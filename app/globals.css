@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-teknova-bg-primary: #020713;
+  --color-teknova-bg-secondary: #061226;
+  --color-teknova-bg-panel: #07172B;
+  
+  --color-teknova-blue: #008CFF;
+  --color-teknova-cyan: #00E5FF;
+  --color-teknova-violet: #7B2CFF;
+  --color-teknova-purple: #B44CFF;
+
+  --color-teknova-text-primary: #F5F8FF;
+  --color-teknova-text-secondary: #A9B8D0;
+  --color-teknova-text-muted: #627694;
+
+  /* Backward compatibility aliases */
+  --color-nexus-bg-1: #020713;
+  --color-nexus-bg-2: #061226;
+  --color-nexus-bg-3: #07172B;
+  --color-nexus-accent-1: #7B2CFF;
+  --color-nexus-accent-2: #B44CFF;
+  --color-nexus-accent-3: #008CFF;
+  --color-nexus-accent-4: #00E5FF;
+  --color-nexus-text-1: #F5F8FF;
+  --color-nexus-text-2: #A9B8D0;
+  --color-nexus-text-3: #627694;
+}
+
+@layer base {
+  * {
+    border-color: rgba(0, 229, 255, 0.12);
+  }
+
+  body {
+    background-color: #020713;
+    color: #A9B8D0;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #F5F8FF;
+    font-family: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(7, 23, 43, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 4, 16, 0.6);
+  }
+
+  .glass-panel-elevated {
+    background: rgba(9, 29, 54, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(0, 140, 255, 0.15);
+  }
+  
+  .glow-cyan {
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+  }
+
+  .glow-violet {
+    text-shadow: 0 0 14px rgba(123, 44, 255, 0.7);
+  }
+
+  .glow-box-cyan {
+    box-shadow: 0 0 24px rgba(0, 229, 255, 0.25);
+  }
+
+  .glow-box-violet {
+    box-shadow: 0 0 24px rgba(123, 44, 255, 0.35);
+  }
+  
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #F5F8FF 0%, #00E5FF 50%, #008CFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-violet {
+    background: linear-gradient(135deg, #00E5FF 0%, #B44CFF 50%, #7B2CFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .neon-border-pulse {
+    animation: neonPulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    border-color: rgba(0, 229, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+  }
+  50% {
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+  }
+}
+
+/* Custom scrollbar for dark cyberpunk aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020713;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #07172B;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #008CFF;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

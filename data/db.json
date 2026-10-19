@@ -1,0 +1,673 @@
+{
+  "events": [
+    {
+      "id": "bug-slayer",
+      "slug": "bug-slayer",
+      "name": "BUG SLAYER",
+      "category": "Technical",
+      "subCategory": "Debugging",
+      "workingInterpretation": "Debugging contest",
+      "participationType": "individual",
+      "description": "Enter the neon simulation to hunt, isolate, and eradicate code vulnerabilities against the clock.",
+      "rules": [
+        "Individual participation only.",
+        "Participants must bring college ID card.",
+        "Programming languages supported: C, C++, Java, Python.",
+        "Round 1: Rapid syntax & logic debugging (30 mins).",
+        "Round 2: Algorithmic fix and performance optimization (45 mins).",
+        "Decision of the judges and coordinators is final."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 4000
+        },
+        {
+          "position": "2nd",
+          "amount": 2000
+        }
+      ],
+      "prizePoolSubtotal": 6000,
+      "date": "December 2, 2026",
+      "time": "10:00 AM",
+      "venue": "Lab Alpha (MCA Department)",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/Teknova '26 Neon Tech Fest Poster.png"
+    },
+    {
+      "id": "mirror-masters",
+      "slug": "mirror-masters",
+      "name": "MIRROR MASTERS",
+      "category": "Technical",
+      "subCategory": "Web Design",
+      "workingInterpretation": "Replica / Replica of Website",
+      "participationType": "team",
+      "teamSize": {
+        "min": 1,
+        "max": 2
+      },
+      "description": "Recreate a high-fidelity cyberpunk web interface with pixel perfection and dynamic responsiveness.",
+      "rules": [
+        "Team of 1 to 2 members.",
+        "Target website mockup will be revealed at the commencement of the event.",
+        "Allowed stack: HTML5, CSS3/Tailwind, Vanilla JS or React.",
+        "No external pre-built templates or AI generators allowed.",
+        "Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 4000
+        },
+        {
+          "position": "2nd",
+          "amount": 2000
+        }
+      ],
+      "prizePoolSubtotal": 6000,
+      "date": "December 2, 2026",
+      "time": "11:30 AM",
+      "venue": "Web Systems Studio",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA '26_ Neon Tech Fest.png"
+    },
+    {
+      "id": "fotonova",
+      "slug": "fotonova",
+      "name": "fotonova",
+      "category": "Creative",
+      "subCategory": "Photography",
+      "workingInterpretation": "Photography contest",
+      "participationType": "individual",
+      "description": "Capture the neon essence, festival energy, and human stories across KMM campus.",
+      "rules": [
+        "Solo participation.",
+        "Theme will be announced on the morning of December 2, 2026.",
+        "Photographs must be shot on campus during the festival hours.",
+        "Basic color grading allowed; major manipulations or composite edits will result in disqualification.",
+        "Submit original EXIF data with image upload."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 1234
+        }
+      ],
+      "prizePoolSubtotal": 1234,
+      "date": "December 2–3, 2026",
+      "time": "All Day",
+      "venue": "Campus Grounds & Media Lounge",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA_ Neon Portal of Possibility.png"
+    },
+    {
+      "id": "teknova-e-clash",
+      "slug": "teknova-e-clash",
+      "name": "TEKNOVA E-CLASH",
+      "category": "Gaming",
+      "subCategory": "E-Football / PES",
+      "workingInterpretation": "E-Football / PES",
+      "participationType": "individual",
+      "description": "Command the virtual pitch in an electrifying knockout e-football tournament.",
+      "rules": [
+        "Solo 1v1 console/PC tournament.",
+        "Match duration: 10 minutes regular time.",
+        "Knockout format; extra time and penalties if tied.",
+        "Controllers will be provided, but participants may bring personal certified controllers."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 4000
+        },
+        {
+          "position": "2nd",
+          "amount": 2000
+        }
+      ],
+      "prizePoolSubtotal": 6000,
+      "date": "December 2, 2026",
+      "time": "01:30 PM",
+      "venue": "Gaming Arena (Auditorium)",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA '26_ Neon Tech Fest 1.png"
+    },
+    {
+      "id": "tek-royale",
+      "slug": "tek-royale",
+      "name": "TEK ROYALE",
+      "category": "Gaming",
+      "subCategory": "Battle Royale",
+      "workingInterpretation": "PUBG tournament",
+      "participationType": "team",
+      "teamSize": {
+        "min": 4,
+        "max": 4
+      },
+      "description": "Drop into the battleground with your squad. Strategy, precision, and survival till the last zone.",
+      "rules": [
+        "Squad participation (strictly 4 players).",
+        "Mobile devices only (no emulators, triggers, or tablet displays).",
+        "Matches will be hosted on custom rooms.",
+        "Points system: Placement points + Kill points as per official tournament standards."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 4000
+        },
+        {
+          "position": "2nd",
+          "amount": 2000
+        }
+      ],
+      "prizePoolSubtotal": 6000,
+      "date": "December 3, 2026",
+      "time": "10:00 AM",
+      "venue": "E-Sports Hub",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/Neon TEKNOVA'26 Tech Fest Poster.png"
+    },
+    {
+      "id": "ideatek",
+      "slug": "ideatek",
+      "name": "IDEATEK",
+      "category": "Flagship",
+      "subCategory": "Ideathon",
+      "workingInterpretation": "Ideathon; two-day flagship event",
+      "participationType": "team",
+      "teamSize": {
+        "min": 2,
+        "max": 4
+      },
+      "description": "The premier 2-day flagship Ideathon: Build disruptive technology solutions for tomorrow's grand challenges.",
+      "rules": [
+        "Team of 2 to 4 members.",
+        "Two-day intensive hack & ideation sprint (Dec 2 & Dec 3).",
+        "Day 1: Problem selection, architecture pitch, milestone checkpoints.",
+        "Day 2: Prototype demo, jury Q&A, and grand finale stage.",
+        "Evaluation criteria: Innovation (30%), Technical Feasibility (30%), Impact (20%), Pitch (20%)."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 20000
+        },
+        {
+          "position": "2nd",
+          "amount": 10000
+        },
+        {
+          "position": "3rd",
+          "amount": 5000
+        }
+      ],
+      "prizePoolSubtotal": 35000,
+      "date": "December 2–3, 2026",
+      "time": "09:00 AM (Day 1) to 04:00 PM (Day 2)",
+      "venue": "Innovation Hub & Main Auditorium",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA '26_ Neon Tech Fest.png"
+    },
+    {
+      "id": "teksphere",
+      "slug": "teksphere",
+      "name": "TEKSPHERE",
+      "category": "Exhibition",
+      "subCategory": "Exhibition",
+      "workingInterpretation": "Exhibition",
+      "participationType": "team",
+      "teamSize": {
+        "min": 1,
+        "max": 4
+      },
+      "description": "Showcase cutting-edge hardware prototypes, IoT rigs, AI agents, and engineering marvels.",
+      "rules": [
+        "Open to individual exhibitors and teams up to 4 members.",
+        "Exhibitors must set up working models by 09:30 AM on Dec 2.",
+        "Live demonstration required for jury inspection and public walkthroughs."
+      ],
+      "prizes": [],
+      "prizePoolSubtotal": 0,
+      "prizeNote": "Prize details to be announced",
+      "date": "December 2–3, 2026",
+      "time": "10:00 AM – 04:00 PM",
+      "venue": "Central Exhibition Courtyard",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA_ Neon Portal of Possibility.png"
+    },
+    {
+      "id": "tektoniq",
+      "slug": "tektoniq",
+      "name": "TEKTONIQ",
+      "category": "Technical",
+      "subCategory": "Quiz",
+      "workingInterpretation": "Technical Quiz",
+      "participationType": "team",
+      "teamSize": {
+        "min": 2,
+        "max": 2
+      },
+      "description": "High-octane technical quiz testing your depth in computing history, algorithms, cryptography, and modern AI.",
+      "rules": [
+        "Teams of 2 members.",
+        "Preliminary written round for all registered teams.",
+        "Top 6 teams qualify for the buzzer stage round on main stage.",
+        "Negative marking applies in final rounds."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 4000
+        },
+        {
+          "position": "2nd",
+          "amount": 2000
+        }
+      ],
+      "prizePoolSubtotal": 6000,
+      "date": "December 3, 2026",
+      "time": "11:00 AM",
+      "venue": "Seminar Hall B",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/Teknova '26 Neon Tech Fest Poster.png"
+    },
+    {
+      "id": "beat-blitz",
+      "slug": "beat-blitz",
+      "name": "BEAT BLITZ",
+      "category": "Cultural",
+      "subCategory": "Spot Dance",
+      "workingInterpretation": "Spot dance / Spot choreography",
+      "participationType": "individual",
+      "description": "Improvise on the spot. Feel the bass drops, electrify the crowd, and own the dance floor.",
+      "rules": [
+        "Solo performance.",
+        "Random music tracks will be played on the spot by the DJ.",
+        "Prelims and Knockout battles.",
+        "Judging based on musicality, rhythm adaptability, stage presence, and crowd impact."
+      ],
+      "prizes": [
+        {
+          "position": "1st",
+          "amount": 3000
+        }
+      ],
+      "prizePoolSubtotal": 3000,
+      "date": "December 3, 2026",
+      "time": "02:00 PM",
+      "venue": "Open Air Amphitheatre",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/Neon TEKNOVA'26 Tech Fest Poster.png"
+    },
+    {
+      "id": "cinova",
+      "slug": "cinova",
+      "name": "CINOVA",
+      "category": "Creative",
+      "subCategory": "Film Fest",
+      "workingInterpretation": "Film fest",
+      "participationType": "team",
+      "teamSize": {
+        "min": 1,
+        "max": 5
+      },
+      "description": "Celebrate cinematic storytelling. Short films that captivate, provoke thought, and inspire.",
+      "rules": [
+        "Maximum runtime: 10 minutes including credits.",
+        "Original screenplays and licensed/original audio only.",
+        "Subtitles in English mandatory if dialogue is in regional languages.",
+        "Films must be submitted in 1080p MP4 format prior to screening schedule."
+      ],
+      "prizes": [],
+      "prizePoolSubtotal": 0,
+      "prizeNote": "Prize details to be announced",
+      "date": "December 3, 2026",
+      "time": "03:00 PM",
+      "venue": "Auditorium Mini Theatre",
+      "registrationFee": null,
+      "registrationOpen": true,
+      "image": "/images/TEKNOVA_ Neon Portal of Possibility.png"
+    }
+  ],
+  "registrations": [
+    {
+      "id": "REG-1792428391697-wptq",
+      "registrationNumber": "TK26-IDEA-0003",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "eventSlug": "ideatek",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1792428391697",
+        "fullName": "Devika Menon 5594",
+        "email": "candidate.5594@rajagiri.edu",
+        "phone": "9847105594",
+        "college": "Rajagiri College of Social Sciences",
+        "course": "MCA",
+        "year": "2nd Year",
+        "studentId": "RCSS-MCA-5594"
+      },
+      "teamName": "Nova Innovators 5594",
+      "teamMembers": [
+        {
+          "name": "Adithya Varma",
+          "email": "adithya.5594@rajagiri.edu",
+          "phone": "9847123457"
+        },
+        {
+          "name": "Fathima Zahra",
+          "email": "fathima.5594@rajagiri.edu",
+          "phone": "9847123458"
+        }
+      ],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-10-19T16:46:31.697Z",
+      "source": "public",
+      "registeredBy": "Self-Registered",
+      "attendanceStatus": "present",
+      "day1Attendance": "present",
+      "day2Attendance": "present",
+      "submissionStatus": "evaluated",
+      "attendanceNotes": "Team checked in at main auditorium desk on time",
+      "attendanceMarkedBy": "Coordinator (IDEATEK)",
+      "attendanceMarkedAt": "2026-10-19T16:46:32.725Z",
+      "projectTitle": "MediPulse AI - Emergency Triage Optimization",
+      "projectSubmissionUrl": "https://github.com/novainnovators/medipulse-ai",
+      "demoUrl": "https://medipulse-demo.vercel.app",
+      "scores": {
+        "innovation": 24,
+        "feasibility": 23,
+        "impact": 25,
+        "pitch": 24
+      },
+      "totalScore": 96,
+      "evaluationNotes": "Exceptional prototype with live sensor integration and clear clinical trial metrics."
+    },
+    {
+      "id": "REG-1792428371931-5vaf",
+      "registrationNumber": "TK26-IDEA-0002",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "eventSlug": "ideatek",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1792428371931",
+        "fullName": "Devika Menon 6781",
+        "email": "candidate.6781@rajagiri.edu",
+        "phone": "9847106781",
+        "college": "Rajagiri College of Social Sciences",
+        "course": "MCA",
+        "year": "2nd Year",
+        "studentId": "RCSS-MCA-6781"
+      },
+      "teamName": "Nova Innovators 6781",
+      "teamMembers": [
+        {
+          "name": "Adithya Varma",
+          "email": "adithya.6781@rajagiri.edu",
+          "phone": "9847123457"
+        },
+        {
+          "name": "Fathima Zahra",
+          "email": "fathima.6781@rajagiri.edu",
+          "phone": "9847123458"
+        }
+      ],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-10-19T16:46:11.931Z",
+      "source": "public",
+      "registeredBy": "Self-Registered",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1792428316086-88fh",
+      "registrationNumber": "TK26-IDEA-0001",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "eventSlug": "ideatek",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1792428316086",
+        "fullName": "Devika Menon",
+        "email": "devika.m@rajagiri.edu",
+        "phone": "9847123456",
+        "college": "Rajagiri College of Social Sciences",
+        "course": "MCA",
+        "year": "2nd Year",
+        "studentId": "RCSS-MCA-042"
+      },
+      "teamName": "Nova Innovators",
+      "teamMembers": [
+        {
+          "name": "Adithya Varma",
+          "email": "adithya@rajagiri.edu",
+          "phone": "9847123457"
+        },
+        {
+          "name": "Fathima Zahra",
+          "email": "fathima@rajagiri.edu",
+          "phone": "9847123458"
+        }
+      ],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-10-19T16:45:16.086Z",
+      "source": "public",
+      "registeredBy": "Self-Registered",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "CERT-1792428394192",
+      "certificateNumber": "CERT-TK26-00001",
+      "registrationNumber": "TK26-IDEA-0003",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "participantName": "Devika Menon 5594",
+      "college": "Rajagiri College of Social Sciences",
+      "certificateType": "first_prize",
+      "issuedAt": "2026-10-19T16:46:34.192Z",
+      "emailStatus": "queued",
+      "retryCount": 0
+    },
+    {
+      "id": "CERT-1792428394798-npom",
+      "certificateNumber": "CERT-TK26-00002",
+      "registrationNumber": "TK26-IDEA-0003",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "participantName": "Devika Menon 5594",
+      "college": "Rajagiri College of Social Sciences",
+      "certificateType": "participation",
+      "issuedAt": "2026-10-19T16:46:34.798Z",
+      "emailStatus": "sent",
+      "emailSentAt": "2026-10-19T16:46:34.798Z",
+      "retryCount": 0
+    }
+  ],
+  "winners": [
+    {
+      "id": "WIN-1792428394191",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "position": "1st",
+      "registrationNumber": "TK26-IDEA-0003",
+      "winnerName": "Devika Menon 5594",
+      "teamName": "Nova Innovators 5594",
+      "college": "Rajagiri College of Social Sciences",
+      "prizeAmount": 20000,
+      "confirmedAt": "2026-10-19T16:46:34.191Z",
+      "confirmedBy": "HOD MCA & Event Lead"
+    }
+  ],
+  "complaints": [
+    {
+      "id": "TKT-395341",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "category": "certificates",
+      "priority": "high",
+      "status": "resolved",
+      "description": "Participant requested re-send of digital certificate email copy.",
+      "submittedBy": "Reception Desk",
+      "submitterRole": "receptionist",
+      "createdAt": "2026-10-19T16:46:35.341Z",
+      "resolutionNotes": "Verified email delivery queue and re-dispatched PDF pass.",
+      "resolvedAt": "2026-10-19T16:46:35.384Z",
+      "assignedTo": "System Administrator"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "AUD-1792428395384",
+      "timestamp": "2026-10-19T16:46:35.384Z",
+      "action": "COMPLAINT_RESOLVED",
+      "entityType": "SUPPORT",
+      "entityId": "TKT-395341",
+      "performedBy": "System Administrator",
+      "details": "Resolved complaint TKT-395341: Verified email delivery queue and re-dispatched PDF pass."
+    },
+    {
+      "id": "AUD-1792428395341",
+      "timestamp": "2026-10-19T16:46:35.341Z",
+      "eventId": "ideatek",
+      "action": "COMPLAINT_SUBMITTED",
+      "entityType": "SUPPORT",
+      "entityId": "TKT-395341",
+      "performedBy": "Reception Desk",
+      "details": "[HIGH] certificates: Participant requested re-send of digital certifica..."
+    },
+    {
+      "id": "AUD-1792428394798",
+      "timestamp": "2026-10-19T16:46:34.798Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "CERTIFICATES_ISSUED",
+      "entityType": "CERTIFICATES",
+      "performedBy": "Coordinator (IDEATEK)",
+      "details": "Issued 1 participation certificates for IDEATEK (0 already issued)."
+    },
+    {
+      "id": "AUD-1792428394192",
+      "timestamp": "2026-10-19T16:46:34.192Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "WINNER_CONFIRMED",
+      "entityType": "RESULTS",
+      "entityId": "TK26-IDEA-0003",
+      "performedBy": "HOD MCA & Event Lead",
+      "details": "Awarded 1st prize (₹20000) to Devika Menon 5594 (TK26-IDEA-0003)"
+    },
+    {
+      "id": "AUD-1792428393404",
+      "timestamp": "2026-10-19T16:46:33.404Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "WORKFLOW_SUBMISSION_UPDATED",
+      "entityType": "SUBMISSION",
+      "entityId": "TK26-IDEA-0003",
+      "performedBy": "Jury Panel (IDEATEK)",
+      "details": "Updated submission & evaluation for Nova Innovators 5594 (Score: 96)"
+    },
+    {
+      "id": "AUD-1792428392725",
+      "timestamp": "2026-10-19T16:46:32.725Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "ATTENDANCE_UPDATED",
+      "entityType": "ATTENDANCE",
+      "entityId": "TK26-IDEA-0003",
+      "performedBy": "Coordinator (IDEATEK)",
+      "details": "Marked PRESENT for Devika Menon 5594"
+    },
+    {
+      "id": "AUD-1792428391697",
+      "timestamp": "2026-10-19T16:46:31.697Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-IDEA-0003",
+      "performedBy": "Self-Registered",
+      "details": "Online registration for IDEATEK"
+    },
+    {
+      "id": "AUD-1792428371931",
+      "timestamp": "2026-10-19T16:46:11.931Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-IDEA-0002",
+      "performedBy": "Self-Registered",
+      "details": "Online registration for IDEATEK"
+    },
+    {
+      "id": "AUD-1792428316086",
+      "timestamp": "2026-10-19T16:45:16.086Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-IDEA-0001",
+      "performedBy": "Self-Registered",
+      "details": "Online registration for IDEATEK"
+    },
+    {
+      "id": "AUD-001",
+      "timestamp": "2026-10-19T16:45:16.055Z",
+      "action": "SYSTEM_INITIALIZED",
+      "entityType": "SYSTEM",
+      "performedBy": "System Administrator",
+      "details": "TEKNOVA ’26 Unified Event Management System initialized with 10 official events."
+    }
+  ],
+  "coordinatorAssignments": {
+    "bug-slayer": [
+      "coordinator.bugslayer@teknova.fest"
+    ],
+    "mirror-masters": [
+      "coordinator.mirrormasters@teknova.fest"
+    ],
+    "fotonova": [
+      "coordinator.fotonova@teknova.fest"
+    ],
+    "teknova-e-clash": [
+      "coordinator.eclash@teknova.fest"
+    ],
+    "tek-royale": [
+      "coordinator.tekroyale@teknova.fest"
+    ],
+    "ideatek": [
+      "coordinator.ideatek@teknova.fest"
+    ],
+    "teksphere": [
+      "coordinator.teksphere@teknova.fest"
+    ],
+    "tektoniq": [
+      "coordinator.tektoniq@teknova.fest"
+    ],
+    "beat-blitz": [
+      "coordinator.beatblitz@teknova.fest"
+    ],
+    "cinova": [
+      "coordinator.cinova@teknova.fest"
+    ]
+  }
+}
