@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
+import { ParticipantPass } from '@/components/events/ParticipantPass';
 import { Search, Printer, ShieldCheck, AlertCircle, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function RegistrationLookupPage() {
@@ -120,9 +121,9 @@ export default function RegistrationLookupPage() {
             </div>
           )}
 
-          {/* Verified Receipt Output */}
+          {/* Verified Pass & Receipt Output */}
           {record && (
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="no-print flex justify-between items-center bg-[#07172B] p-4 rounded-xl border border-white/10">
                 <button
                   onClick={() => setRecord(null)}
@@ -130,13 +131,13 @@ export default function RegistrationLookupPage() {
                 >
                   ← Lookup Another Registration
                 </button>
-                <button
-                  onClick={handlePrint}
-                  className="px-4 py-2 bg-[#008CFF] hover:bg-[#00E5FF] text-white rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 shadow"
-                >
-                  <Printer size={14} /> Print Receipt
-                </button>
+                <span className="text-xs font-mono text-emerald-400">
+                  Registration Verified ✓
+                </span>
               </div>
+
+              {/* Official Cyberpunk Participant Pass */}
+              <ParticipantPass registration={record} />
 
               {/* Printable Receipt Card */}
               <div className="receipt-container bg-white text-slate-900 rounded-2xl p-8 sm:p-12 border-2 border-slate-900 shadow-2xl relative overflow-hidden">

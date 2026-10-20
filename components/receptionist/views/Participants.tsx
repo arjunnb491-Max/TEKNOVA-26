@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Download, Printer, Users, Eye, X, RefreshCw, CheckCircle2, Phone, Mail, School } from 'lucide-react';
 import { OFFICIAL_EVENTS } from '@/data/events';
 import { RegistrationRecord } from '@/lib/store';
+import { ParticipantPass } from '@/components/events/ParticipantPass';
 
 export default function ReceptionistParticipants() {
   const [registrations, setRegistrations] = useState<RegistrationRecord[]>([]);
@@ -255,89 +256,39 @@ export default function ReceptionistParticipants() {
 
       {/* Modal View & Print Dialog */}
       {selectedReg && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-[#061226] border border-[#00E5FF]/40 rounded-3xl max-w-2xl w-full p-6 lg:p-8 shadow-2xl relative space-y-6 printable-receipt text-white">
-            <button
-              onClick={() => setSelectedReg(null)}
-              className="absolute top-5 right-5 text-[#627694] hover:text-white p-2 no-print"
-            >
-              <X size={20} />
-            </button>
-
-            <div className="flex items-center justify-between pb-6 border-b border-white/10">
+        <div className="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-[#061226] border border-[#00E5FF]/40 rounded-3xl max-w-3xl w-full p-6 shadow-2xl relative space-y-6 my-6 text-white">
+            <div className="flex items-center justify-between no-print border-b border-white/10 pb-4">
               <div>
                 <span className="text-[10px] font-mono text-[#00E5FF] tracking-widest uppercase font-bold block">
-                  KMM College of Arts and Science • MCA Department
+                  Reception Desk Deskpass
                 </span>
                 <h3 className="text-xl font-black font-space-grotesk text-white">
-                  TEKNOVA ’26 OFFICIAL ENTRY PASS
+                  Participant Entry Pass
                 </h3>
                 <p className="text-xs font-mono text-[#A9B8D0]">
-                  December 2–3, 2026 • Thrikkakara
+                  {selectedReg.registrationNumber} • {selectedReg.participant.fullName}
                 </p>
               </div>
-
-              <div className="text-right">
-                <span className="text-[10px] font-mono text-[#627694] block uppercase">Reg No</span>
-                <span className="text-lg font-extrabold font-mono text-[#00E5FF]">
-                  {selectedReg.registrationNumber}
-                </span>
-              </div>
+              <button
+                onClick={() => setSelectedReg(null)}
+                className="text-[#627694] hover:text-white p-2 rounded-lg hover:bg-white/5 transition-colors"
+              >
+                <X size={20} />
+              </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 text-xs font-mono">
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Event</span>
-                <span className="text-white font-bold block mt-0.5">{selectedReg.eventName}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Candidate</span>
-                <span className="text-white font-bold block mt-0.5">{selectedReg.participant.fullName}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Mobile & Email</span>
-                <span className="text-[#A9B8D0] block mt-0.5">{selectedReg.participant.phone}</span>
-                <span className="text-[#627694] text-[10px] block truncate">{selectedReg.participant.email}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">College</span>
-                <span className="text-white font-bold block mt-0.5 truncate">{selectedReg.participant.college}</span>
-              </div>
-            </div>
+            {/* Official Cyberpunk Participant Pass */}
+            <ParticipantPass registration={selectedReg} />
 
-            {selectedReg.teamName && (
-              <div className="p-4 bg-[#07172B] rounded-xl border border-[#7B2CFF]/30 text-xs font-mono">
-                <span className="text-[#B44CFF] font-bold block mb-1">
-                  Team: {selectedReg.teamName} (Leader: {selectedReg.participant.fullName})
-                </span>
-                {selectedReg.teamMembers && selectedReg.teamMembers.length > 0 && (
-                  <div className="text-[11px] text-[#A9B8D0] space-y-0.5">
-                    {selectedReg.teamMembers.map((m, idx) => (
-                      <div key={idx}>Member {idx + 2}: {m.name} ({m.phone || 'Phone verified'})</div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between no-print">
-              <span className="text-[11px] text-[#627694] font-mono">
-                Source: {selectedReg.source} • Registered: {new Date(selectedReg.registrationDate).toLocaleDateString()}
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handlePrint}
-                  className="px-4 py-2 bg-gradient-to-r from-[#008CFF] to-[#00E5FF] text-[#020713] font-bold rounded-xl text-xs font-mono flex items-center gap-1.5 shadow-lg"
-                >
-                  <Printer size={14} /> Print Pass
-                </button>
-                <button
-                  onClick={() => setSelectedReg(null)}
-                  className="px-4 py-2 bg-[#07172B] text-[#A9B8D0] hover:text-white rounded-xl text-xs font-mono border border-white/10"
-                >
-                  Close
-                </button>
-              </div>
+            <div className="pt-2 flex items-center justify-between text-xs text-[#627694] font-mono border-t border-white/10 no-print">
+              <span>Candidate: {selectedReg.participant.phone} • {selectedReg.participant.email}</span>
+              <button
+                onClick={() => setSelectedReg(null)}
+                className="px-4 py-2 bg-[#07172B] hover:bg-white/5 text-[#A9B8D0] hover:text-white rounded-xl text-xs font-mono border border-white/10 transition-colors"
+              >
+                Close Pass Modal
+              </button>
             </div>
           </div>
         </div>

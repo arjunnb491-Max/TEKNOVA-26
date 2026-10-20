@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { OFFICIAL_EVENTS, OfficialEvent } from '@/data/events';
 import { RegistrationRecord } from '@/lib/store';
+import { ParticipantPass } from '@/components/events/ParticipantPass';
 
 export default function SpotRegistration() {
   const [selectedEventSlug, setSelectedEventSlug] = useState(OFFICIAL_EVENTS[0].slug);
@@ -168,71 +169,8 @@ export default function SpotRegistration() {
             </div>
           </div>
 
-          {/* Printable Badge / Receipt Layout */}
-          <div className="bg-[#061226] p-8 rounded-3xl border border-[#00E5FF]/30 shadow-2xl space-y-6 printable-receipt text-white">
-            <div className="flex items-center justify-between pb-6 border-b border-white/10">
-              <div>
-                <span className="text-[10px] font-mono text-[#00E5FF] tracking-widest uppercase font-bold block">
-                  KMM College of Arts and Science • MCA Department
-                </span>
-                <h3 className="text-2xl font-black font-space-grotesk text-white">
-                  TEKNOVA ’26 OFFICIAL ENTRY PASS
-                </h3>
-                <p className="text-xs font-mono text-[#A9B8D0]">
-                  December 2–3, 2026 • Thrikkakara, Kochi
-                </p>
-              </div>
-
-              <div className="text-right">
-                <span className="text-[10px] font-mono text-[#627694] block uppercase">Pass Number</span>
-                <span className="text-xl font-extrabold font-mono text-[#00E5FF]">
-                  {completedReg.registrationNumber}
-                </span>
-                <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono block mt-1">
-                  Verified Walk-in
-                </span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Event Registered</span>
-                <span className="text-white font-bold block mt-0.5">{completedReg.eventName}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Candidate Name</span>
-                <span className="text-white font-bold block mt-0.5">{completedReg.participant.fullName}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">College</span>
-                <span className="text-white font-bold block mt-0.5 truncate">{completedReg.participant.college}</span>
-              </div>
-              <div className="p-3 bg-[#07172B] rounded-xl border border-white/5">
-                <span className="text-[10px] text-[#627694] block">Format</span>
-                <span className="text-[#00E5FF] font-bold block mt-0.5 uppercase">{completedReg.participationType}</span>
-              </div>
-            </div>
-
-            {completedReg.teamName && (
-              <div className="p-4 bg-[#07172B] rounded-xl border border-[#7B2CFF]/30 text-xs font-mono">
-                <span className="text-[#B44CFF] font-bold block mb-1">
-                  Team Squad: {completedReg.teamName} (Leader: {completedReg.participant.fullName})
-                </span>
-                {completedReg.teamMembers && completedReg.teamMembers.length > 0 && (
-                  <div className="text-[11px] text-[#A9B8D0] space-y-0.5">
-                    {completedReg.teamMembers.map((m, idx) => (
-                      <div key={idx}>Member {idx + 2}: {m.name} ({m.phone || 'Phone verified'})</div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#627694]">
-              <span>Issued at Reception Desk on {new Date(completedReg.registrationDate).toLocaleString()}</span>
-              <span>Keep this pass with your College ID card for entry</span>
-            </div>
-          </div>
+          {/* The Official Cyberpunk Participant Pass */}
+          <ParticipantPass registration={completedReg} />
         </div>
       ) : (
         /* Registration Form */

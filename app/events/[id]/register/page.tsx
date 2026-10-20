@@ -7,6 +7,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { resolveEventByIdOrSlug, OfficialEvent, formatINR } from '@/data/events';
+import { ParticipantPass } from '@/components/events/ParticipantPass';
 import { 
   CheckCircle2, Users, User, ArrowLeft, ArrowRight, Printer, 
   Download, ShieldCheck, AlertCircle, Copy, Check, Calendar, MapPin, QrCode, FileText 
@@ -449,7 +450,7 @@ export default function EventRegistrationPage() {
             </div>
           )}
 
-          {/* STEP 2: Registration Confirmation & Printable Official Receipt */}
+          {/* STEP 2: Registration Confirmation & Official Participant Pass */}
           {step === 2 && createdRegistration && (
             <div className="space-y-8">
               {/* Success Notification Bar (Hidden in print) */}
@@ -459,170 +460,82 @@ export default function EventRegistrationPage() {
                   <div>
                     <h2 className="text-lg font-bold text-white font-space-grotesk">Registration Confirmed!</h2>
                     <p className="text-xs text-[#A9B8D0]">
-                      Stored in TEKNOVA database. You can save, download, or print this official registration receipt.
+                      Successfully recorded in the database. Save your official pass image or print it below.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <button
-                    onClick={handlePrint}
-                    className="px-4 py-2 bg-[#008CFF] hover:bg-[#00E5FF] text-white rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-colors shadow-md"
-                  >
-                    <Printer size={14} /> Print Receipt
-                  </button>
                   <Link
                     href="/events"
                     className="px-4 py-2 bg-[#07172B] hover:bg-white/5 text-white border border-white/10 rounded-xl text-xs font-mono transition-colors"
                   >
-                    Explore More
+                    Explore More Events
                   </Link>
                 </div>
               </div>
 
-              {/* The Official Printable Receipt */}
-              <div className="receipt-container bg-white text-slate-900 rounded-2xl p-8 sm:p-12 border-2 border-slate-900 shadow-2xl relative overflow-hidden">
-                {/* Watermark / Header */}
-                <div className="border-b-2 border-slate-900 pb-6 mb-8 text-center relative">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="text-left">
-                      <div className="text-xs font-mono uppercase font-bold tracking-widest text-slate-500">
-                        OFFICIAL FESTIVAL RECEIPT
-                      </div>
-                      <div className="text-2xl font-black tracking-tight text-slate-950">
-                        TEKNOVA ’26
-                      </div>
-                      <div className="text-xs font-medium text-slate-600">
-                        Department of MCA • KMM College of Arts and Science, Thrikkakara
-                      </div>
+              {/* The Official Cyberpunk Participant Pass */}
+              <ParticipantPass
+                registration={createdRegistration}
+                eventCategory={event.category}
+              />
+
+              {/* Supplementary Details & Contest Summary */}
+              <div className="no-print pt-2">
+                <div className="glass-panel rounded-2xl border border-white/10 p-6 space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-2">
+                    <div>
+                      <span className="text-xs font-mono text-[#00E5FF] uppercase tracking-wider block">
+                        Contest Details
+                      </span>
+                      <h3 className="text-base font-bold text-white font-space-grotesk">
+                        {createdRegistration.eventName}
+                      </h3>
+                      <p className="text-xs text-[#A9B8D0] mt-0.5">{event.workingInterpretation}</p>
                     </div>
-
-                    <div className="text-right">
-                      <div className="text-[10px] font-mono text-slate-500">REGISTRATION NUMBER</div>
-                      <div className="text-xl font-mono font-black text-indigo-700 tracking-wider">
-                        {createdRegistration.registrationNumber}
-                      </div>
-                      <div className="text-[10px] text-slate-500">
-                        {new Date(createdRegistration.registrationDate).toLocaleString('en-IN')}
-                      </div>
+                    <div className="sm:text-right">
+                      <span className="text-[10px] font-mono text-[#A9B8D0] block">VENUE & TIMING</span>
+                      <span className="text-xs font-bold text-white font-mono">
+                        {event.venue} • {event.date} ({event.time})
+                      </span>
                     </div>
                   </div>
 
-                  <div className="inline-block px-4 py-1 bg-slate-950 text-white text-xs font-mono font-bold tracking-widest uppercase rounded">
-                    CONTEST PARTICIPATION PASS
-                  </div>
-                </div>
-
-                {/* Receipt Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-sm mb-8 pb-8 border-b border-slate-200">
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Event Registered</span>
-                    <strong className="text-base text-slate-950">{createdRegistration.eventName}</strong>
-                    <div className="text-xs text-slate-600">{event.workingInterpretation}</div>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Participation Format</span>
-                    <strong className="text-base text-slate-950 capitalize">{createdRegistration.participationType}</strong>
-                    {createdRegistration.teamName && (
-                      <div className="text-xs text-indigo-700 font-semibold">Team: {createdRegistration.teamName}</div>
-                    )}
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Participant / Leader Name</span>
-                    <strong className="text-slate-950">{createdRegistration.participant.fullName}</strong>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">College / Institution</span>
-                    <strong className="text-slate-950">{createdRegistration.participant.college}</strong>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Email & Mobile</span>
-                    <div className="text-slate-900">{createdRegistration.participant.email} • {createdRegistration.participant.phone}</div>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Fest Venue & Dates</span>
-                    <div className="text-slate-900">{event.venue} • {event.date} ({event.time})</div>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Payment Verification Status</span>
-                    <span className="inline-block mt-0.5 px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full uppercase">
-                      {createdRegistration.paymentStatus === 'verified' ? 'Verified / Free Entry' : 'Verified (On-Spot Cleared)'}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-xs font-mono text-slate-500 uppercase block">Registration Source</span>
-                    <span className="text-slate-900 text-xs font-mono">
-                      {createdRegistration.source === 'receptionist_walkin' ? 'Reception Desk Walk-In' : 'Online Portal'}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Team Roster details if team event */}
-                {createdRegistration.teamMembers && createdRegistration.teamMembers.length > 0 && (
-                  <div className="mb-8 pb-8 border-b border-slate-200">
-                    <h4 className="text-xs font-mono uppercase font-bold text-slate-500 mb-3">
-                      Team Roster ({createdRegistration.teamMembers.length + 1} Members)
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                      <div className="p-2.5 bg-slate-50 border border-slate-200 rounded">
-                        <span className="font-bold">1. {createdRegistration.participant.fullName}</span> (Leader)
-                      </div>
-                      {createdRegistration.teamMembers.map((m: any, i: number) => (
-                        <div key={i} className="p-2.5 bg-slate-50 border border-slate-200 rounded">
-                          <span className="font-bold">{i + 2}. {m.name}</span> ({m.email})
+                  {/* Team Members if applicable */}
+                  {createdRegistration.teamMembers && createdRegistration.teamMembers.length > 0 && (
+                    <div className="space-y-3">
+                      <h4 className="text-xs font-mono uppercase font-bold text-[#A9B8D0]">
+                        Team Roster ({createdRegistration.teamMembers.length + 1} Members) — Team {createdRegistration.teamName}
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div className="p-3 bg-[#061226] border border-white/10 rounded-xl">
+                          <span className="font-bold text-white">1. {createdRegistration.participant.fullName}</span>
+                          <span className="text-[#00E5FF] text-[10px] ml-1.5 font-mono">(Leader)</span>
+                          <div className="text-[11px] text-[#A9B8D0] mt-0.5">{createdRegistration.participant.email}</div>
                         </div>
-                      ))}
+                        {createdRegistration.teamMembers.map((m: any, i: number) => (
+                          <div key={i} className="p-3 bg-[#061226] border border-white/10 rounded-xl">
+                            <span className="font-bold text-white">{i + 2}. {m.name}</span>
+                            <div className="text-[11px] text-[#A9B8D0] mt-0.5">{m.email}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {/* Receipt Footer & Instructions */}
-                <div className="flex flex-col sm:flex-row justify-between items-end pt-2 text-xs text-slate-500 gap-4">
-                  <div className="space-y-1">
-                    <div className="font-bold text-slate-700">Instructions for Fest Day:</div>
-                    <div>1. Present this printed pass or digital copy at reception on Dec 2–3.</div>
-                    <div>2. Bring valid college student ID card for identity verification.</div>
-                    <div>3. IDEAS TODAY. A BRIGHTER TOMORROW. • IDEAS • PEOPLE • POSSIBILITIES</div>
-                  </div>
-
-                  <div className="text-center sm:text-right">
-                    <div className="h-10 border-b border-slate-400 w-36 mb-1 ml-auto"></div>
-                    <div className="text-[10px] font-mono text-slate-600">Authorized Signature / Seal</div>
-                    <div className="text-[9px] text-slate-400">Department of MCA</div>
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs border-t border-white/10">
+                    <span className="text-[#A9B8D0]">
+                      Need to reprint or verify later? Use the self-service lookup portal anytime.
+                    </span>
+                    <Link
+                      href="/lookup"
+                      className="text-[#00E5FF] hover:underline font-mono font-bold"
+                    >
+                      Visit Lookup Page →
+                    </Link>
                   </div>
                 </div>
-              </div>
-
-              {/* Action buttons (Hidden in print) */}
-              <div className="no-print flex flex-wrap justify-center gap-4 pt-4">
-                <button
-                  onClick={handlePrint}
-                  className="px-6 py-3 bg-[#008CFF] hover:bg-[#00E5FF] text-white rounded-xl text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg"
-                >
-                  <Printer size={16} /> Print Pass / Save PDF
-                </button>
-
-                <button
-                  onClick={copyRegNumber}
-                  className="px-6 py-3 bg-[#07172B] hover:bg-white/5 border border-white/10 text-white rounded-xl text-xs font-mono uppercase tracking-wider flex items-center gap-2"
-                >
-                  {copied ? <Check size={16} className="text-emerald-400" /> : <Copy size={16} />}
-                  {copied ? 'Copied Number!' : 'Copy Reg Number'}
-                </button>
-
-                <Link
-                  href="/lookup"
-                  className="px-6 py-3 bg-[#07172B] hover:bg-white/5 border border-white/10 text-[#00E5FF] rounded-xl text-xs font-mono uppercase tracking-wider flex items-center gap-2"
-                >
-                  Lookup Anytime
-                </Link>
               </div>
             </div>
           )}
