@@ -76,9 +76,9 @@ export default function AdminParticipants() {
   return (
     <div className="space-y-6">
       {/* Search & Filter Header */}
-      <div className="bg-[#061226] p-5 rounded-2xl border border-white/5 flex flex-wrap gap-4 items-center justify-between">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="relative w-72">
+      <div className="bg-[#061226] p-3.5 sm:p-5 rounded-2xl border border-white/5 flex flex-wrap gap-3 sm:gap-4 items-center justify-between">
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto">
+          <div className="relative w-full sm:w-72">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#627694]" size={16} />
             <input
               type="text"
@@ -89,33 +89,35 @@ export default function AdminParticipants() {
             />
           </div>
 
-          <select
-            value={eventFilter}
-            onChange={e => setEventFilter(e.target.value)}
-            className="px-3 py-2 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
-          >
-            <option value="all">All Events ({OFFICIAL_EVENTS.length} Official)</option>
-            {OFFICIAL_EVENTS.map(e => (
-              <option key={e.slug} value={e.slug}>{e.name}</option>
-            ))}
-          </select>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <select
+              value={eventFilter}
+              onChange={e => setEventFilter(e.target.value)}
+              className="flex-1 sm:flex-none px-3 py-2 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
+            >
+              <option value="all">All Events ({OFFICIAL_EVENTS.length} Official)</option>
+              {OFFICIAL_EVENTS.map(e => (
+                <option key={e.slug} value={e.slug}>{e.name}</option>
+              ))}
+            </select>
 
-          <select
-            value={typeFilter}
-            onChange={e => setTypeFilter(e.target.value)}
-            className="px-3 py-2 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
-          >
-            <option value="all">All Formats</option>
-            <option value="individual">Individual Only</option>
-            <option value="team">Teams Only</option>
-          </select>
+            <select
+              value={typeFilter}
+              onChange={e => setTypeFilter(e.target.value)}
+              className="flex-1 sm:flex-none px-3 py-2 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
+            >
+              <option value="all">All Formats</option>
+              <option value="individual">Individual</option>
+              <option value="team">Teams</option>
+            </select>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
           <button
             onClick={loadData}
             disabled={loading}
-            className="p-2 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors"
+            className="p-2 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors shrink-0"
             title="Refresh"
           >
             <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
@@ -123,7 +125,7 @@ export default function AdminParticipants() {
           <button
             onClick={exportCSV}
             disabled={filtered.length === 0}
-            className="px-4 py-2 bg-[#07172B] hover:bg-[#008CFF]/20 text-[#00E5FF] border border-white/10 hover:border-[#00E5FF]/40 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all"
+            className="flex-1 sm:flex-none justify-center px-4 py-2 bg-[#07172B] hover:bg-[#008CFF]/20 text-[#00E5FF] border border-white/10 hover:border-[#00E5FF]/40 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 transition-all"
           >
             <Download size={14} /> Export CSV ({filtered.length})
           </button>

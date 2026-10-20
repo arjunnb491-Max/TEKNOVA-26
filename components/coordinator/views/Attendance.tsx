@@ -139,9 +139,9 @@ export default function Attendance({ event }: AttendanceProps) {
 
       {/* Main Table Container */}
       <div className="bg-[#061226] rounded-2xl border border-[#00E5FF]/20 overflow-hidden shadow-2xl">
-        <div className="p-5 border-b border-white/5 flex flex-wrap gap-4 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative w-72">
+        <div className="p-3.5 sm:p-5 border-b border-white/5 flex flex-wrap gap-3 sm:gap-4 items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+            <div className="relative w-full sm:w-72">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#627694]" size={16} />
               <input
                 type="text"
@@ -156,19 +156,19 @@ export default function Attendance({ event }: AttendanceProps) {
               <div className="flex bg-[#07172B] rounded-xl p-1 border border-white/10 text-xs font-mono">
                 <button
                   onClick={() => setFilterDay('overall')}
-                  className={`px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'overall' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
+                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'overall' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
                 >
                   Both Days
                 </button>
                 <button
                   onClick={() => setFilterDay('day1')}
-                  className={`px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'day1' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
+                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'day1' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
                 >
                   Day 1 (Dec 2)
                 </button>
                 <button
                   onClick={() => setFilterDay('day2')}
-                  className={`px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'day2' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
+                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg transition-colors ${filterDay === 'day2' ? 'bg-[#008CFF] text-white font-bold' : 'text-[#A9B8D0] hover:text-white'}`}
                 >
                   Day 2 (Dec 3)
                 </button>
@@ -176,11 +176,11 @@ export default function Attendance({ event }: AttendanceProps) {
             )}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
             <button
               onClick={loadData}
               disabled={loading}
-              className="p-2 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors"
+              className="p-2 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors shrink-0"
               title="Refresh roster"
             >
               <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
@@ -188,10 +188,10 @@ export default function Attendance({ event }: AttendanceProps) {
             <button
               onClick={handleSaveAll}
               disabled={saving}
-              className="px-5 py-2 bg-gradient-to-r from-[#008CFF] to-[#00E5FF] text-[#020713] text-xs font-bold font-mono rounded-xl hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all flex items-center gap-2"
+              className="flex-1 sm:flex-none justify-center px-4 sm:px-5 py-2 bg-gradient-to-r from-[#008CFF] to-[#00E5FF] text-[#020713] text-xs font-bold font-mono rounded-xl hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all flex items-center gap-2"
             >
               <Save size={14} />
-              {saving ? 'Syncing...' : 'Save & Lock Attendance'}
+              {saving ? 'Syncing...' : 'Save & Lock'}
             </button>
           </div>
         </div>

@@ -57,17 +57,17 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
   return (
     <div className="space-y-8">
       {/* Banner */}
-      <div className="bg-[#061226] p-6 lg:p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-wrap items-center justify-between gap-6 shadow-2xl">
+      <div className="bg-[#061226] p-4 sm:p-6 lg:p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-wrap items-center justify-between gap-4 sm:gap-6 shadow-2xl">
         <div className="absolute top-0 right-0 w-80 h-80 bg-[#7B2CFF]/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse"></span>
-            <span className="text-xs font-mono text-[#00E5FF] uppercase tracking-widest font-bold">
+            <span className="text-[10px] sm:text-xs font-mono text-[#00E5FF] uppercase tracking-widest font-bold">
               KMM College MCA • Central Administration
             </span>
           </div>
-          <h2 className="text-2xl font-bold font-space-grotesk text-white">
+          <h2 className="text-xl sm:text-2xl font-bold font-space-grotesk text-white">
             TEKNOVA ’26 Master Operations Dashboard
           </h2>
           <p className="text-xs text-[#A9B8D0] font-mono mt-1 max-w-xl">

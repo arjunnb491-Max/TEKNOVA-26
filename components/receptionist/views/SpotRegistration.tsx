@@ -149,20 +149,21 @@ export default function SpotRegistration() {
       {/* Confirmation Modal / Print View */}
       {completedReg ? (
         <div className="space-y-6">
-          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 flex items-center justify-between">
+          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <span className="flex items-center gap-2">
-              <CheckCircle2 size={16} /> Registration generated successfully: <strong className="text-white">{completedReg.registrationNumber}</strong>
+              <CheckCircle2 size={16} className="shrink-0" /> 
+              <span>Registration generated successfully: <strong className="text-white">{completedReg.registrationNumber}</strong></span>
             </span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
               <button
                 onClick={handlePrint}
-                className="px-4 py-1.5 bg-[#00E5FF] text-[#020713] font-bold rounded-lg hover:shadow-lg flex items-center gap-1.5 transition-all"
+                className="flex-1 sm:flex-none justify-center px-4 py-2 bg-[#00E5FF] text-[#020713] font-bold rounded-lg hover:shadow-lg flex items-center gap-1.5 transition-all"
               >
-                <Printer size={14} /> Print Desk Badge
+                <Printer size={14} /> Print Badge
               </button>
               <button
                 onClick={handleReset}
-                className="px-4 py-1.5 bg-[#07172B] text-white rounded-lg border border-white/10 hover:bg-white/5 transition-colors"
+                className="flex-1 sm:flex-none justify-center px-4 py-2 bg-[#07172B] text-white rounded-lg border border-white/10 hover:bg-white/5 transition-colors"
               >
                 Register Another
               </button>
@@ -174,7 +175,7 @@ export default function SpotRegistration() {
         </div>
       ) : (
         /* Registration Form */
-        <form onSubmit={handleSubmit} className="bg-[#061226] p-6 lg:p-8 rounded-3xl border border-[#00E5FF]/20 shadow-2xl space-y-6 text-xs font-mono">
+        <form onSubmit={handleSubmit} className="bg-[#061226] p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-[#00E5FF]/20 shadow-2xl space-y-6 text-xs font-mono">
           {/* Event Selector */}
           <div>
             <label className="text-xs font-mono uppercase tracking-wider text-[#00E5FF] font-bold block mb-2">
@@ -343,14 +344,14 @@ export default function SpotRegistration() {
           </div>
 
           {/* Submission button */}
-          <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <span className="text-[11px] text-[#627694]">
               Walk-in registrations are verified and immediately visible to coordinators.
             </span>
             <button
               type="submit"
               disabled={submitting}
-              className="px-8 py-3 bg-gradient-to-r from-[#008CFF] to-[#00E5FF] text-[#020713] font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all flex items-center gap-2"
+              className="px-8 py-3 bg-gradient-to-r from-[#008CFF] to-[#00E5FF] text-[#020713] font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all flex items-center justify-center gap-2 w-full sm:w-auto shrink-0"
             >
               <UserPlus size={16} />
               {submitting ? 'Generating Pass...' : 'Issue Entry Pass'}

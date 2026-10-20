@@ -129,23 +129,23 @@ export default function ReceptionistParticipants() {
   return (
     <div className="space-y-6">
       {/* Search & Filter Header */}
-      <div className="bg-[#061226] p-5 rounded-2xl border border-white/5 flex flex-wrap gap-4 items-center justify-between">
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="relative w-80">
+      <div className="bg-[#061226] p-3.5 sm:p-5 rounded-2xl border border-white/5 flex flex-wrap gap-3 sm:gap-4 items-center justify-between">
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full lg:w-auto">
+          <div className="relative w-full sm:w-80">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#627694]" size={16} />
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search Reg No, Name, College, Phone..."
-              className="w-full pl-10 pr-4 py-2.5 bg-[#07172B] border border-white/10 rounded-xl text-xs text-white placeholder-[#627694] focus:outline-none focus:border-[#00E5FF]"
+              className="w-full pl-10 pr-4 py-2 sm:py-2.5 bg-[#07172B] border border-white/10 rounded-xl text-xs text-white placeholder-[#627694] focus:outline-none focus:border-[#00E5FF]"
             />
           </div>
 
           <select
             value={eventFilter}
             onChange={e => setEventFilter(e.target.value)}
-            className="px-3 py-2.5 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
+            className="w-full sm:w-auto px-3 py-2 sm:py-2.5 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
           >
             <option value="all">All Events ({OFFICIAL_EVENTS.length} Official)</option>
             {OFFICIAL_EVENTS.map(e => (
@@ -154,21 +154,21 @@ export default function ReceptionistParticipants() {
           </select>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
           <button
             onClick={exportCSV}
             disabled={filtered.length === 0}
-            className="px-4 py-2.5 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/60 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none"
+            className="flex-1 sm:flex-none justify-center px-4 py-2 sm:py-2.5 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/60 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none"
             title={filtered.length === 0 ? "No participants available to export" : "Download participant details as .csv (Excel) file"}
           >
             <Download size={15} />
-            <span>Export CSV (Excel)</span>
+            <span>Export CSV</span>
           </button>
 
           <button
             onClick={loadData}
             disabled={loading}
-            className="p-2.5 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors"
+            className="p-2 sm:p-2.5 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors shrink-0"
             title="Refresh Directory"
           >
             <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
