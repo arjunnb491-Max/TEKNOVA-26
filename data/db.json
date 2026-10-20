@@ -74,36 +74,6 @@
       "image": "/images/TEKNOVA '26_ Neon Tech Fest.png"
     },
     {
-      "id": "fotonova",
-      "slug": "fotonova",
-      "name": "fotonova",
-      "category": "Creative",
-      "subCategory": "Photography",
-      "workingInterpretation": "Photography contest",
-      "participationType": "individual",
-      "description": "Capture the neon essence, festival energy, and human stories across KMM campus.",
-      "rules": [
-        "Solo participation.",
-        "Theme will be announced on the morning of December 2, 2026.",
-        "Photographs must be shot on campus during the festival hours.",
-        "Basic color grading allowed; major manipulations or composite edits will result in disqualification.",
-        "Submit original EXIF data with image upload."
-      ],
-      "prizes": [
-        {
-          "position": "1st",
-          "amount": 1234
-        }
-      ],
-      "prizePoolSubtotal": 1234,
-      "date": "December 2–3, 2026",
-      "time": "All Day",
-      "venue": "Campus Grounds & Media Lounge",
-      "registrationFee": null,
-      "registrationOpen": true,
-      "image": "/images/TEKNOVA_ Neon Portal of Possibility.png"
-    },
-    {
       "id": "teknova-e-clash",
       "slug": "teknova-e-clash",
       "name": "TEKNOVA E-CLASH",
@@ -308,35 +278,6 @@
       "registrationFee": null,
       "registrationOpen": true,
       "image": "/images/Neon TEKNOVA'26 Tech Fest Poster.png"
-    },
-    {
-      "id": "cinova",
-      "slug": "cinova",
-      "name": "CINOVA",
-      "category": "Creative",
-      "subCategory": "Film Fest",
-      "workingInterpretation": "Film fest",
-      "participationType": "team",
-      "teamSize": {
-        "min": 1,
-        "max": 5
-      },
-      "description": "Celebrate cinematic storytelling. Short films that captivate, provoke thought, and inspire.",
-      "rules": [
-        "Maximum runtime: 10 minutes including credits.",
-        "Original screenplays and licensed/original audio only.",
-        "Subtitles in English mandatory if dialogue is in regional languages.",
-        "Films must be submitted in 1080p MP4 format prior to screening schedule."
-      ],
-      "prizes": [],
-      "prizePoolSubtotal": 0,
-      "prizeNote": "Prize details to be announced",
-      "date": "December 3, 2026",
-      "time": "03:00 PM",
-      "venue": "Auditorium Mini Theatre",
-      "registrationFee": null,
-      "registrationOpen": true,
-      "image": "/images/TEKNOVA_ Neon Portal of Possibility.png"
     }
   ],
   "registrations": [],
@@ -346,11 +287,11 @@
   "auditLogs": [
     {
       "id": "AUD-001",
-      "timestamp": "2026-10-20T08:44:50.299Z",
+      "timestamp": "2026-10-20T09:05:26.704Z",
       "action": "SYSTEM_INITIALIZED",
       "entityType": "SYSTEM",
       "performedBy": "System Administrator",
-      "details": "TEKNOVA ’26 Unified Event Management System initialized with 10 official events."
+      "details": "TEKNOVA ’26 Unified Event Management System initialized with 8 official events."
     }
   ],
   "coordinatorAssignments": {
@@ -359,9 +300,6 @@
     ],
     "mirror-masters": [
       "coordinator.mirrormasters@teknova.fest"
-    ],
-    "fotonova": [
-      "coordinator.fotonova@teknova.fest"
     ],
     "teknova-e-clash": [
       "coordinator.eclash@teknova.fest"
@@ -380,9 +318,6 @@
     ],
     "beat-blitz": [
       "coordinator.beatblitz@teknova.fest"
-    ],
-    "cinova": [
-      "coordinator.cinova@teknova.fest"
     ]
   }
 }

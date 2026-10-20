@@ -57,7 +57,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/events" className="text-[#A9B8D0] hover:text-[#00E5FF] transition-colors">
-                  Explore Events (10 Official)
+                  Explore Events
                 </Link>
               </li>
               <li>

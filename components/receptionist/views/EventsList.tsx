@@ -39,15 +39,15 @@ export default function EventsList() {
           >
             <option value="All">All Categories</option>
             <option value="Technical">Technical</option>
-            <option value="Design">Design</option>
-            <option value="Creative">Creative</option>
             <option value="Gaming">Gaming</option>
+            <option value="Flagship">Flagship</option>
             <option value="Cultural">Cultural</option>
+            <option value="Exhibition">Exhibition</option>
           </select>
         </div>
 
         <div className="text-xs font-mono text-[#627694]">
-          Single Source of Truth: <span className="text-[#00E5FF] font-bold">10 Official Events</span>
+          Single Source of Truth: <span className="text-[#00E5FF] font-bold">{OFFICIAL_EVENTS.length} Official Events</span>
         </div>
       </div>
       

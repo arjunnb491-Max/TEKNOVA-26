@@ -137,20 +137,18 @@ function readDb(): FestDatabase {
             action: 'SYSTEM_INITIALIZED',
             entityType: 'SYSTEM',
             performedBy: 'System Administrator',
-            details: 'TEKNOVA ’26 Unified Event Management System initialized with 10 official events.'
+            details: `TEKNOVA ’26 Unified Event Management System initialized with ${OFFICIAL_EVENTS.length} official events.`
           }
         ],
         coordinatorAssignments: {
           'bug-slayer': ['coordinator.bugslayer@teknova.fest'],
           'mirror-masters': ['coordinator.mirrormasters@teknova.fest'],
-          'fotonova': ['coordinator.fotonova@teknova.fest'],
           'teknova-e-clash': ['coordinator.eclash@teknova.fest'],
           'tek-royale': ['coordinator.tekroyale@teknova.fest'],
           'ideatek': ['coordinator.ideatek@teknova.fest'],
           'teksphere': ['coordinator.teksphere@teknova.fest'],
           'tektoniq': ['coordinator.tektoniq@teknova.fest'],
           'beat-blitz': ['coordinator.beatblitz@teknova.fest'],
-          'cinova': ['coordinator.cinova@teknova.fest'],
         }
       };
       fs.writeFileSync(DB_PATH, JSON.stringify(initialDb, null, 2), 'utf-8');
@@ -242,9 +240,7 @@ export const Store = {
       'beat-blitz': ['cultural.lead@teknova.in'],
       'bug-slayer': ['debugging.lead@teknova.in'],
       'teknova-e-clash': ['eclash.pes@teknova.in'],
-      'fotonova': ['photo.lead@teknova.in'],
-      'teksphere': ['expo.lead@teknova.in'],
-      'cinova': ['media.lead@teknova.in']
+      'teksphere': ['expo.lead@teknova.in']
     };
   },
 

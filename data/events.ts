@@ -90,33 +90,6 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     image: '/images/TEKNOVA \'26_ Neon Tech Fest.png'
   },
   {
-    id: 'fotonova',
-    slug: 'fotonova',
-    name: 'fotonova',
-    category: 'Creative',
-    subCategory: 'Photography',
-    workingInterpretation: 'Photography contest',
-    participationType: 'individual',
-    description: 'Capture the neon essence, festival energy, and human stories across KMM campus.',
-    rules: [
-      'Solo participation.',
-      'Theme will be announced on the morning of December 2, 2026.',
-      'Photographs must be shot on campus during the festival hours.',
-      'Basic color grading allowed; major manipulations or composite edits will result in disqualification.',
-      'Submit original EXIF data with image upload.'
-    ],
-    prizes: [
-      { position: '1st', amount: 1234 }
-    ],
-    prizePoolSubtotal: 1234,
-    date: 'December 2–3, 2026',
-    time: 'All Day',
-    venue: 'Campus Grounds & Media Lounge',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/TEKNOVA_ Neon Portal of Possibility.png'
-  },
-  {
     id: 'teknova-e-clash',
     slug: 'teknova-e-clash',
     name: 'TEKNOVA E-CLASH',
@@ -279,32 +252,6 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     registrationFee: null,
     registrationOpen: true,
     image: '/images/Neon TEKNOVA\'26 Tech Fest Poster.png'
-  },
-  {
-    id: 'cinova',
-    slug: 'cinova',
-    name: 'CINOVA',
-    category: 'Creative',
-    subCategory: 'Film Fest',
-    workingInterpretation: 'Film fest',
-    participationType: 'team',
-    teamSize: { min: 1, max: 5 },
-    description: 'Celebrate cinematic storytelling. Short films that captivate, provoke thought, and inspire.',
-    rules: [
-      'Maximum runtime: 10 minutes including credits.',
-      'Original screenplays and licensed/original audio only.',
-      'Subtitles in English mandatory if dialogue is in regional languages.',
-      'Films must be submitted in 1080p MP4 format prior to screening schedule.'
-    ],
-    prizes: [],
-    prizePoolSubtotal: 0,
-    prizeNote: 'Prize details to be announced',
-    date: 'December 3, 2026',
-    time: '03:00 PM',
-    venue: 'Auditorium Mini Theatre',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/TEKNOVA_ Neon Portal of Possibility.png'
   }
 ];
 
@@ -330,8 +277,8 @@ export const CATEGORIES = [
   },
   {
     id: 'cultural',
-    name: 'CULTURAL & CREATIVE',
-    description: 'Spot choreography, photography, and short films.',
+    name: 'CULTURAL',
+    description: 'Spot choreography and competitive stage performance.',
     iconName: 'Music',
   }
 ];
@@ -351,7 +298,7 @@ export function formatINR(amount: number): string {
 export const TOTAL_KNOWN_PRIZE_POOL = OFFICIAL_EVENTS.reduce(
   (acc, event) => acc + event.prizePoolSubtotal,
   0
-); // Exactly ₹69,234
+); // Exactly ₹68,000
 
 // Alias mapping for legacy event names from previous prototypes
 export const LEGACY_EVENT_ALIASES: Record<string, string> = {

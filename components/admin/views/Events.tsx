@@ -145,7 +145,7 @@ export default function AdminEvents() {
             Official Event Catalogue & Prize Management
           </h2>
           <p className="text-xs text-[#627694] font-mono mt-0.5">
-            Single Source of Truth: 10 official events. Edit rules, prize positions, venue, and registration status.
+            Single Source of Truth: {events.length} official events. Edit rules, prize positions, venue, and registration status.
           </p>
         </div>
 

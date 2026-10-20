@@ -47,6 +47,84 @@ export default function ReceptionistParticipants() {
     window.print();
   };
 
+  const exportCSV = () => {
+    if (filtered.length === 0) return;
+
+    const escapeCSV = (val: string | number | null | undefined): string => {
+      if (val === null || val === undefined) return '""';
+      const str = String(val).replace(/"/g, '""');
+      return `"${str}"`;
+    };
+
+    const headers = [
+      'Registration Number',
+      'Event Name',
+      'Event ID',
+      'Format',
+      'Participant Name',
+      'College',
+      'Phone',
+      'Email',
+      'Course',
+      'Year',
+      'Student ID',
+      'Team Name',
+      'Team Members',
+      'Registration Type',
+      'Payment Status',
+      'Attendance Overall',
+      'Day 1 Attendance',
+      'Day 2 Attendance',
+      'Attendance Marked By',
+      'Attendance Marked Time',
+      'Registration Date'
+    ];
+
+    const rows = filtered.map(r => {
+      const teamMembersFormatted = r.teamMembers && r.teamMembers.length > 0
+        ? r.teamMembers.map(m => `${m.name}${m.phone ? ` (${m.phone})` : ''}${m.email ? ` [${m.email}]` : ''}`).join('; ')
+        : '';
+
+      return [
+        escapeCSV(r.registrationNumber),
+        escapeCSV(r.eventName),
+        escapeCSV(r.eventSlug || r.eventId),
+        escapeCSV(r.participationType),
+        escapeCSV(r.participant.fullName),
+        escapeCSV(r.participant.college),
+        escapeCSV(r.participant.phone),
+        escapeCSV(r.participant.email),
+        escapeCSV(r.participant.course || '—'),
+        escapeCSV(r.participant.year || '—'),
+        escapeCSV(r.participant.studentId || '—'),
+        escapeCSV(r.teamName || '—'),
+        escapeCSV(teamMembersFormatted || '—'),
+        escapeCSV(r.source === 'receptionist_walkin' ? 'On-The-Spot Walk-in' : 'Online'),
+        escapeCSV(r.paymentStatus),
+        escapeCSV(r.attendanceStatus),
+        escapeCSV(r.day1Attendance || 'not_marked'),
+        escapeCSV(r.day2Attendance || 'not_marked'),
+        escapeCSV(r.attendanceMarkedBy || '—'),
+        escapeCSV(r.attendanceMarkedAt ? new Date(r.attendanceMarkedAt).toLocaleString('en-IN') : '—'),
+        escapeCSV(new Date(r.registrationDate).toLocaleString('en-IN'))
+      ].join(',');
+    });
+
+    // Prepend UTF-8 BOM so Microsoft Excel correctly renders all text encodings
+    const csvContent = '\uFEFF' + [headers.join(','), ...rows].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    const filterTag = eventFilter === 'all' ? 'All_Events' : eventFilter;
+    const dateTag = new Date().toISOString().slice(0, 10);
+    link.download = `TEKNOVA_26_Participants_${filterTag}_${dateTag}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-6">
       {/* Search & Filter Header */}
@@ -68,21 +146,33 @@ export default function ReceptionistParticipants() {
             onChange={e => setEventFilter(e.target.value)}
             className="px-3 py-2.5 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
           >
-            <option value="all">All Events (10 Official)</option>
+            <option value="all">All Events ({OFFICIAL_EVENTS.length} Official)</option>
             {OFFICIAL_EVENTS.map(e => (
               <option key={e.slug} value={e.slug}>{e.name}</option>
             ))}
           </select>
         </div>
 
-        <button
-          onClick={loadData}
-          disabled={loading}
-          className="p-2.5 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors"
-          title="Refresh Directory"
-        >
-          <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={exportCSV}
+            disabled={filtered.length === 0}
+            className="px-4 py-2.5 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/60 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none"
+            title={filtered.length === 0 ? "No participants available to export" : "Download participant details as .csv (Excel) file"}
+          >
+            <Download size={15} />
+            <span>Export CSV (Excel)</span>
+          </button>
+
+          <button
+            onClick={loadData}
+            disabled={loading}
+            className="p-2.5 text-[#A9B8D0] hover:text-[#00E5FF] hover:bg-[#07172B] rounded-xl border border-white/5 transition-colors"
+            title="Refresh Directory"
+          >
+            <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
+          </button>
+        </div>
       </div>
 
       {/* Roster Table */}

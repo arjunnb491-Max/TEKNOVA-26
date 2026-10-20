@@ -13,7 +13,8 @@ import {
   Printer,
   AlertTriangle,
   Clock,
-  Sparkles
+  Sparkles,
+  Download
 } from 'lucide-react';
 import { RegistrationRecord } from '@/lib/store';
 import { formatINR } from '@/data/events';
@@ -187,18 +188,30 @@ export default function ReceptionistOverview({ onTabChange }: OverviewProps) {
               Recent Registration Activity
             </h3>
             <p className="text-xs text-[#627694] font-mono mt-0.5">
-              Live registrations across all 10 events
+              Live registrations across official events
             </p>
           </div>
 
-          {onTabChange && (
-            <button
-              onClick={() => onTabChange('participants')}
-              className="text-xs font-mono text-[#00E5FF] hover:underline flex items-center gap-1"
-            >
-              View Full Directory →
-            </button>
-          )}
+          <div className="flex items-center gap-3">
+            {onTabChange && (
+              <button
+                onClick={() => onTabChange('participants')}
+                className="px-3 py-1.5 bg-[#07172B] hover:bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/60 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                title="Go to Participant Directory to export CSV (Excel)"
+              >
+                <Download size={13} />
+                <span>Export CSV</span>
+              </button>
+            )}
+            {onTabChange && (
+              <button
+                onClick={() => onTabChange('participants')}
+                className="text-xs font-mono text-[#00E5FF] hover:underline flex items-center gap-1"
+              >
+                View Full Directory →
+              </button>
+            )}
+          </div>
         </div>
 
         {recentRegistrations.length === 0 ? (

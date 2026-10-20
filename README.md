@@ -15,7 +15,7 @@ Official website and event-management system for **TEKNOVA ’26**, organized by
 TEKNOVA ’26 is a unified web application serving participants, event coordinators, reception desks, and administrators for the premier intercollegiate technical & cultural confluence.
 
 ### Key Capabilities
-- **Public Fest Hub**: Hero countdown, 10 flagship events catalogue, schedule, guidelines, interactive FAQ, and registration lookup.
+- **Public Fest Hub**: Hero countdown, flagship events catalogue, schedule, guidelines, interactive FAQ, and registration lookup.
 - **Participant Registration**: Event registration with team support, receipt generation, reference codes, and status verification.
 - **Coordinator Workspace (`/coordinator`)**: Event-specific candidate rosters, attendance check-ins, score inputs, and winner declarations.
 - **Reception Desk (`/receptionist`)**: Spot registration desk, centralized participant lookups, and fast badge verification.

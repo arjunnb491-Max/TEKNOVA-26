@@ -1,5 +1,5 @@
 import { Calendar, MapPin, Award, Sparkles } from "lucide-react";
-import { formatINR, TOTAL_KNOWN_PRIZE_POOL } from "@/data/events";
+import { formatINR, TOTAL_KNOWN_PRIZE_POOL, OFFICIAL_EVENTS } from "@/data/events";
 
 export function FestInfo() {
   const infoItems = [
@@ -25,7 +25,7 @@ export function FestInfo() {
       icon: <Award className="w-8 h-8 text-[#7B2CFF]" />,
       label: "PUBLISHED PRIZE POOL",
       value: formatINR(TOTAL_KNOWN_PRIZE_POOL),
-      subtext: "Across 10 Official Tournaments",
+      subtext: `Across ${OFFICIAL_EVENTS.length} Official Tournaments`,
     },
   ];
 

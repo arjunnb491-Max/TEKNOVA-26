@@ -94,7 +94,7 @@ export default function AdminParticipants() {
             onChange={e => setEventFilter(e.target.value)}
             className="px-3 py-2 bg-[#07172B] border border-white/10 rounded-xl text-xs font-mono text-white focus:outline-none focus:border-[#00E5FF]"
           >
-            <option value="all">All Events (10 Official)</option>
+            <option value="all">All Events ({OFFICIAL_EVENTS.length} Official)</option>
             {OFFICIAL_EVENTS.map(e => (
               <option key={e.slug} value={e.slug}>{e.name}</option>
             ))}

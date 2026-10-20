@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { formatINR, TOTAL_KNOWN_PRIZE_POOL } from "@/data/events";
+import { formatINR, TOTAL_KNOWN_PRIZE_POOL, OFFICIAL_EVENTS } from "@/data/events";
 
 export function CTA() {
   return (
@@ -23,7 +23,7 @@ export function CTA() {
           </h2>
           
           <p className="text-base md:text-lg text-[#A9B8D0] mb-8 max-w-2xl mx-auto leading-relaxed relative z-10">
-            Compete across 10 official tournaments for a total published prize pool of <strong className="text-white font-mono">{formatINR(TOTAL_KNOWN_PRIZE_POOL)}+</strong>. No participant account required to register.
+            Compete across {OFFICIAL_EVENTS.length} official tournaments for a total published prize pool of <strong className="text-white font-mono">{formatINR(TOTAL_KNOWN_PRIZE_POOL)}+</strong>. No participant account required to register.
           </p>
           
           <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">

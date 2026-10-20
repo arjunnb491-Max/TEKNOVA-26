@@ -153,7 +153,7 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
                 Event-Wise Registrations & Attendance
               </h3>
               <p className="text-xs text-[#627694] font-mono">
-                Single Source of Truth across the 10 official events
+                Single Source of Truth across the {stats?.totalEvents || OFFICIAL_EVENTS.length} official events
               </p>
             </div>
             {onTabChange && (

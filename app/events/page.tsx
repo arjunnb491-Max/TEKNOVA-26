@@ -85,7 +85,7 @@ export default function EventsListing() {
     return matchesSearch && matchesCat;
   });
 
-  const categories = ['All', 'Technical', 'Gaming', 'Flagship', 'Cultural', 'Creative', 'Exhibition'];
+  const categories = ['All', 'Technical', 'Gaming', 'Flagship', 'Cultural', 'Exhibition'];
 
   return (
     <div className="min-h-screen bg-[#020713] text-[#A9B8D0] font-sans antialiased">
@@ -103,7 +103,7 @@ export default function EventsListing() {
               EXPLORE EVENTS
             </h1>
             <p className="text-sm md:text-base text-[#A9B8D0] leading-relaxed">
-              Ten official tournaments and flagship challenges across MCA and KMM College campus.
+              Official tournaments and flagship challenges across MCA and KMM College campus.
               Total Published Prize Pool: <strong className="text-white font-mono">{formatINR(TOTAL_KNOWN_PRIZE_POOL)}+</strong>
             </p>
 
@@ -127,7 +127,7 @@ export default function EventsListing() {
                 </span>
               ) : (
                 <span className="text-[#00E5FF] flex items-center gap-1">
-                  <CheckCircle2 size={12} /> Connected (0 published in DB table — displaying official 10 events catalogue)
+                  <CheckCircle2 size={12} /> Connected (0 published in DB table — displaying official {OFFICIAL_EVENTS.length} events catalogue)
                 </span>
               )}
               <button 

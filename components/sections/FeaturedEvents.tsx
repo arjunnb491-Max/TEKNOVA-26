@@ -22,7 +22,7 @@ export function FeaturedEvents() {
             href="/events"
             className="text-[#00E5FF] hover:text-white transition-colors flex items-center gap-2 uppercase tracking-widest text-xs font-mono font-semibold group"
           >
-            View All 10 Events
+            View All {FEATURED_EVENTS.length} Events
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
