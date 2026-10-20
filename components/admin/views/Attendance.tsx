@@ -131,42 +131,50 @@ export default function AdminAttendance() {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
-              {registrations.map(r => (
-                <tr key={r.registrationNumber} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-3.5 px-4 font-bold text-[#00E5FF]">
-                    {r.registrationNumber}
-                  </td>
-                  <td className="py-3.5 px-4 text-white font-bold">
-                    {r.participant.fullName}
-                    {r.teamName && (
-                      <span className="text-[10px] text-[#A9B8D0] block">
-                        Team: {r.teamName}
-                      </span>
-                    )}
-                  </td>
-                  <td className="py-3.5 px-4 text-[#A9B8D0]">
-                    {r.eventName}
-                  </td>
-                  <td className="py-3.5 px-4 text-[#627694]">
-                    {r.participant.college}
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                      r.attendanceStatus === 'present' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                      r.attendanceStatus === 'absent' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' :
-                      'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                    }`}>
-                      {r.attendanceStatus.replace('_', ' ')}
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-4 text-[#A9B8D0]">
-                    {r.attendanceMarkedBy || 'Desk Verification'}
-                  </td>
-                  <td className="py-3.5 px-4 text-[#627694]">
-                    {r.attendanceMarkedAt ? new Date(r.attendanceMarkedAt).toLocaleTimeString() : '—'}
+              {registrations.length === 0 ? (
+                <tr>
+                  <td colSpan={7} className="py-12 text-center text-[#627694] font-mono text-xs">
+                    No attendance records found in the database.
                   </td>
                 </tr>
-              ))}
+              ) : (
+                registrations.map(r => (
+                  <tr key={r.registrationNumber} className="hover:bg-white/[0.02] transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-[#00E5FF]">
+                      {r.registrationNumber}
+                    </td>
+                    <td className="py-3.5 px-4 text-white font-bold">
+                      {r.participant.fullName}
+                      {r.teamName && (
+                        <span className="text-[10px] text-[#A9B8D0] block">
+                          Team: {r.teamName}
+                        </span>
+                      )}
+                    </td>
+                    <td className="py-3.5 px-4 text-[#A9B8D0]">
+                      {r.eventName}
+                    </td>
+                    <td className="py-3.5 px-4 text-[#627694]">
+                      {r.participant.college}
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
+                        r.attendanceStatus === 'present' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
+                        r.attendanceStatus === 'absent' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' :
+                        'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                      }`}>
+                        {r.attendanceStatus.replace('_', ' ')}
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-[#A9B8D0]">
+                      {r.attendanceMarkedBy || 'Desk Verification'}
+                    </td>
+                    <td className="py-3.5 px-4 text-[#627694]">
+                      {r.attendanceMarkedAt ? new Date(r.attendanceMarkedAt).toLocaleTimeString() : '—'}
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>

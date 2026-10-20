@@ -147,7 +147,14 @@ export default function AdminParticipants() {
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
-              {filtered.map(r => (
+              {filtered.length === 0 ? (
+                <tr>
+                  <td colSpan={8} className="py-12 text-center text-[#627694] font-mono text-xs">
+                    {search ? 'No participants match your search query.' : 'No participant registrations found in the database.'}
+                  </td>
+                </tr>
+              ) : (
+                filtered.map(r => (
                 <tr key={r.registrationNumber} className="hover:bg-white/[0.02] transition-colors">
                   <td className="py-3.5 px-4 font-bold text-[#00E5FF]">
                     {r.registrationNumber}
@@ -199,7 +206,8 @@ export default function AdminParticipants() {
                     </button>
                   </td>
                 </tr>
-              ))}
+              ))
+            )}
             </tbody>
           </table>
         </div>

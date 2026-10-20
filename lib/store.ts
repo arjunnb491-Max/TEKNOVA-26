@@ -772,5 +772,27 @@ export const Store = {
       totalEvents: db.events.length,
       eventWise
     };
+  },
+
+  // Reset all operational dummy data while retaining official events and configurations
+  resetOperationalData: (performedBy = 'System Administrator'): boolean => {
+    const db = readDb();
+    db.registrations = [];
+    db.certificates = [];
+    db.winners = [];
+    db.complaints = [];
+    db.auditLogs = [
+      {
+        id: `AUD-${Date.now()}`,
+        timestamp: new Date().toISOString(),
+        action: 'DATABASE_PURGED',
+        entityType: 'SYSTEM',
+        performedBy,
+        details: 'All operational records (registrations, certificates, winners, complaints) cleared.'
+      }
+    ];
+    writeDb(db);
+    return true;
   }
 };
+

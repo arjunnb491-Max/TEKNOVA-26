@@ -169,52 +169,60 @@ export default function AdminCertificates() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {certificates.map(c => (
-                  <tr key={c.id} className="hover:bg-white/[0.02] transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-[#00E5FF]">
-                      {c.certificateNumber}
-                    </td>
-                    <td className="py-3.5 px-4 text-white">
-                      {c.registrationNumber}
-                    </td>
-                    <td className="py-3.5 px-4 font-bold text-white">
-                      {c.participantName}
-                      <span className="text-[10px] text-[#A9B8D0] block font-normal">{c.college}</span>
-                    </td>
-                    <td className="py-3.5 px-4 text-[#A9B8D0]">
-                      {c.eventName}
-                    </td>
-                    <td className="py-3.5 px-4">
-                      <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${
-                        c.certificateType.includes('prize') 
-                          ? 'bg-amber-400/20 text-amber-400 border border-amber-400/30' 
-                          : 'bg-[#008CFF]/20 text-[#00E5FF] border border-[#008CFF]/30'
-                      }`}>
-                        {c.certificateType.replace('_', ' ')}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-4 text-center">
-                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                        c.emailStatus === 'sent' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-                        c.emailStatus === 'failed' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' :
-                        'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                      }`}>
-                        {c.emailStatus}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-4 text-center">
-                      {c.emailStatus === 'failed' && (
-                        <button
-                          onClick={() => handleRetryEmail(c.id)}
-                          disabled={retryingId === c.id}
-                          className="px-2.5 py-1 bg-[#07172B] hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg text-[10px] font-bold inline-flex items-center gap-1"
-                        >
-                          <RotateCcw size={10} className={retryingId === c.id ? 'animate-spin' : ''} /> Retry
-                        </button>
-                      )}
+                {certificates.length === 0 ? (
+                  <tr>
+                    <td colSpan={7} className="py-12 text-center text-[#627694] font-mono text-xs">
+                      No certificates issued yet.
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  certificates.map(c => (
+                    <tr key={c.id} className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-3.5 px-4 font-bold text-[#00E5FF]">
+                        {c.certificateNumber}
+                      </td>
+                      <td className="py-3.5 px-4 text-white">
+                        {c.registrationNumber}
+                      </td>
+                      <td className="py-3.5 px-4 font-bold text-white">
+                        {c.participantName}
+                        <span className="text-[10px] text-[#A9B8D0] block font-normal">{c.college}</span>
+                      </td>
+                      <td className="py-3.5 px-4 text-[#A9B8D0]">
+                        {c.eventName}
+                      </td>
+                      <td className="py-3.5 px-4">
+                        <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-bold ${
+                          c.certificateType.includes('prize') 
+                            ? 'bg-amber-400/20 text-amber-400 border border-amber-400/30' 
+                            : 'bg-[#008CFF]/20 text-[#00E5FF] border border-[#008CFF]/30'
+                        }`}>
+                          {c.certificateType.replace('_', ' ')}
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-4 text-center">
+                        <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
+                          c.emailStatus === 'sent' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
+                          c.emailStatus === 'failed' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' :
+                          'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                        }`}>
+                          {c.emailStatus}
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-4 text-center">
+                        {c.emailStatus === 'failed' && (
+                          <button
+                            onClick={() => handleRetryEmail(c.id)}
+                            disabled={retryingId === c.id}
+                            className="px-2.5 py-1 bg-[#07172B] hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg text-[10px] font-bold inline-flex items-center gap-1"
+                          >
+                            <RotateCcw size={10} className={retryingId === c.id ? 'animate-spin' : ''} /> Retry
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
