@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { Search, Printer, ShieldCheck, AlertCircle, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -140,16 +141,25 @@ export default function RegistrationLookupPage() {
               {/* Printable Receipt Card */}
               <div className="receipt-container bg-white text-slate-900 rounded-2xl p-8 sm:p-12 border-2 border-slate-900 shadow-2xl relative overflow-hidden">
                 <div className="border-b-2 border-slate-900 pb-6 mb-8 text-center relative">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="text-left">
-                      <div className="text-xs font-mono uppercase font-bold tracking-widest text-slate-500">
-                        OFFICIAL FESTIVAL RECEIPT
-                      </div>
-                      <div className="text-2xl font-black tracking-tight text-slate-950">
-                        TEKNOVA ’26
-                      </div>
-                      <div className="text-xs font-medium text-slate-600">
-                        Department of MCA • KMM College of Arts and Science, Thrikkakara
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                    <div className="flex items-center gap-4 text-left">
+                      <Image
+                        src="/images/kmm-college-logo.png"
+                        alt="KMM College of Arts and Science"
+                        width={130}
+                        height={46}
+                        className="h-10 sm:h-12 w-auto object-contain"
+                      />
+                      <div>
+                        <div className="text-[10px] font-mono uppercase font-bold tracking-widest text-slate-500">
+                          OFFICIAL FESTIVAL RECEIPT
+                        </div>
+                        <div className="text-2xl font-black tracking-tight text-slate-950">
+                          TEKNOVA ’26
+                        </div>
+                        <div className="text-xs font-medium text-slate-600">
+                          Department of MCA • KMM College of Arts and Science
+                        </div>
                       </div>
                     </div>
 

@@ -63,9 +63,23 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-[#00E5FF]/40 shadow-[0_0_15px_rgba(0,229,255,0.3)] bg-[#07172B]">
+          {/* Brand Logos */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+            {/* KMM College Logo Badge */}
+            <div className="bg-white/95 hover:bg-white rounded-lg px-2 py-1 transition-all border border-white/20 shadow-sm flex items-center shrink-0">
+              <Image
+                src="/images/kmm-college-logo.png"
+                alt="KMM College of Arts and Science"
+                width={95}
+                height={34}
+                className="h-6 sm:h-7 w-auto object-contain"
+                priority
+              />
+            </div>
+            
+            <div className="h-6 w-[1px] bg-white/20 hidden sm:block"></div>
+
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-[#00E5FF]/40 shadow-[0_0_15px_rgba(0,229,255,0.3)] bg-[#07172B] shrink-0">
               <Image 
                 src="/images/TEKNOVA_26_logo_300x300.png"
                 alt="TEKNOVA '26 Logo"
@@ -76,11 +90,11 @@ export function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-extrabold tracking-wider text-white font-space-grotesk group-hover:text-[#00E5FF] transition-colors flex items-center gap-1.5">
+              <span className="text-lg sm:text-2xl font-extrabold tracking-wider text-white font-space-grotesk group-hover:text-[#00E5FF] transition-colors flex items-center gap-1">
                 TEKNOVA <span className="text-[#00E5FF]">’26</span>
               </span>
-              <span className="text-[10px] font-mono tracking-widest text-[#A9B8D0] uppercase hidden sm:block">
-                KMM College • MCA
+              <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-[#A9B8D0] uppercase hidden sm:block">
+                MCA Dept • Thrikkakara
               </span>
             </div>
           </Link>

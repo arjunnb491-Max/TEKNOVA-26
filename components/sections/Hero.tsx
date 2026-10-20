@@ -19,11 +19,28 @@ export function Hero() {
           {/* Left Column: Festival Identity & Information */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             
-            {/* Department & Institution Badge */}
-            <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-3.5 py-1.5 rounded-full border border-[#00E5FF]/30 bg-[#07172B]/80 backdrop-blur-md text-xs font-mono">
-              <span className="text-[#00E5FF] font-bold">KMM College of Arts and Science, Thrikkakara</span>
-              <span className="text-white/30">•</span>
-              <span className="text-[#A9B8D0]">Department of MCA</span>
+            {/* Department & Institution Branding Badge */}
+            <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-3 p-1.5 pr-4 rounded-2xl border border-[#00E5FF]/30 bg-[#07172B]/90 backdrop-blur-md shadow-[0_0_20px_rgba(0,140,255,0.15)]">
+              <div className="bg-white rounded-xl px-3 py-1 flex items-center justify-center shadow-sm">
+                <Image
+                  src="/images/kmm-college-logo.png"
+                  alt="KMM College of Arts and Science, Thrikkakara"
+                  width={130}
+                  height={45}
+                  className="h-7 sm:h-8 w-auto object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col text-left">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#00E5FF] font-bold text-xs font-mono">Department of MCA</span>
+                  <span className="text-white/30 text-xs hidden sm:inline">•</span>
+                  <span className="text-[11px] text-[#A9B8D0] font-mono hidden sm:inline">Thrikkakara</span>
+                </div>
+                <span className="text-[10px] text-white/70 font-mono tracking-wider">
+                  Approved by AICTE & Govt. of Kerala • M.G. University
+                </span>
+              </div>
             </div>
 
             {/* Main Fest Title */}

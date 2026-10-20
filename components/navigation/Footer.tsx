@@ -11,31 +11,46 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Identity & Institution */}
-          <div className="col-span-1 md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-[#00E5FF]/40 bg-[#07172B]">
-                <Image 
-                  src="/images/TEKNOVA_26_logo_300x300.png"
-                  alt="TEKNOVA '26"
-                  fill
-                  sizes="40px"
-                  className="object-cover"
+          {/* Identity & Institution */}
+          <div className="col-span-1 md:col-span-2 space-y-5">
+            {/* Dual Institution & Fest Logos */}
+            <div className="flex flex-wrap items-center gap-4">
+              {/* KMM College Official Logo Card */}
+              <div className="bg-white rounded-xl px-3 py-2 border border-white/20 shadow-md flex items-center">
+                <Image
+                  src="/images/kmm-college-logo.png"
+                  alt="KMM College of Arts and Science, Thrikkakara"
+                  width={140}
+                  height={50}
+                  className="h-8 sm:h-9 w-auto object-contain"
                 />
               </div>
-              <div>
-                <h2 className="text-2xl font-extrabold font-space-grotesk text-white tracking-wider">
-                  TEKNOVA <span className="text-[#00E5FF]">’26</span>
-                </h2>
-                <p className="text-xs font-mono text-[#00E5FF] tracking-widest uppercase">
-                  IDEAS TODAY. A BRIGHTER TOMORROW.
-                </p>
+
+              <div className="flex items-center gap-3">
+                <div className="relative w-11 h-11 rounded-lg overflow-hidden border border-[#00E5FF]/40 bg-[#07172B]">
+                  <Image 
+                    src="/images/TEKNOVA_26_logo_300x300.png"
+                    alt="TEKNOVA '26"
+                    fill
+                    sizes="44px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-extrabold font-space-grotesk text-white tracking-wider">
+                    TEKNOVA <span className="text-[#00E5FF]">’26</span>
+                  </h2>
+                  <p className="text-xs font-mono text-[#00E5FF] tracking-widest uppercase">
+                    IDEAS TODAY. A BRIGHTER TOMORROW.
+                  </p>
+                </div>
               </div>
             </div>
 
             <p className="text-sm text-[#A9B8D0] leading-relaxed max-w-lg">
               The premier intercollegiate technical & cultural confluence organized by the 
               <span className="text-[#F5F8FF] font-semibold"> Department of MCA</span>, 
-              <span className="text-[#F5F8FF] font-semibold"> KMM College of Arts and Science, Thrikkakara</span>.
+              <span className="text-[#F5F8FF] font-semibold"> KMM College of Arts and Science, Thrikkakara</span>. Approved by AICTE & Govt. of Kerala, Affiliated to M.G. University, Kottayam.
             </p>
 
             <div className="p-3 bg-[#07172B]/70 border border-white/5 rounded-xl max-w-lg text-xs font-mono text-[#A9B8D0] space-y-1">

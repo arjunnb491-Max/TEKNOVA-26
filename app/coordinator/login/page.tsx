@@ -45,21 +45,34 @@ export default function CoordinatorLogin() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#7B2CFF]/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10 text-center">
-        <Link href="/" className="inline-flex items-center gap-3 mb-6">
-          <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-[#00E5FF]/40 bg-[#07172B] shadow-[0_0_20px_rgba(0,229,255,0.3)]">
-            <Image 
-              src="/images/TEKNOVA_26_logo_300x300.png"
-              alt="TEKNOVA '26"
-              fill
-              sizes="48px"
-              className="object-cover"
+        <div className="flex flex-col items-center gap-3 mb-6">
+          <div className="bg-white rounded-xl px-3.5 py-1.5 border border-white/20 shadow-md flex items-center">
+            <Image
+              src="/images/kmm-college-logo.png"
+              alt="KMM College of Arts and Science"
+              width={140}
+              height={48}
+              className="h-8 w-auto object-contain"
+              priority
             />
           </div>
-          <div className="text-left">
-            <h1 className="text-2xl font-black font-space-grotesk text-white">TEKNOVA ’26</h1>
-            <p className="text-[10px] font-mono text-[#00E5FF] tracking-widest uppercase">Department of MCA</p>
-          </div>
-        </Link>
+
+          <Link href="/" className="inline-flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-[#00E5FF]/40 bg-[#07172B] shadow-[0_0_20px_rgba(0,229,255,0.3)]">
+              <Image 
+                src="/images/TEKNOVA_26_logo_300x300.png"
+                alt="TEKNOVA '26"
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </div>
+            <div className="text-left">
+              <h1 className="text-xl font-black font-space-grotesk text-white">TEKNOVA ’26</h1>
+              <p className="text-[10px] font-mono text-[#00E5FF] tracking-widest uppercase">Department of MCA</p>
+            </div>
+          </Link>
+        </div>
 
         <h2 className="text-2xl font-bold font-space-grotesk text-white">
           Coordinator Workspace

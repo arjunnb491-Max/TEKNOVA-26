@@ -41,10 +41,21 @@ export function AboutTeknova() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-transparent to-transparent opacity-70"></div>
                 
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#020713]/85 backdrop-blur-md border border-white/10">
-                  <div className="text-xs font-mono text-[#00E5FF] uppercase">Department of MCA</div>
-                  <div className="text-sm font-bold text-white font-space-grotesk">KMM College of Arts and Science</div>
-                  <div className="text-xs text-[#A9B8D0] mt-0.5">Thrikkakara, Kochi</div>
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#020713]/90 backdrop-blur-md border border-white/10 flex items-center gap-3">
+                  <div className="bg-white rounded-lg p-1.5 shrink-0 shadow-sm">
+                    <Image
+                      src="/images/kmm-college-logo.png"
+                      alt="KMM College of Arts and Science"
+                      width={105}
+                      height={38}
+                      className="h-8 w-auto object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-mono text-[#00E5FF] uppercase font-bold">Department of MCA</div>
+                    <div className="text-sm font-bold text-white font-space-grotesk">KMM College of Arts and Science</div>
+                    <div className="text-[10px] text-[#A9B8D0]">Approved by AICTE & Govt. of Kerala • M.G. University</div>
+                  </div>
                 </div>
               </div>
             </div>
