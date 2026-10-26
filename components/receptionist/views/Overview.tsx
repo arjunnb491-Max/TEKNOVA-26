@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { RegistrationRecord } from '@/lib/store';
 import { formatINR } from '@/data/events';
+import { AnimatedCounter } from '@/components/animations/AnimatedCounter';
 
 interface OverviewProps {
   onTabChange?: (tab: string) => void;
@@ -101,52 +102,52 @@ export default function ReceptionistOverview({ onTabChange }: OverviewProps) {
 
       {/* Real KPI Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-[#061226] p-5 rounded-2xl border border-white/5">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-white/5 hover:border-[#00E5FF]/30 transition-all duration-300">
           <div className="flex items-center justify-between text-[#627694] mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Total Registrations</span>
             <Users size={18} className="text-[#00E5FF]" />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-white block">
-            {totalRegs}
+            <AnimatedCounter value={totalRegs} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#A9B8D0] mt-1 block">
             {indRegs} Individual • {teamRegs} Teams
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-emerald-500/20">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300">
           <div className="flex items-center justify-between text-emerald-400 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">On-the-Spot Walk-ins</span>
             <UserPlus size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-emerald-400 block">
-            {spotRegs}
+            <AnimatedCounter value={spotRegs} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
             Issued at Reception Desk
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-amber-500/20">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-amber-500/20 hover:border-amber-400/40 transition-all duration-300">
           <div className="flex items-center justify-between text-amber-400 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Confirmed Winners</span>
             <Trophy size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-amber-400 block">
-            {confirmedWinners}
+            <AnimatedCounter value={confirmedWinners} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
             Declared by Coordinators
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-[#7B2CFF]/30">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-[#7B2CFF]/30 hover:border-[#7B2CFF]/60 transition-all duration-300">
           <div className="flex items-center justify-between text-[#B44CFF] mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Official Events</span>
             <Calendar size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-white block">
-            10
+            <AnimatedCounter value={10} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#A9B8D0] mt-1 block">
             Catalogue Active

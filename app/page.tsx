@@ -10,6 +10,7 @@ import { FeaturedEvents } from '@/components/sections/FeaturedEvents';
 import { AboutTeknova } from '@/components/sections/AboutTeknova';
 import { GalleryPreview } from '@/components/sections/GalleryPreview';
 import { CTA } from '@/components/sections/CTA';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { Calendar, Clock, MapPin, Mail, Phone, ExternalLink, CheckCircle } from 'lucide-react';
 import { OFFICIAL_EVENTS, formatINR } from '@/data/events';
 
@@ -52,10 +53,11 @@ export default function Home() {
         <EventCategories />
 
         {/* Schedule Section */}
-        <section id="schedule" className="py-24 bg-[#061226]/60 relative border-t border-white/5">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-16">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block">
+        <section id="schedule" className="py-24 bg-[#061226]/60 relative border-t border-white/5 overflow-hidden">
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <ScrollReveal direction="up" className="text-center mb-16">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block flex items-center justify-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse"></span>
                 Official Itinerary
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold font-space-grotesk text-white mb-4 uppercase tracking-wider glow-cyan">
@@ -64,24 +66,24 @@ export default function Home() {
               <p className="text-sm text-[#A9B8D0] max-w-xl mx-auto">
                 December 2–3, 2026 • Department of MCA, KMM College of Arts and Science, Thrikkakara
               </p>
-            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Day 1 */}
-              <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 shadow-xl">
+              <ScrollReveal direction="left" className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 shadow-xl cyber-bracket">
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
                   <div>
                     <span className="text-xs font-mono text-[#00E5FF] uppercase font-bold tracking-widest">DAY 01</span>
                     <h3 className="text-2xl font-bold font-space-grotesk text-white">Wednesday, Dec 2, 2026</h3>
                   </div>
                   <div className="px-3 py-1 bg-[#008CFF]/20 border border-[#008CFF]/40 text-[#00E5FF] text-xs font-mono rounded-full">
-                    6 Events
+                    5 Events
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   {day1Events.map((evt, i) => (
-                    <div key={i} className="p-4 bg-[#07172B]/70 border border-white/5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 hover:border-[#00E5FF]/30 transition-colors">
+                    <div key={i} className="p-4 bg-[#07172B]/70 border border-white/5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 hover:border-[#00E5FF]/40 hover:shadow-[0_0_15px_rgba(0,140,255,0.15)] transition-all">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-[#00E5FF] border border-[#00E5FF]/20">
@@ -99,23 +101,23 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* Day 2 */}
-              <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 shadow-xl">
+              <ScrollReveal direction="right" className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 shadow-xl cyber-bracket">
                 <div className="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
                   <div>
                     <span className="text-xs font-mono text-[#B44CFF] uppercase font-bold tracking-widest">DAY 02</span>
                     <h3 className="text-2xl font-bold font-space-grotesk text-white">Thursday, Dec 3, 2026</h3>
                   </div>
                   <div className="px-3 py-1 bg-[#7B2CFF]/20 border border-[#7B2CFF]/40 text-[#B44CFF] text-xs font-mono rounded-full">
-                    6 Events
+                    5 Events
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   {day2Events.map((evt, i) => (
-                    <div key={i} className="p-4 bg-[#07172B]/70 border border-white/5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 hover:border-[#B44CFF]/30 transition-colors">
+                    <div key={i} className="p-4 bg-[#07172B]/70 border border-white/5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 hover:border-[#B44CFF]/40 hover:shadow-[0_0_15px_rgba(180,76,255,0.15)] transition-all">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-[#B44CFF] border border-[#7B2CFF]/20">
@@ -133,7 +135,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -145,19 +147,20 @@ export default function Home() {
         <GalleryPreview />
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 bg-[#020713] relative">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-16">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block">
+        <section id="contact" className="py-24 bg-[#020713] relative overflow-hidden">
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <ScrollReveal direction="up" className="text-center mb-16">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block flex items-center justify-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse"></span>
                 Get in Touch
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold font-space-grotesk text-white mb-4 uppercase tracking-wider glow-cyan">
                 Contact & Location
               </h2>
-            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center flex flex-col items-center">
+              <ScrollReveal delay={0.05} direction="up" className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-[#00E5FF]/40 text-center flex flex-col items-center cyber-bracket transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#008CFF]/10 text-[#00E5FF] flex items-center justify-center mb-4">
                   <MapPin size={24} />
                 </div>
@@ -167,9 +170,9 @@ export default function Home() {
                   Thrikkakara, Kochi - 682021<br />
                   Kerala, India
                 </p>
-              </div>
+              </ScrollReveal>
 
-              <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center flex flex-col items-center">
+              <ScrollReveal delay={0.12} direction="up" className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-[#00E5FF]/40 text-center flex flex-col items-center cyber-bracket transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#008CFF]/10 text-[#00E5FF] flex items-center justify-center mb-4">
                   <Mail size={24} />
                 </div>
@@ -178,10 +181,10 @@ export default function Home() {
                   mca@kmmcollege.edu.in<br />
                   teknova@kmmcollege.edu.in
                 </p>
-              </div>
+              </ScrollReveal>
 
-              <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center flex flex-col items-center">
-                <div className="w-12 h-12 rounded-xl bg-[#008CFF]/10 text-[#00E5FF] flex items-center justify-center mb-4">
+              <ScrollReveal delay={0.2} direction="up" className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-[#7B2CFF]/40 text-center flex flex-col items-center cyber-bracket transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[#7B2CFF]/15 text-[#B44CFF] flex items-center justify-center mb-4">
                   <Calendar size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-white font-space-grotesk mb-2">Fest Operations</h3>
@@ -190,7 +193,7 @@ export default function Home() {
                   Gates open: 08:30 AM IST<br />
                   Department of MCA
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

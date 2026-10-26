@@ -8,6 +8,7 @@ import { Footer } from '@/components/navigation/Footer';
 import { supabase, DbEvent } from '@/lib/supabase';
 import { OFFICIAL_EVENTS, OfficialEvent, formatINR, TOTAL_KNOWN_PRIZE_POOL } from '@/data/events';
 import { Search, Trophy, Calendar, MapPin, Users, User, ArrowRight, AlertCircle, Database, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { EventCard } from '@/components/events/EventCard';
 
 export default function EventsListing() {
   const [dbEvents, setDbEvents] = useState<DbEvent[]>([]);
@@ -206,93 +207,8 @@ export default function EventsListing() {
           {/* Events Grid */}
           {!loading && filteredEvents.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredEvents.map((event) => (
-                <div 
-                  key={event.id}
-                  className="glass-panel border border-white/5 rounded-2xl overflow-hidden group hover:border-[#00E5FF]/40 hover:shadow-[0_0_30px_rgba(0,140,255,0.2)] transition-all duration-300 flex flex-col"
-                >
-                  {/* Event Poster Header */}
-                  <div className="h-48 bg-[#07172B] relative overflow-hidden flex items-center justify-center">
-                    <Image 
-                      src={event.image} 
-                      alt={event.name} 
-                      fill 
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-65 group-hover:opacity-85"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-[#020713]/40 to-transparent"></div>
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <span className="px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest bg-[#020713]/90 backdrop-blur border border-[#00E5FF]/30 text-[#00E5FF] rounded-full">
-                        {event.category}
-                      </span>
-                    </div>
-
-                    {/* SubCategory tag */}
-                    <div className="absolute bottom-3 left-4 z-20">
-                      <span className="text-xs font-mono text-[#A9B8D0] bg-[#07172B]/90 px-2 py-0.5 rounded border border-white/5">
-                        {event.workingInterpretation}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-bold font-space-grotesk text-white group-hover:text-[#00E5FF] transition-colors">
-                        {event.name}
-                      </h3>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#A9B8D0] border border-white/10 px-2 py-0.5 rounded bg-white/5 flex items-center gap-1">
-                        {event.participationType === 'team' ? <Users size={12} /> : <User size={12} />}
-                        {event.participationType}
-                      </span>
-                    </div>
-                    
-                    <p className="text-[#A9B8D0] text-sm mb-6 line-clamp-2 leading-relaxed">
-                      {event.description}
-                    </p>
-
-                    {/* Schedule & Venue */}
-                    <div className="space-y-2 mb-6 text-xs text-[#A9B8D0]">
-                      <div className="flex items-center gap-2">
-                        <Calendar size={13} className="text-[#00E5FF]" />
-                        <span>{event.date} • {event.time}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin size={13} className="text-[#008CFF]" />
-                        <span>{event.venue}</span>
-                      </div>
-                    </div>
-
-                    {/* Prize Pool Display */}
-                    <div className="mb-6 p-3 bg-[#061226] border border-white/5 rounded-xl flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs font-mono text-[#A9B8D0]">
-                        <Trophy size={14} className="text-[#00E5FF]" />
-                        <span>PRIZE POOL</span>
-                      </div>
-                      <div className="text-sm font-bold font-mono text-[#00E5FF]">
-                        {event.prizePoolSubtotal > 0 ? formatINR(event.prizePoolSubtotal) : (event.prizeNote || 'TBA')}
-                      </div>
-                    </div>
-                    
-                    {/* Action Links */}
-                    <div className="mt-auto flex gap-3">
-                      <Link 
-                        href={`/events/${event.slug}`}
-                        className="flex-1 text-center py-2.5 bg-[#07172B] border border-white/10 hover:border-white/30 text-white rounded-xl text-xs font-mono uppercase tracking-wider font-semibold transition-all hover:bg-white/5"
-                      >
-                        View Details
-                      </Link>
-                      <Link 
-                        href={`/events/${event.slug}/register`}
-                        className="flex-1 text-center py-2.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl text-xs font-mono uppercase tracking-wider font-bold transition-all shadow-[0_0_15px_rgba(0,140,255,0.3)] flex items-center justify-center gap-1"
-                      >
-                        Register <ArrowRight size={14} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+              {filteredEvents.map((event, idx) => (
+                <EventCard key={event.id} event={event} index={idx} />
               ))}
             </div>
           )}

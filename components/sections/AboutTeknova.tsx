@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Award, Users, Lightbulb, Compass } from "lucide-react";
+import { ChevronRight, Users, Lightbulb, Compass } from "lucide-react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export function AboutTeknova() {
   const pillars = [
@@ -28,9 +29,9 @@ export function AboutTeknova() {
       
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          {/* Visual Showcase Card */}
-          <div className="flex-1 w-full relative">
-            <div className="aspect-[4/3] max-w-lg mx-auto glass-panel rounded-3xl border border-[#00E5FF]/20 p-2 relative overflow-hidden group shadow-[0_0_35px_rgba(0,140,255,0.2)]">
+          {/* Visual Showcase Card with Cyber Brackets */}
+          <ScrollReveal direction="left" className="flex-1 w-full relative">
+            <div className="aspect-[4/3] max-w-lg mx-auto glass-panel rounded-3xl border border-[#00E5FF]/20 p-2 relative overflow-hidden group shadow-[0_0_35px_rgba(0,140,255,0.2)] hover:border-[#00E5FF]/50 transition-all duration-500 cyber-bracket">
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <Image
                   src="/images/TEKNOVA_26_525x328.jpg"
@@ -59,12 +60,13 @@ export function AboutTeknova() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
           
           {/* Content Description */}
-          <div className="flex-1 space-y-6">
+          <ScrollReveal direction="right" className="flex-1 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] block mb-2">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] block mb-2 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse"></span>
                 The Festival Genesis
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold font-space-grotesk text-white uppercase tracking-tight glow-cyan">
@@ -84,7 +86,7 @@ export function AboutTeknova() {
             {/* Three Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               {pillars.map((p, idx) => (
-                <div key={idx} className="p-3.5 bg-[#07172B] border border-white/5 rounded-xl">
+                <div key={idx} className="p-3.5 bg-[#07172B] border border-white/5 hover:border-[#00E5FF]/30 transition-colors rounded-xl">
                   <div className="mb-2 p-2 bg-white/5 rounded-lg inline-block">{p.icon}</div>
                   <div className="text-xs font-bold font-mono text-white mb-1">{p.title}</div>
                   <div className="text-[11px] text-[#A9B8D0] leading-snug">{p.desc}</div>
@@ -95,17 +97,15 @@ export function AboutTeknova() {
             <div className="pt-2">
               <Link
                 href="/events"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,140,255,0.3)] group"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(0,140,255,0.3)] hover:shadow-[0_0_30px_rgba(0,229,255,0.5)] group hover:scale-[1.02] active:scale-[0.98]"
               >
-                Explore Contests & Workshops
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>Explore Contests & Workshops</span>
+                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
   );
 }
-
-export const AboutNexus = AboutTeknova;

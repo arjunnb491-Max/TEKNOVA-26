@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { AuditLogRecord } from '@/lib/store';
 import { OFFICIAL_EVENTS, formatINR } from '@/data/events';
+import { AnimatedCounter } from '@/components/animations/AnimatedCounter';
 
 interface OverviewProps {
   onTabChange?: (tab: string) => void;
@@ -84,54 +85,54 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
         </div>
       </div>
 
-      {/* KPI Cards */}
+      {/* KPI Cards with Animated Counters */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-[#061226] p-5 rounded-2xl border border-white/5">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-white/5 hover:border-[#00E5FF]/30 hover:shadow-[0_0_20px_rgba(0,140,255,0.15)] transition-all">
           <div className="flex items-center justify-between text-[#627694] mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Total Registrations</span>
             <Users size={18} className="text-[#00E5FF]" />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-white block">
-            {totalRegs}
+            <AnimatedCounter value={totalRegs} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#A9B8D0] mt-1 block">
             {indRegs} Individual • {teamRegs} Teams
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-emerald-500/20">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all">
           <div className="flex items-center justify-between text-emerald-400 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Attendance Check-in</span>
             <UserCheck size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-emerald-400 block">
-            {presentCount}
+            <AnimatedCounter value={presentCount} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
             {absentCount} Absent • {totalRegs - presentCount - absentCount} Unmarked
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-[#00E5FF]/20">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-[#00E5FF]/20 hover:border-[#00E5FF]/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] transition-all">
           <div className="flex items-center justify-between text-[#00E5FF] mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Confirmed Winners</span>
             <Trophy size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-[#00E5FF] block">
-            {confirmedWinners}
+            <AnimatedCounter value={confirmedWinners} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
             Official Results Declared
           </span>
         </div>
 
-        <div className="bg-[#061226] p-5 rounded-2xl border border-rose-500/20">
+        <div className="bg-[#061226] p-5 rounded-2xl border border-rose-500/20 hover:border-rose-500/40 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] transition-all">
           <div className="flex items-center justify-between text-rose-400 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider">Open Tickets / Complaints</span>
             <AlertTriangle size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-rose-400 block">
-            {openComplaints}
+            <AnimatedCounter value={openComplaints} duration={900} />
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
             Requiring Admin Action

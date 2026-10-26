@@ -8,6 +8,7 @@ import {
   Users, UserCheck, Trophy, Calendar, MapPin, 
   ArrowRight, Clock, RefreshCw, AlertCircle, CheckCircle2 
 } from 'lucide-react';
+import { AnimatedCounter } from '@/components/animations/AnimatedCounter';
 
 export default function CoordinatorOverview({ event }: { event: OfficialEvent }) {
   const [registrations, setRegistrations] = useState<RegistrationRecord[]>([]);
@@ -72,12 +73,14 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
         </div>
       </div>
 
-      {/* Real Metric KPI Cards */}
+      {/* Real Metric KPI Cards with Animated Roll-up */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center justify-between">
+        <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-[#00E5FF]/40 hover:shadow-[0_0_20px_rgba(0,140,255,0.2)] transition-all flex items-center justify-between">
           <div>
             <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Total Registrations</div>
-            <div className="text-3xl font-black font-space-grotesk text-white">{totalRegs}</div>
+            <div className="text-3xl font-black font-space-grotesk text-white">
+              <AnimatedCounter value={totalRegs} duration={900} />
+            </div>
             <div className="text-[11px] text-[#00E5FF] font-mono mt-1">
               {event.participationType === 'team' ? 'Registered Squads' : 'Individual Competitors'}
             </div>
@@ -87,10 +90,12 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
           </div>
         </div>
 
-        <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center justify-between">
+        <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-emerald-500/40 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all flex items-center justify-between">
           <div>
             <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Marked Present</div>
-            <div className="text-3xl font-black font-space-grotesk text-emerald-400">{presentCount}</div>
+            <div className="text-3xl font-black font-space-grotesk text-emerald-400">
+              <AnimatedCounter value={presentCount} duration={900} />
+            </div>
             <div className="text-[11px] text-[#A9B8D0] font-mono mt-1">
               {attendanceRate}% Check-in Rate
             </div>
@@ -100,7 +105,7 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
           </div>
         </div>
 
-        <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center justify-between">
+        <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-[#7B2CFF]/40 hover:shadow-[0_0_20px_rgba(123,44,255,0.2)] transition-all flex items-center justify-between">
           <div>
             <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Prize Allocation</div>
             <div className="text-xl font-bold font-mono text-[#00E5FF]">
@@ -115,10 +120,12 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
           </div>
         </div>
 
-        <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center justify-between">
+        <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-[#00E5FF]/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.2)] transition-all flex items-center justify-between">
           <div>
             <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Confirmed Winners</div>
-            <div className="text-3xl font-black font-space-grotesk text-[#00E5FF]">{winners.length}</div>
+            <div className="text-3xl font-black font-space-grotesk text-[#00E5FF]">
+              <AnimatedCounter value={winners.length} duration={900} />
+            </div>
             <div className="text-[11px] text-emerald-400 font-mono mt-1">
               {winners.length >= event.prizes.length && event.prizes.length > 0 ? 'All Positions Finalized' : 'Results In Progress'}
             </div>

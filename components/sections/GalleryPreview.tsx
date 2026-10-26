@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export function GalleryPreview() {
   const visualAssets = [
@@ -11,10 +12,11 @@ export function GalleryPreview() {
   ];
 
   return (
-    <section className="py-24 bg-[#061226]/50 relative border-t border-white/5">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block">
+    <section className="py-24 bg-[#061226]/50 relative border-t border-white/5 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <ScrollReveal direction="up" className="text-center mb-16">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#00E5FF] mb-2 block flex items-center justify-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse"></span>
             Visual Identity & Concepts
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold font-space-grotesk text-white mb-4 uppercase tracking-wider glow-cyan">
@@ -23,13 +25,15 @@ export function GalleryPreview() {
           <p className="text-sm text-[#A9B8D0] max-w-2xl mx-auto leading-relaxed">
             The futuristic cyberpunk and neon identity of KMM College of Arts and Science MCA Fest.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-12">
           {visualAssets.map((asset, index) => (
-            <div 
+            <ScrollReveal 
               key={index}
-              className={`relative overflow-hidden rounded-2xl bg-[#07172B] border border-white/10 group hover:border-[#00E5FF]/50 transition-all duration-300 aspect-[4/3] ${
+              delay={index * 0.06}
+              direction="up"
+              className={`relative overflow-hidden rounded-2xl bg-[#07172B] border border-white/10 group hover:border-[#00E5FF]/60 hover:shadow-[0_0_30px_rgba(0,140,255,0.25)] transition-all duration-500 aspect-[4/3] cyber-bracket ${
                 index === 0 || index === 3 ? "md:col-span-2 md:aspect-[21/9]" : ""
               }`}
             >
@@ -38,9 +42,9 @@ export function GalleryPreview() {
                 alt={asset.caption}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-75 group-hover:opacity-95"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-75 group-hover:opacity-95"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-transparent to-transparent opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
               
               <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs font-mono text-[#F5F8FF]">
                 <span className="truncate">{asset.caption}</span>
@@ -48,7 +52,7 @@ export function GalleryPreview() {
                   TEKNOVA
                 </span>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

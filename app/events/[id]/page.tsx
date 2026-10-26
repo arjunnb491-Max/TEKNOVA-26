@@ -31,9 +31,12 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
             <span className="text-[#00E5FF] font-bold">{event.name}</span>
           </nav>
 
-          <div className="glass-panel rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+          <div className="glass-panel rounded-3xl overflow-hidden border border-white/15 shadow-2xl cyber-bracket relative">
+            {/* Top Cyber Scanline */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent opacity-80 z-30" />
+
             {/* Banner Header Image */}
-            <div className="h-64 sm:h-80 bg-[#07172B] w-full relative overflow-hidden">
+            <div className="h-64 sm:h-80 bg-[#07172B] w-full relative overflow-hidden group">
               <Image 
                 src={event.image}
                 alt={event.name}
@@ -158,9 +161,11 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
                     <div className="pt-2">
                       <Link 
                         href={`/events/${event.slug}/register`}
-                        className="w-full py-4 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl text-center font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(0,140,255,0.4)] flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+                        className="w-full py-4 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl text-center font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(0,140,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] group energy-pulse"
                       >
-                        Register For Contest <ArrowRight size={16} />
+                        <span className="relative z-10 flex items-center justify-center gap-2">
+                          Register For Contest <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                        </span>
                       </Link>
                     </div>
 
