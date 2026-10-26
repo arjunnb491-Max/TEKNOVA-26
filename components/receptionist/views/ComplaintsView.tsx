@@ -130,7 +130,6 @@ export default function ReceptionistComplaints() {
               >
                 <option value="registration">Registration Correction</option>
                 <option value="attendance">Attendance / Desk Check-in</option>
-                <option value="certificates">Certificate / Pass Error</option>
                 <option value="technical">Technical / Printer Bug</option>
                 <option value="other">Other Desk Request</option>
               </select>

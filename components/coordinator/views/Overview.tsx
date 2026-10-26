@@ -3,36 +3,32 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { OfficialEvent, formatINR } from '@/data/events';
-import { RegistrationRecord, ConfirmedWinnerRecord, CertificateRecord } from '@/lib/store';
+import { RegistrationRecord, ConfirmedWinnerRecord } from '@/lib/store';
 import { 
-  Users, UserCheck, Trophy, Award, Calendar, MapPin, 
+  Users, UserCheck, Trophy, Calendar, MapPin, 
   ArrowRight, Clock, RefreshCw, AlertCircle, CheckCircle2 
 } from 'lucide-react';
 
 export default function CoordinatorOverview({ event }: { event: OfficialEvent }) {
   const [registrations, setRegistrations] = useState<RegistrationRecord[]>([]);
   const [winners, setWinners] = useState<ConfirmedWinnerRecord[]>([]);
-  const [certificates, setCertificates] = useState<CertificateRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
   const loadData = async () => {
     setLoading(true);
     try {
-      const [regRes, winRes, certRes] = await Promise.all([
+      const [regRes, winRes] = await Promise.all([
         fetch(`/api/register?eventId=${event.slug}`),
-        fetch(`/api/results?eventId=${event.slug}`),
-        fetch(`/api/certificates?eventId=${event.slug}`)
+        fetch(`/api/results?eventId=${event.slug}`)
       ]);
 
-      const [regData, winData, certData] = await Promise.all([
+      const [regData, winData] = await Promise.all([
         regRes.json(),
-        winRes.json(),
-        certRes.json()
+        winRes.json()
       ]);
 
       setRegistrations(regData.registrations || []);
       setWinners(winData.winners || []);
-      setCertificates(certData.certificates || []);
     } catch (err) {
       console.error('Error loading coordinator overview:', err);
     } finally {
@@ -47,7 +43,6 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
   const totalRegs = registrations.length;
   const presentCount = registrations.filter(r => r.attendanceStatus === 'present' || r.day1Attendance === 'present' || r.day2Attendance === 'present').length;
   const attendanceRate = totalRegs > 0 ? Math.round((presentCount / totalRegs) * 100) : 0;
-  const certsIssued = certificates.length;
 
   return (
     <div className="space-y-8">
@@ -122,14 +117,14 @@ export default function CoordinatorOverview({ event }: { event: OfficialEvent })
 
         <div className="glass-panel p-6 rounded-2xl border border-white/5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Certificates Issued</div>
-            <div className="text-3xl font-black font-space-grotesk text-[#00E5FF]">{certsIssued}</div>
+            <div className="text-xs font-mono text-[#A9B8D0] uppercase mb-1">Confirmed Winners</div>
+            <div className="text-3xl font-black font-space-grotesk text-[#00E5FF]">{winners.length}</div>
             <div className="text-[11px] text-emerald-400 font-mono mt-1">
-              Eligible (Present) Only
+              {winners.length >= event.prizes.length && event.prizes.length > 0 ? 'All Positions Finalized' : 'Results In Progress'}
             </div>
           </div>
           <div className="p-3 bg-[#00E5FF]/15 text-[#00E5FF] rounded-2xl border border-[#00E5FF]/20">
-            <Award size={24} />
+            <CheckCircle2 size={24} />
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ import Events from '@/components/admin/views/Events';
 import Coordinators from '@/components/admin/views/Coordinators';
 import Participants from '@/components/admin/views/Participants';
 import Attendance from '@/components/admin/views/Attendance';
-import Certificates from '@/components/admin/views/Certificates';
 import Complaints from '@/components/admin/views/Complaints';
 import AuditLogs from '@/components/admin/views/AuditLogs';
 
@@ -40,7 +39,6 @@ export default function AdminDashboard() {
       case 'coordinators': return <Coordinators />;
       case 'participants': return <Participants />;
       case 'attendance': return <Attendance />;
-      case 'certificates': return <Certificates />;
       case 'complaints': return <Complaints />;
       case 'audit': return <AuditLogs />;
       default: return <Overview onTabChange={setActiveTab} />;

@@ -94,7 +94,7 @@ export default function Complaints({ event }: ComplaintsProps) {
             Coordinator Support & Escalation Desk — {event.name}
           </h2>
           <p className="text-xs text-[#627694] font-mono mt-1">
-            Log technical bugs, registration disputes, scoring conflicts, or certificate errors directly to Administrator.
+            Log technical bugs, registration disputes, or scoring conflicts directly to Administrator.
           </p>
         </div>
 
@@ -126,7 +126,6 @@ export default function Complaints({ event }: ComplaintsProps) {
                 <option value="registration">Registration Issue</option>
                 <option value="attendance">Attendance Correction</option>
                 <option value="results">Scoring / Results Dispute</option>
-                <option value="certificates">Certificate Error</option>
                 <option value="technical">Technical / Network Bug</option>
                 <option value="other">Other Operational Support</option>
               </select>

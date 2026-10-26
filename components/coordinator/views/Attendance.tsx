@@ -198,7 +198,7 @@ export default function Attendance({ event }: AttendanceProps) {
 
         {saveSuccess && (
           <div className="bg-emerald-500/10 border-b border-emerald-500/30 px-5 py-2.5 text-xs text-emerald-400 font-mono flex items-center gap-2">
-            <CheckCircle2 size={16} /> Attendance records synced to database successfully. Eligible certificates can now be issued.
+            <CheckCircle2 size={16} /> Attendance records synced to database successfully.
           </div>
         )}
 

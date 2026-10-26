@@ -229,7 +229,7 @@ export default function AdminComplaints() {
                   rows={4}
                   value={resolutionNotes}
                   onChange={e => setResolutionNotes(e.target.value)}
-                  placeholder="Detail the action taken (e.g. Corrected name in registry, re-queued certificate email, adjusted attendance)..."
+                  placeholder="Detail the action taken (e.g. Corrected name in registry, updated registration details, adjusted attendance)..."
                   required
                   className="w-full p-3 bg-[#07172B] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#00E5FF]"
                 />

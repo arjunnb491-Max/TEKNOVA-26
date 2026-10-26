@@ -9,7 +9,6 @@ import {
   Users, 
   UserCheck, 
   Trophy, 
-  Award, 
   AlertTriangle, 
   LogOut,
   Bell,
@@ -60,7 +59,6 @@ export default function DashboardLayout({
     { id: 'attendance', label: 'Attendance', icon: UserCheck },
     { id: 'workflow', label: getWorkflowTabName(), icon: Layers },
     { id: 'prizes', label: 'Winner Confirmation', icon: Trophy },
-    { id: 'certificates', label: 'Certificates & Email', icon: Award },
     { id: 'complaints', label: 'Support & Tickets', icon: AlertTriangle },
   ];
 

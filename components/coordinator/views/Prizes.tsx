@@ -115,7 +115,7 @@ export default function Prizes({ event }: PrizesProps) {
             Official Result & Winner Declaration — {event.name}
           </h2>
           <p className="text-xs text-[#627694] font-mono mt-1">
-            Confirmed winners are immediately synced to Receptionist Portal, Admin Analytics, and Certificate Engine.
+            Confirmed winners are immediately synced to Receptionist Portal and Admin Analytics.
           </p>
         </div>
 
@@ -244,7 +244,6 @@ export default function Prizes({ event }: PrizesProps) {
                   <th className="py-3 px-4">College</th>
                   <th className="py-3 px-4">Prize Amount</th>
                   <th className="py-3 px-4">Confirmed At</th>
-                  <th className="py-3 px-4 text-center">Certificate Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -268,11 +267,6 @@ export default function Prizes({ event }: PrizesProps) {
                     </td>
                     <td className="py-3.5 px-4 text-[#627694]">
                       {new Date(w.confirmedAt).toLocaleDateString()}
-                    </td>
-                    <td className="py-3.5 px-4 text-center">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
-                        Auto-Issued
-                      </span>
                     </td>
                   </tr>
                 ))}

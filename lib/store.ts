@@ -49,22 +49,6 @@ export interface RegistrationRecord {
   evaluationNotes?: string;
 }
 
-export interface CertificateRecord {
-  id: string;
-  certificateNumber: string;
-  registrationNumber: string;
-  eventId: string;
-  eventName: string;
-  participantName: string;
-  college: string;
-  certificateType: 'participation' | 'first_prize' | 'second_prize' | 'third_prize';
-  issuedAt: string;
-  emailStatus: 'pending' | 'queued' | 'sent' | 'failed';
-  emailSentAt?: string;
-  emailError?: string;
-  retryCount: number;
-}
-
 export interface ConfirmedWinnerRecord {
   id: string;
   eventId: string;
@@ -83,7 +67,7 @@ export interface ComplaintRecord {
   id: string;
   eventId?: string;
   eventName?: string;
-  category: 'registration' | 'attendance' | 'results' | 'certificates' | 'technical' | 'other';
+  category: 'registration' | 'attendance' | 'results' | 'technical' | 'other';
   priority: 'low' | 'medium' | 'high' | 'urgent';
   status: 'open' | 'under_review' | 'in_progress' | 'resolved' | 'closed';
   description: string;
@@ -111,7 +95,6 @@ export interface AuditLogRecord {
 export interface FestDatabase {
   events: OfficialEvent[];
   registrations: RegistrationRecord[];
-  certificates: CertificateRecord[];
   winners: ConfirmedWinnerRecord[];
   complaints: ComplaintRecord[];
   auditLogs: AuditLogRecord[];
@@ -127,7 +110,6 @@ function readDb(): FestDatabase {
       const initialDb: FestDatabase = {
         events: OFFICIAL_EVENTS,
         registrations: [],
-        certificates: [],
         winners: [],
         complaints: [],
         auditLogs: [
@@ -162,7 +144,6 @@ function readDb(): FestDatabase {
     return {
       events: OFFICIAL_EVENTS,
       registrations: [],
-      certificates: [],
       winners: [],
       complaints: [],
       auditLogs: [],
@@ -187,11 +168,6 @@ export function generateRegistrationNumber(eventSlug: string): string {
   return `TK26-${eventPrefix}-${count.toString().padStart(4, '0')}`;
 }
 
-export function generateCertificateId(eventSlug: string): string {
-  const db = readDb();
-  const count = db.certificates.length + 1;
-  return `CERT-TK26-${count.toString().padStart(5, '0')}`;
-}
 
 export const Store = {
   // Events
@@ -525,26 +501,6 @@ export const Store = {
 
     db.winners.push(newWinner);
 
-    // Auto generate winner certificate
-    const certNumber = generateCertificateId(event.slug);
-    const winnerCertType = payload.position === '1st' ? 'first_prize' : payload.position === '2nd' ? 'second_prize' : 'third_prize';
-    
-    // Prevent duplicate certificate
-    db.certificates = db.certificates.filter(c => !(c.registrationNumber === reg.registrationNumber && c.certificateType === winnerCertType));
-
-    db.certificates.push({
-      id: `CERT-${Date.now()}`,
-      certificateNumber: certNumber,
-      registrationNumber: reg.registrationNumber,
-      eventId: event.slug,
-      eventName: event.name,
-      participantName: reg.participant.fullName,
-      college: reg.participant.college,
-      certificateType: winnerCertType,
-      issuedAt: new Date().toISOString(),
-      emailStatus: 'queued',
-      retryCount: 0
-    });
 
     db.auditLogs.unshift({
       id: `AUD-${Date.now()}`,
@@ -562,98 +518,6 @@ export const Store = {
     return { success: true, winner: newWinner };
   },
 
-  // Certificates
-  getCertificates: (eventId?: string): CertificateRecord[] => {
-    const db = readDb();
-    if (!eventId || eventId === 'all') return db.certificates;
-    return db.certificates.filter(c => c.eventId === eventId);
-  },
-
-  issueParticipationCertificates: (eventId: string, performedBy: string): { issued: number; skipped: number } => {
-    const db = readDb();
-    const event = db.events.find(e => e.slug === eventId || e.id === eventId);
-    if (!event) return { issued: 0, skipped: 0 };
-
-    // Eligible: present participants only!
-    const eligibleRegs = db.registrations.filter(r => 
-      (r.eventSlug === event.slug || r.eventId === event.id) && 
-      (r.attendanceStatus === 'present' || r.day1Attendance === 'present' || r.day2Attendance === 'present')
-    );
-
-    let issued = 0;
-    let skipped = 0;
-
-    for (const reg of eligibleRegs) {
-      // Prevent duplicate participation certificate
-      const alreadyHas = db.certificates.some(c => 
-        c.registrationNumber === reg.registrationNumber && c.certificateType === 'participation'
-      );
-
-      if (alreadyHas) {
-        skipped++;
-        continue;
-      }
-
-      const certNumber = generateCertificateId(event.slug);
-      db.certificates.push({
-        id: `CERT-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
-        certificateNumber: certNumber,
-        registrationNumber: reg.registrationNumber,
-        eventId: event.slug,
-        eventName: event.name,
-        participantName: reg.participant.fullName,
-        college: reg.participant.college,
-        certificateType: 'participation',
-        issuedAt: new Date().toISOString(),
-        emailStatus: 'sent', // Simulated delivery confirmation
-        emailSentAt: new Date().toISOString(),
-        retryCount: 0
-      });
-      issued++;
-    }
-
-    if (issued > 0) {
-      db.auditLogs.unshift({
-        id: `AUD-${Date.now()}`,
-        timestamp: new Date().toISOString(),
-        eventId: event.slug,
-        eventName: event.name,
-        action: 'CERTIFICATES_ISSUED',
-        entityType: 'CERTIFICATES',
-        performedBy,
-        details: `Issued ${issued} participation certificates for ${event.name} (${skipped} already issued).`
-      });
-      writeDb(db);
-    }
-
-    return { issued, skipped };
-  },
-
-  retryCertificateEmail: (certificateId: string, performedBy: string): boolean => {
-    const db = readDb();
-    const cert = db.certificates.find(c => c.id === certificateId || c.certificateNumber === certificateId);
-    if (!cert) return false;
-
-    cert.emailStatus = 'sent';
-    cert.emailSentAt = new Date().toISOString();
-    cert.retryCount += 1;
-    delete cert.emailError;
-
-    db.auditLogs.unshift({
-      id: `AUD-${Date.now()}`,
-      timestamp: new Date().toISOString(),
-      eventId: cert.eventId,
-      eventName: cert.eventName,
-      action: 'CERTIFICATE_EMAIL_RETRIED',
-      entityType: 'CERTIFICATES',
-      entityId: cert.certificateNumber,
-      performedBy,
-      details: `Retried certificate email delivery for ${cert.participantName}`
-    });
-
-    writeDb(db);
-    return true;
-  },
 
   // Complaints
   getComplaints: (eventId?: string): ComplaintRecord[] => {
@@ -741,7 +605,6 @@ export const Store = {
     const teamRegs = db.registrations.filter(r => r.participationType === 'team').length;
     const presentCount = db.registrations.filter(r => r.attendanceStatus === 'present' || r.day1Attendance === 'present' || r.day2Attendance === 'present').length;
     const absentCount = db.registrations.filter(r => r.attendanceStatus === 'absent').length;
-    const certsIssued = db.certificates.length;
     const winnersCount = db.winners.length;
     const openComplaints = db.complaints.filter(c => c.status === 'open' || c.status === 'in_progress').length;
 
@@ -762,7 +625,6 @@ export const Store = {
       teamRegistrations: teamRegs,
       presentCount,
       absentCount,
-      certificatesIssued: certsIssued,
       confirmedWinners: winnersCount,
       openComplaints,
       totalEvents: db.events.length,
@@ -774,7 +636,6 @@ export const Store = {
   resetOperationalData: (performedBy = 'System Administrator'): boolean => {
     const db = readDb();
     db.registrations = [];
-    db.certificates = [];
     db.winners = [];
     db.complaints = [];
     db.auditLogs = [
@@ -784,7 +645,7 @@ export const Store = {
         action: 'DATABASE_PURGED',
         entityType: 'SYSTEM',
         performedBy,
-        details: 'All operational records (registrations, certificates, winners, complaints) cleared.'
+        details: 'All operational records (registrations, winners, complaints) cleared.'
       }
     ];
     writeDb(db);

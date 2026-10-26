@@ -5,9 +5,7 @@ import {
   Users, 
   CalendarDays, 
   UserCheck, 
-  Award, 
   AlertTriangle, 
-  Mail, 
   RefreshCw, 
   Trophy, 
   UserCog, 
@@ -50,7 +48,6 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
   const teamRegs = stats?.teamRegistrations || 0;
   const presentCount = stats?.presentCount || 0;
   const absentCount = stats?.absentCount || 0;
-  const certsIssued = stats?.certificatesIssued || 0;
   const confirmedWinners = stats?.confirmedWinners || 0;
   const openComplaints = stats?.openComplaints || 0;
 
@@ -71,7 +68,7 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
             TEKNOVA ’26 Master Operations Dashboard
           </h2>
           <p className="text-xs text-[#A9B8D0] font-mono mt-1 max-w-xl">
-            Live database-backed management of registrations, coordinator scopes, attendance locking, winner confirmation, and certificates.
+            Live database-backed management of registrations, coordinator scopes, attendance locking, and winner confirmation.
           </p>
         </div>
 
@@ -117,14 +114,14 @@ export default function AdminOverview({ onTabChange }: OverviewProps) {
 
         <div className="bg-[#061226] p-5 rounded-2xl border border-[#00E5FF]/20">
           <div className="flex items-center justify-between text-[#00E5FF] mb-3">
-            <span className="text-[10px] font-mono uppercase tracking-wider">Certificates Issued</span>
-            <Award size={18} />
+            <span className="text-[10px] font-mono uppercase tracking-wider">Confirmed Winners</span>
+            <Trophy size={18} />
           </div>
           <span className="text-3xl font-extrabold font-space-grotesk text-[#00E5FF] block">
-            {certsIssued}
+            {confirmedWinners}
           </span>
           <span className="text-[11px] font-mono text-[#627694] mt-1 block">
-            {confirmedWinners} Winners Confirmed
+            Official Results Declared
           </span>
         </div>
 

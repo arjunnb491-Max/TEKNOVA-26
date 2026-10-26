@@ -8,7 +8,6 @@ import Participants from '@/components/coordinator/views/Participants';
 import Attendance from '@/components/coordinator/views/Attendance';
 import WorkflowView from '@/components/coordinator/views/WorkflowView';
 import Prizes from '@/components/coordinator/views/Prizes';
-import Certificates from '@/components/coordinator/views/Certificates';
 import Complaints from '@/components/coordinator/views/Complaints';
 import { OFFICIAL_EVENTS, OfficialEvent } from '@/data/events';
 
@@ -54,7 +53,6 @@ export default function CoordinatorDashboard() {
       case 'attendance': return <Attendance event={currentEvent} />;
       case 'workflow': return <WorkflowView event={currentEvent} />;
       case 'prizes': return <Prizes event={currentEvent} />;
-      case 'certificates': return <Certificates event={currentEvent} />;
       case 'complaints': return <Complaints event={currentEvent} />;
       default: return <Overview event={currentEvent} />;
     }

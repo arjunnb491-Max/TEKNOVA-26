@@ -47,7 +47,7 @@ export default function AdminAuditLogs() {
             System Audit Trail & Security Ledger
           </h2>
           <p className="text-xs text-[#627694] font-mono mt-0.5">
-            Immutable chronological logging of registrations, attendance locks, winner confirmations, and certificates.
+            Immutable chronological logging of registrations, attendance locks, and winner confirmations.
           </p>
         </div>
 

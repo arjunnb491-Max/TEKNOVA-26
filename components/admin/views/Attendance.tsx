@@ -43,7 +43,7 @@ export default function AdminAttendance() {
             Central Fest Attendance Control & Check-in Desk
           </h2>
           <p className="text-xs text-[#627694] font-mono mt-0.5">
-            Attendance locked by coordinators gates eligibility for official participation certificates.
+            Attendance locked and verified by event coordinators.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function AdminAttendance() {
             {presentList.length}
           </span>
           <span className="text-[11px] text-[#627694] font-mono block mt-1">
-            Eligible for Certificate Generation
+            Verified Present at Desk
           </span>
         </div>
 
@@ -92,7 +92,7 @@ export default function AdminAttendance() {
             {absentList.length}
           </span>
           <span className="text-[11px] text-[#627694] font-mono block mt-1">
-            Ineligible for Certificates
+            Recorded as Absent
           </span>
         </div>
 

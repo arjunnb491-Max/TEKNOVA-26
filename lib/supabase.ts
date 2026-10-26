@@ -78,17 +78,6 @@ export interface DbAttendance {
   updated_at?: string;
 }
 
-export interface DbCertificate {
-  id: string;
-  event_id: string;
-  participant_id: string;
-  certificate_type: 'participation' | 'winner' | 'runner_up' | string;
-  certificate_number: string;
-  file_path: string | null;
-  status: string;
-  created_at?: string;
-}
-
 export interface DbEventResult {
   id: string;
   event_id: string;
@@ -113,19 +102,6 @@ export interface DbComplaint {
   resolved_at: string | null;
   created_at?: string;
   updated_at?: string;
-}
-
-export interface DbEmailLog {
-  id: string;
-  event_id: string | null;
-  participant_id: string | null;
-  certificate_id: string | null;
-  subject: string;
-  recipient_email: string;
-  status: string;
-  error_message: string | null;
-  sent_at: string | null;
-  created_at?: string;
 }
 
 export interface DbEvaluation {

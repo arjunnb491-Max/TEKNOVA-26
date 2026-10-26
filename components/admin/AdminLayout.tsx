@@ -10,7 +10,6 @@ import {
   UserCog, 
   Users, 
   UserCheck, 
-  Award, 
   AlertTriangle, 
   History, 
   LogOut,
@@ -36,7 +35,6 @@ export default function AdminLayout({ children, activeTab, setActiveTab }: Layou
     { id: 'coordinators', label: 'Coordinator Assignments', icon: UserCog },
     { id: 'participants', label: 'Master Participant Directory', icon: Users },
     { id: 'attendance', label: 'Attendance Management', icon: UserCheck },
-    { id: 'certificates', label: 'Certificates & Email Queue', icon: Award },
     { id: 'complaints', label: 'Complaint Resolution Desk', icon: AlertTriangle },
     { id: 'audit', label: 'System Audit Logs', icon: History },
   ];
