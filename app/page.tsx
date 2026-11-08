@@ -9,7 +9,6 @@ import { EventCategories } from '@/components/sections/EventCategories';
 import { FeaturedEvents } from '@/components/sections/FeaturedEvents';
 import { AboutTeknova } from '@/components/sections/AboutTeknova';
 import { GalleryPreview } from '@/components/sections/GalleryPreview';
-import { VisualEffectsShowcase } from '@/components/sections/VisualEffectsShowcase';
 import { CTA } from '@/components/sections/CTA';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { Calendar, Clock, MapPin, Mail, Phone, ExternalLink, CheckCircle } from 'lucide-react';
@@ -146,9 +145,6 @@ export default function Home() {
 
         {/* Concept Gallery */}
         <GalleryPreview />
-
-        {/* 5 Deterministic Visual Effects Showcase (Zero Physics) */}
-        <VisualEffectsShowcase />
 
         {/* Contact Section */}
         <section id="contact" className="py-24 bg-[#020713] relative overflow-hidden">

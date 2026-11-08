@@ -48,7 +48,6 @@ export function Navbar() {
     { name: "Home", href: "/" },
     { name: "Events", href: "/events" },
     { name: "Schedule", href: "/#schedule" },
-    { name: "Visual Effects", href: "/#visual-engine" },
     { name: "About", href: "/#about" },
     { name: "Receipt Lookup", href: "/lookup" },
     { name: "Contact", href: "/#contact" },
