@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="cultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#7B2CFF" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="32" fill="#030917" stroke="#EC4899" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M55 110 L55 90 M70 125 L70 75 M85 135 L85 65 M100 145 L100 55 M115 135 L115 65 M130 125 L130 75 M145 110 L145 90" stroke="url(#cultGrad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M40 100 Q 70 60, 100 100 T 160 100" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6"/>
+</svg>

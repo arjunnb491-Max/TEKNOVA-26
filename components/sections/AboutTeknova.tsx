@@ -34,7 +34,7 @@ export function AboutTeknova() {
             <div className="aspect-[4/3] max-w-lg mx-auto glass-panel rounded-3xl border border-[#00E5FF]/20 p-2 relative overflow-hidden group shadow-[0_0_35px_rgba(0,140,255,0.2)] hover:border-[#00E5FF]/50 transition-all duration-500 cyber-bracket">
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/TEKNOVA_26_525x328.jpg"
+                  src="/images/about/mca-department-showcase.webp"
                   alt="KMM College MCA Department TEKNOVA"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"

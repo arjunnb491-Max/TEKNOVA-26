@@ -18,16 +18,16 @@ export default function Home() {
   const day1Events = [
     { time: "09:00 AM", title: "IDEATEK (Flagship Ideathon) - Day 1 Commences", venue: "Innovation Hub", type: "Team (2–4)", badge: "Flagship" },
     { time: "10:00 AM", title: "BUG SLAYER - Debugging Contest", venue: "Lab Alpha (MCA)", type: "Individual", badge: "Technical" },
-    { time: "10:00 AM", title: "TEKSPHERE - Hardware & Project Exhibition Setup", venue: "Central Courtyard", type: "Showcase", badge: "Exhibition" },
-    { time: "11:30 AM", title: "MIRROR MASTERS - Website Replica Challenge", venue: "Web Systems Studio", type: "Team (1–2)", badge: "Technical" },
-    { time: "01:30 PM", title: "TEKNOVA E-CLASH - E-Football / PES Tournament", venue: "Gaming Arena", type: "Individual", badge: "Gaming" },
+    { time: "11:30 AM", title: "MIRROR MASTER - Website Replica Challenge", venue: "Web Systems Studio", type: "Team (1–2)", badge: "Technical" },
+    { time: "01:30 PM", title: "TEKNOVA E-CLASH - E-Football Tournament", venue: "Gaming Arena", type: "Individual", badge: "Gaming" },
+    { time: "02:00 PM", title: "FOTONOVA - Photography Contest Kickoff & Framing", venue: "Campus & Studio", type: "Individual", badge: "Creative" },
   ];
 
   const day2Events = [
     { time: "09:30 AM", title: "IDEATEK - Prototype Evaluation & Jury Presentation", venue: "Main Auditorium", type: "Team (2–4)", badge: "Flagship" },
-    { time: "10:00 AM", title: "TEK ROYALE - PUBG / BGMI Tournament", venue: "E-Sports Hub", type: "Squad (4)", badge: "Gaming" },
+    { time: "10:00 AM", title: "TEK ROYAL - PUBG Battleground Tournament", venue: "E-Sports Hub", type: "Squad (4)", badge: "Gaming" },
     { time: "11:00 AM", title: "TEKTONIQ - Technical Quiz (Prelims & Stage Buzzer)", venue: "Seminar Hall B", type: "Team of 2", badge: "Technical" },
-    { time: "02:00 PM", title: "BEAT BLITZ - Spot Dance / Choreography Battles", venue: "Open Air Amphitheatre", type: "Individual", badge: "Cultural" },
+    { time: "01:30 PM", title: "FIND-X - Campus Mystery Treasure Hunt", venue: "Campus Grounds", type: "Team (3–4)", badge: "General" },
     { time: "04:30 PM", title: "Grand Valedictory Ceremony & Prize Distribution", venue: "Main Auditorium", type: "All Events", badge: "Awards" },
   ];
 

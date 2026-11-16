@@ -27,8 +27,8 @@
 
 | Asset ID | Asset Name & Description | Target Path | Target Dimensions | Format | Status | Notes |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- |
-| `ASSET-HERO-01` | **Hero Showcase Card Key Visual** | `public/images/hero/hero-key-visual-portrait.webp` | **900 × 1200 px (3:4)** | WebP | `[ ] Pending` | **Critical fix**: Replaces 3:2 landscape poster that gets cropped |
-| `ASSET-ABT-01` | MCA Department & Tech Genesis Banner | `public/images/about/mca-department-showcase.webp` | **1024 × 768 px (4:3)** | WebP | `[ ] Pending` | Replaces `TEKNOVA_26_525x328.jpg` to fit container ratio |
+| `ASSET-HERO-01` | **Hero Showcase Card Key Visual** | `public/images/hero/hero-key-visual-portrait.webp` | **900 × 1200 px (3:4)** | WebP | `[x] Integrated` | **Fixed**: Replaces 3:2 landscape poster that got cropped |
+| `ASSET-ABT-01` | MCA Department & Tech Genesis Banner | `public/images/about/mca-department-showcase.webp` | **1024 × 768 px (4:3)** | WebP | `[x] Integrated` | Replaces `TEKNOVA_26_525x328.jpg` to fit container ratio |
 
 ---
 
@@ -36,14 +36,14 @@
 
 | Asset ID | Event Name | Target Path | Target Dimensions | Format | Status | Notes |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- |
-| `ASSET-EVT-IDEATEK-CRD` | IDEATEK Thumbnail | `public/images/events/thumbnails/ideatek-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | AI Brain, ideation, 48hr hackathon theme |
-| `ASSET-EVT-MIRROR-CRD` | MIRROR MASTERS Thumbnail | `public/images/events/thumbnails/mirror-masters-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Dual screen replica, cyberpunk UI mockup |
-| `ASSET-EVT-BLIND-CRD` | BLIND CODING Thumbnail | `public/images/events/thumbnails/blind-coding-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Dark terminal, glowing code, keyboard keycaps |
-| `ASSET-EVT-ROYALE-CRD` | TEK ROYALE Thumbnail | `public/images/events/thumbnails/tek-royale-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Battle royale airdrop, military combat visor |
-| `ASSET-EVT-ECLASH-CRD` | TEKNOVA E-CLASH Thumbnail | `public/images/events/thumbnails/teknova-e-clash-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Neon stadium, cyber soccer player, e-football |
-| `ASSET-EVT-SPHERE-CRD` | TEKSPHERE Thumbnail | `public/images/events/thumbnails/teksphere-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | IoT hardware, robotics workbench, AI sphere |
-| `ASSET-EVT-TONIQ-CRD` | TEKTONIQ Thumbnail | `public/images/events/thumbnails/tektoniq-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Tech quiz buzzer, electric arcs, binary brain |
-| `ASSET-EVT-BLITZ-CRD` | BEAT BLITZ Thumbnail | `public/images/events/thumbnails/beat-blitz-card.webp` | 800 × 450 px | WebP | `[ ] Pending` | Neon dancer silhouette, audio waveform equalizer |
+| `ASSET-EVT-IDEATEK-CRD` | IDEATEK Thumbnail | `public/images/events/thumbnails/ideatek.webp` | 800 × 450 px | WebP | `[x] Integrated` | Idea Thon + Flagship neon composite |
+| `ASSET-EVT-BUG-CRD` | BUG SLAYER Thumbnail | `public/images/events/thumbnails/bug-slayer.webp` | 800 × 450 px | WebP | `[x] Integrated` | Debugging Event neon terminal composite |
+| `ASSET-EVT-MIRROR-CRD` | MIRROR MASTER Thumbnail | `public/images/events/thumbnails/mirror-master.webp` | 800 × 450 px | WebP | `[x] Integrated` | Replica Event UI matrix composite |
+| `ASSET-EVT-FOTO-CRD` | FOTONOVA Thumbnail | `public/images/events/thumbnails/fotonova.webp` | 800 × 450 px | WebP | `[x] Integrated` | Photography Contest neon lens composite |
+| `ASSET-EVT-ECLASH-CRD` | TEKNOVA E-CLASH Thumbnail | `public/images/events/thumbnails/teknova-e-clash.webp` | 800 × 450 px | WebP | `[x] Integrated` | E-Football esports pitch composite |
+| `ASSET-EVT-ROYAL-CRD` | TEK ROYAL Thumbnail | `public/images/events/thumbnails/tek-royal.webp` | 800 × 450 px | WebP | `[x] Integrated` | PUBG Battleground combat crosshair composite |
+| `ASSET-EVT-FINDX-CRD` | FIND-X Thumbnail | `public/images/events/thumbnails/find-x.webp` | 800 × 450 px | WebP | `[x] Integrated` | Treasure Hunt cipher waypoint composite |
+| `ASSET-EVT-TONIQ-CRD` | TEKTONIQ Thumbnail | `public/images/events/thumbnails/tektoniq.webp` | 800 × 450 px | WebP | `[x] Integrated` | Technical Quiz quantum buzzer composite |
 
 ---
 
@@ -51,14 +51,14 @@
 
 | Asset ID | Event Name | Target Path | Target Dimensions | Format | Status | Notes |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- |
-| `ASSET-EVT-IDEATEK-BNR` | IDEATEK Banner | `public/images/events/banners/ideatek-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic ideation lab atmosphere |
-| `ASSET-EVT-MIRROR-BNR` | MIRROR MASTERS Banner | `public/images/events/banners/mirror-masters-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic web developer studio workstation |
-| `ASSET-EVT-BLIND-BNR` | BLIND CODING Banner | `public/images/events/banners/blind-coding-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic hacker laboratory stream |
-| `ASSET-EVT-ROYALE-BNR` | TEK ROYALE Banner | `public/images/events/banners/tek-royale-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic dystopian combat terrain |
-| `ASSET-EVT-ECLASH-BNR` | TEKNOVA E-CLASH Banner | `public/images/events/banners/teknova-e-clash-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic holographic esports stadium |
-| `ASSET-EVT-SPHERE-BNR` | TEKSPHERE Banner | `public/images/events/banners/teksphere-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic tech expo showroom floor |
-| `ASSET-EVT-TONIQ-BNR` | TEKTONIQ Banner | `public/images/events/banners/tektoniq-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic quiz arena stage with buzzer pods |
-| `ASSET-EVT-BLITZ-BNR` | BEAT BLITZ Banner | `public/images/events/banners/beat-blitz-banner.webp` | 1920 × 640 px | WebP | `[ ] Pending` | Panoramic festival amphitheatre concert stage |
+| `ASSET-EVT-IDEATEK-BNR` | IDEATEK Banner | `public/images/events/banners/ideatek.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic ideation lab atmosphere |
+| `ASSET-EVT-BUG-BNR` | BUG SLAYER Banner | `public/images/events/banners/bug-slayer.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic debugging arena stream |
+| `ASSET-EVT-MIRROR-BNR` | MIRROR MASTER Banner | `public/images/events/banners/mirror-master.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic replica developer workstation |
+| `ASSET-EVT-FOTO-BNR` | FOTONOVA Banner | `public/images/events/banners/fotonova.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic photography studio & aperture |
+| `ASSET-EVT-ECLASH-BNR` | TEKNOVA E-CLASH Banner | `public/images/events/banners/teknova-e-clash.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic holographic esports stadium |
+| `ASSET-EVT-ROYAL-BNR` | TEK ROYAL Banner | `public/images/events/banners/tek-royal.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic battleground combat terrain |
+| `ASSET-EVT-FINDX-BNR` | FIND-X Banner | `public/images/events/banners/find-x.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic mystery waypoint & cryptographic terrain |
+| `ASSET-EVT-TONIQ-BNR` | TEKTONIQ Banner | `public/images/events/banners/tektoniq.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic quiz arena stage with buzzer pods |
 
 ---
 

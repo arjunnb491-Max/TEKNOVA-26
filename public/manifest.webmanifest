@@ -1,0 +1,21 @@
+{
+  "name": "TEKNOVA ’26",
+  "short_name": "TEKNOVA",
+  "description": "Official Tech Fest Platform for TEKNOVA '26, KMM College of Arts and Science, Thrikkakara",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020713",
+  "theme_color": "#020713",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

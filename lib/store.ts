@@ -123,14 +123,16 @@ function readDb(): FestDatabase {
           }
         ],
         coordinatorAssignments: {
-          'bug-slayer': ['coordinator.bugslayer@teknova.fest'],
-          'mirror-masters': ['coordinator.mirrormasters@teknova.fest'],
-          'teknova-e-clash': ['coordinator.eclash@teknova.fest'],
-          'tek-royale': ['coordinator.tekroyale@teknova.fest'],
           'ideatek': ['coordinator.ideatek@teknova.fest'],
-          'teksphere': ['coordinator.teksphere@teknova.fest'],
+          'bug-slayer': ['coordinator.bugslayer@teknova.fest'],
+          'mirror-master': ['coordinator.mirrormaster@teknova.fest'],
+          'mirror-masters': ['coordinator.mirrormaster@teknova.fest'],
+          'fotonova': ['coordinator.fotonova@teknova.fest'],
+          'teknova-e-clash': ['coordinator.eclash@teknova.fest'],
+          'tek-royal': ['coordinator.tekroyal@teknova.fest'],
+          'tek-royale': ['coordinator.tekroyal@teknova.fest'],
+          'find-x': ['coordinator.findx@teknova.fest'],
           'tektoniq': ['coordinator.tektoniq@teknova.fest'],
-          'beat-blitz': ['coordinator.beatblitz@teknova.fest'],
         }
       };
       fs.writeFileSync(DB_PATH, JSON.stringify(initialDb, null, 2), 'utf-8');

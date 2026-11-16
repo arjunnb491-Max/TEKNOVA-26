@@ -140,29 +140,49 @@ export default function WorkflowView({ event, onPromoteToWinners }: WorkflowView
           { key: 'impact', label: 'Societal / Market Impact', max: 25 },
           { key: 'pitch', label: 'Presentation & Prototype Demo', max: 25 },
         ];
+      case 'bug-slayer':
+        return [
+          { key: 'round1', label: 'Round 1: Rapid Syntax & Logic Fixes', max: 40 },
+          { key: 'round2', label: 'Round 2: Algorithm Optimization', max: 40 },
+          { key: 'speedBonus', label: 'Time & Execution Efficiency', max: 20 },
+        ];
+      case 'mirror-master':
       case 'mirror-masters':
         return [
           { key: 'visualFidelity', label: 'Visual Pixel Fidelity & Layout', max: 40 },
           { key: 'responsive', label: 'Mobile & Tablet Responsiveness', max: 30 },
           { key: 'codeQuality', label: 'Semantic Code, CSS & Speed', max: 30 },
         ];
+      case 'fotonova':
+        return [
+          { key: 'composition', label: 'Composition & Framing', max: 30 },
+          { key: 'lighting', label: 'Lighting & Mood', max: 30 },
+          { key: 'thematicImpact', label: 'Storytelling & Thematic Relevance', max: 40 },
+        ];
+      case 'teknova-e-clash':
+        return [
+          { key: 'matchScore', label: 'Goal Margin / Match Result Points', max: 50 },
+          { key: 'fairPlay', label: 'Discipline & Possession Control', max: 25 },
+          { key: 'knockoutRound', label: 'Stage Advancement Points', max: 25 },
+        ];
+      case 'tek-royal':
       case 'tek-royale':
         return [
           { key: 'match1', label: 'Match 1 Total Points (Rank + Kills)', max: 50 },
           { key: 'match2', label: 'Match 2 Total Points (Rank + Kills)', max: 50 },
           { key: 'match3', label: 'Match 3 Total Points (Rank + Kills)', max: 50 },
         ];
+      case 'find-x':
+        return [
+          { key: 'cipherSpeed', label: 'Riddle / Cipher Decryption Speed', max: 35 },
+          { key: 'checkpointPace', label: 'Checkpoint Waypoint Pace', max: 35 },
+          { key: 'artifactDiscovery', label: 'Final Artifact Discovery & Sequence', max: 30 },
+        ];
       case 'tektoniq':
         return [
           { key: 'prelims', label: 'Round 1: Prelims MCQ', max: 30 },
           { key: 'rapidFire', label: 'Round 2: Rapid Fire', max: 30 },
           { key: 'buzzer', label: 'Round 3: Live Buzzer & Code Decryption', max: 40 },
-        ];
-      case 'beat-blitz':
-        return [
-          { key: 'musicality', label: 'Rhythm, Timing & Musicality', max: 35 },
-          { key: 'originality', label: 'Style, Choreography & Execution', max: 35 },
-          { key: 'stagePresence', label: 'Crowd Energy & Stage Presence', max: 30 },
         ];
       default:
         return [

@@ -159,8 +159,8 @@ export function Hero() {
           >
             <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden glass-panel border border-[#00E5FF]/30 shadow-[0_0_50px_rgba(0,140,255,0.25)] hover:shadow-[0_0_70px_rgba(0,229,255,0.35)] hover:border-[#00E5FF]/60 transition-all duration-500 group cyber-bracket">
               <Image
-                src="/images/TEKNOVA '26_ Neon Tech Fest.png"
-                alt="TEKNOVA '26 Official Fest Poster"
+                src="/images/hero/hero-key-visual-portrait.webp"
+                alt="TEKNOVA '26 Official Key Visual"
                 fill
                 sizes="(max-width: 768px) 100vw, 450px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"

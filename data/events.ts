@@ -32,125 +32,12 @@ export interface OfficialEvent {
 
 export const OFFICIAL_EVENTS: OfficialEvent[] = [
   {
-    id: 'bug-slayer',
-    slug: 'bug-slayer',
-    name: 'BUG SLAYER',
-    category: 'Technical',
-    subCategory: 'Debugging',
-    workingInterpretation: 'Debugging contest',
-    participationType: 'individual',
-    description: 'Enter the neon simulation to hunt, isolate, and eradicate code vulnerabilities against the clock.',
-    rules: [
-      'Individual participation only.',
-      'Participants must bring college ID card.',
-      'Programming languages supported: C, C++, Java, Python.',
-      'Round 1: Rapid syntax & logic debugging (30 mins).',
-      'Round 2: Algorithmic fix and performance optimization (45 mins).',
-      'Decision of the judges and coordinators is final.'
-    ],
-    prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
-    ],
-    prizePoolSubtotal: 6000,
-    date: 'December 2, 2026',
-    time: '10:00 AM',
-    venue: 'Lab Alpha (MCA Department)',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/Teknova \'26 Neon Tech Fest Poster.png'
-  },
-  {
-    id: 'mirror-masters',
-    slug: 'mirror-masters',
-    name: 'MIRROR MASTERS',
-    category: 'Technical',
-    subCategory: 'Web Design',
-    workingInterpretation: 'Replica / Replica of Website',
-    participationType: 'team',
-    teamSize: { min: 1, max: 2 },
-    description: 'Recreate a high-fidelity cyberpunk web interface with pixel perfection and dynamic responsiveness.',
-    rules: [
-      'Team of 1 to 2 members.',
-      'Target website mockup will be revealed at the commencement of the event.',
-      'Allowed stack: HTML5, CSS3/Tailwind, Vanilla JS or React.',
-      'No external pre-built templates or AI generators allowed.',
-      'Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics.'
-    ],
-    prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
-    ],
-    prizePoolSubtotal: 6000,
-    date: 'December 2, 2026',
-    time: '11:30 AM',
-    venue: 'Web Systems Studio',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/TEKNOVA \'26_ Neon Tech Fest.png'
-  },
-  {
-    id: 'teknova-e-clash',
-    slug: 'teknova-e-clash',
-    name: 'TEKNOVA E-CLASH',
-    category: 'Gaming',
-    subCategory: 'E-Football / PES',
-    workingInterpretation: 'E-Football / PES',
-    participationType: 'individual',
-    description: 'Command the virtual pitch in an electrifying knockout e-football tournament.',
-    rules: [
-      'Solo 1v1 console/PC tournament.',
-      'Match duration: 10 minutes regular time.',
-      'Knockout format; extra time and penalties if tied.',
-      'Controllers will be provided, but participants may bring personal certified controllers.'
-    ],
-    prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
-    ],
-    prizePoolSubtotal: 6000,
-    date: 'December 2, 2026',
-    time: '01:30 PM',
-    venue: 'Gaming Arena (Auditorium)',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/TEKNOVA \'26_ Neon Tech Fest 1.png'
-  },
-  {
-    id: 'tek-royale',
-    slug: 'tek-royale',
-    name: 'TEK ROYALE',
-    category: 'Gaming',
-    subCategory: 'Battle Royale',
-    workingInterpretation: 'PUBG tournament',
-    participationType: 'team',
-    teamSize: { min: 4, max: 4 },
-    description: 'Drop into the battleground with your squad. Strategy, precision, and survival till the last zone.',
-    rules: [
-      'Squad participation (strictly 4 players).',
-      'Mobile devices only (no emulators, triggers, or tablet displays).',
-      'Matches will be hosted on custom rooms.',
-      'Points system: Placement points + Kill points as per official tournament standards.'
-    ],
-    prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
-    ],
-    prizePoolSubtotal: 6000,
-    date: 'December 3, 2026',
-    time: '10:00 AM',
-    venue: 'E-Sports Hub',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/Neon TEKNOVA\'26 Tech Fest Poster.png'
-  },
-  {
     id: 'ideatek',
     slug: 'ideatek',
     name: 'IDEATEK',
     category: 'Flagship',
     subCategory: 'Ideathon',
-    workingInterpretation: 'Ideathon; two-day flagship event',
+    workingInterpretation: 'Idea Thon + Flagship',
     participationType: 'team',
     teamSize: { min: 2, max: 4 },
     description: 'The premier 2-day flagship Ideathon: Build disruptive technology solutions for tomorrow\'s grand challenges.',
@@ -172,39 +59,185 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     venue: 'Innovation Hub & Main Auditorium',
     registrationFee: null,
     registrationOpen: true,
-    image: '/images/TEKNOVA \'26_ Neon Tech Fest.png'
+    image: '/images/events/thumbnails/ideatek.webp'
   },
   {
-    id: 'teksphere',
-    slug: 'teksphere',
-    name: 'TEKSPHERE',
-    category: 'Exhibition',
-    subCategory: 'Exhibition',
-    workingInterpretation: 'Exhibition',
-    participationType: 'team',
-    teamSize: { min: 1, max: 4 },
-    description: 'Showcase cutting-edge hardware prototypes, IoT rigs, AI agents, and engineering marvels.',
+    id: 'bug-slayer',
+    slug: 'bug-slayer',
+    name: 'BUG SLAYER',
+    category: 'Technical',
+    subCategory: 'Debugging',
+    workingInterpretation: 'Debugging Event',
+    participationType: 'individual',
+    description: 'Enter the neon simulation to hunt, isolate, and eradicate code vulnerabilities against the clock.',
     rules: [
-      'Open to individual exhibitors and teams up to 4 members.',
-      'Exhibitors must set up working models by 09:30 AM on Dec 2.',
-      'Live demonstration required for jury inspection and public walkthroughs.'
+      'Individual participation only.',
+      'Participants must bring college ID card.',
+      'Programming languages supported: C, C++, Java, Python.',
+      'Round 1: Rapid syntax & logic debugging (30 mins).',
+      'Round 2: Algorithmic fix and performance optimization (45 mins).',
+      'Decision of the judges and coordinators is final.'
     ],
-    prizes: [],
-    prizePoolSubtotal: 0,
-    prizeNote: 'Prize details to be announced',
-    date: 'December 2–3, 2026',
-    time: '10:00 AM – 04:00 PM',
-    venue: 'Central Exhibition Courtyard',
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 2, 2026',
+    time: '10:00 AM',
+    venue: 'Lab Alpha (MCA Department)',
     registrationFee: null,
     registrationOpen: true,
-    image: '/images/TEKNOVA_ Neon Portal of Possibility.png'
+    image: '/images/events/thumbnails/bug-slayer.webp'
+  },
+  {
+    id: 'mirror-master',
+    slug: 'mirror-master',
+    name: 'MIRROR MASTER',
+    category: 'Technical',
+    subCategory: 'Web Design',
+    workingInterpretation: 'Replica Event',
+    participationType: 'team',
+    teamSize: { min: 1, max: 2 },
+    description: 'Recreate a high-fidelity cyberpunk web interface with pixel perfection and dynamic responsiveness.',
+    rules: [
+      'Team of 1 to 2 members.',
+      'Target website mockup will be revealed at the commencement of the event.',
+      'Allowed stack: HTML5, CSS3/Tailwind, Vanilla JS or React.',
+      'No external pre-built templates or AI generators allowed.',
+      'Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics.'
+    ],
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 2, 2026',
+    time: '11:30 AM',
+    venue: 'Web Systems Studio',
+    registrationFee: null,
+    registrationOpen: true,
+    image: '/images/events/thumbnails/mirror-master.webp'
+  },
+  {
+    id: 'fotonova',
+    slug: 'fotonova',
+    name: 'FOTONOVA',
+    category: 'Creative',
+    subCategory: 'Photography',
+    workingInterpretation: 'Photography Contest',
+    participationType: 'individual',
+    description: 'Capture the pulse, light, and cyberpunk festival moments across the campus through your creative lens.',
+    rules: [
+      'Individual participation only.',
+      'Theme will be announced at the commencement of the event.',
+      'All photos must be taken inside the campus during festival hours.',
+      'Basic color grading and cropping permitted; AI generative modification prohibited.',
+      'Participants must submit raw EXIF metadata alongside final entries.',
+      'Judging criteria: Composition, Storytelling, Lighting, and Thematic Impact.'
+    ],
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 2, 2026',
+    time: '02:00 PM',
+    venue: 'Campus Grounds & Media Studio',
+    registrationFee: null,
+    registrationOpen: true,
+    image: '/images/events/thumbnails/fotonova.webp'
+  },
+  {
+    id: 'teknova-e-clash',
+    slug: 'teknova-e-clash',
+    name: 'TEKNOVA E-CLASH',
+    category: 'Gaming',
+    subCategory: 'E-Football',
+    workingInterpretation: 'E-Football',
+    participationType: 'individual',
+    description: 'Command the virtual pitch in an electrifying knockout e-football tournament.',
+    rules: [
+      'Solo 1v1 console/PC tournament.',
+      'Match duration: 10 minutes regular time.',
+      'Knockout format; extra time and penalties if tied.',
+      'Controllers will be provided, but participants may bring personal certified controllers.'
+    ],
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 2, 2026',
+    time: '01:30 PM',
+    venue: 'Gaming Arena (Auditorium)',
+    registrationFee: null,
+    registrationOpen: true,
+    image: '/images/events/thumbnails/teknova-e-clash.webp'
+  },
+  {
+    id: 'tek-royal',
+    slug: 'tek-royal',
+    name: 'TEK ROYAL',
+    category: 'Gaming',
+    subCategory: 'Battle Royale',
+    workingInterpretation: 'PUBG',
+    participationType: 'team',
+    teamSize: { min: 4, max: 4 },
+    description: 'Drop into the battleground with your squad. Strategy, precision, and survival till the last zone.',
+    rules: [
+      'Squad participation (strictly 4 players).',
+      'Mobile devices only (no emulators, triggers, or tablet displays).',
+      'Matches will be hosted on custom rooms.',
+      'Points system: Placement points + Kill points as per official tournament standards.'
+    ],
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 3, 2026',
+    time: '10:00 AM',
+    venue: 'E-Sports Hub',
+    registrationFee: null,
+    registrationOpen: true,
+    image: '/images/events/thumbnails/tek-royal.webp'
+  },
+  {
+    id: 'find-x',
+    slug: 'find-x',
+    name: 'FIND-X',
+    category: 'Cultural',
+    subCategory: 'Treasure Hunt',
+    workingInterpretation: 'Treasure Hunt',
+    participationType: 'team',
+    teamSize: { min: 3, max: 4 },
+    description: 'Decrypt cryptic riddles, scour hidden campus coordinates, and race against rival squads to uncover the ultimate digital-physical artifact.',
+    rules: [
+      'Team of 3 to 4 members.',
+      'Teams will receive cryptographic and physical clues leading across campus coordinates.',
+      'All clues must be solved sequentially; skipping checkpoints leads to disqualification.',
+      'Use of electronic navigation and campus maps permitted.',
+      'First team to unearth the final artifact and report to the central base wins.'
+    ],
+    prizes: [
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
+    ],
+    prizePoolSubtotal: 6000,
+    date: 'December 3, 2026',
+    time: '01:30 PM',
+    venue: 'Campus Grounds & Central Base',
+    registrationFee: null,
+    registrationOpen: true,
+    image: '/images/events/thumbnails/find-x.webp'
   },
   {
     id: 'tektoniq',
     slug: 'tektoniq',
     name: 'TEKTONIQ',
     category: 'Technical',
-    subCategory: 'Quiz',
+    subCategory: 'Technical Quiz',
     workingInterpretation: 'Technical Quiz',
     participationType: 'team',
     teamSize: { min: 2, max: 2 },
@@ -225,60 +258,34 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     venue: 'Seminar Hall B',
     registrationFee: null,
     registrationOpen: true,
-    image: '/images/Teknova \'26 Neon Tech Fest Poster.png'
-  },
-  {
-    id: 'beat-blitz',
-    slug: 'beat-blitz',
-    name: 'BEAT BLITZ',
-    category: 'Cultural',
-    subCategory: 'Spot Dance',
-    workingInterpretation: 'Spot dance / Spot choreography',
-    participationType: 'individual',
-    description: 'Improvise on the spot. Feel the bass drops, electrify the crowd, and own the dance floor.',
-    rules: [
-      'Solo performance.',
-      'Random music tracks will be played on the spot by the DJ.',
-      'Prelims and Knockout battles.',
-      'Judging based on musicality, rhythm adaptability, stage presence, and crowd impact.'
-    ],
-    prizes: [
-      { position: '1st', amount: 3000 }
-    ],
-    prizePoolSubtotal: 3000,
-    date: 'December 3, 2026',
-    time: '02:00 PM',
-    venue: 'Open Air Amphitheatre',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/Neon TEKNOVA\'26 Tech Fest Poster.png'
+    image: '/images/events/thumbnails/tektoniq.webp'
   }
 ];
 
 // Event categories
 export const CATEGORIES = [
   {
+    id: 'flagship',
+    name: 'FLAGSHIP IDEATHON',
+    description: 'Two-day premier innovation sprint tackling tomorrow\'s grand challenges.',
+    iconName: 'Sparkles',
+  },
+  {
     id: 'technical',
     name: 'TECHNICAL',
-    description: 'Debugging, web design, and algorithmic mastery.',
+    description: 'Debugging, web replication, and algorithmic IT quiz showdowns.',
     iconName: 'Cpu',
   },
   {
     id: 'gaming',
     name: 'GAMING & E-SPORTS',
-    description: 'High stakes competitive E-Football and battle royale arenas.',
+    description: 'High-stakes competitive E-Football and PUBG battle royale arenas.',
     iconName: 'Gamepad2',
   },
   {
-    id: 'flagship',
-    name: 'FLAGSHIP IDEATHON',
-    description: 'Two-day innovation sprint tackling tomorrow\'s grand challenges.',
-    iconName: 'Sparkles',
-  },
-  {
-    id: 'cultural',
-    name: 'CULTURAL',
-    description: 'Spot choreography and competitive stage performance.',
+    id: 'creative',
+    name: 'CREATIVE & GENERAL',
+    description: 'Photography visual storytelling and campus-wide mystery treasure hunt.',
     iconName: 'Music',
   }
 ];
@@ -298,29 +305,34 @@ export function formatINR(amount: number): string {
 export const TOTAL_KNOWN_PRIZE_POOL = OFFICIAL_EVENTS.reduce(
   (acc, event) => acc + event.prizePoolSubtotal,
   0
-); // Exactly ₹68,000
+); // Exactly ₹77,000
 
 // Alias mapping for legacy event names from previous prototypes
 export const LEGACY_EVENT_ALIASES: Record<string, string> = {
   'pes': 'teknova-e-clash',
   'e-football': 'teknova-e-clash',
-  'pubg': 'tek-royale',
-  'bgmi': 'tek-royale',
-  'replica': 'mirror-masters',
-  'replica-of-website': 'mirror-masters',
-  'web-design': 'mirror-masters',
+  'pubg': 'tek-royal',
+  'bgmi': 'tek-royal',
+  'tek-royale': 'tek-royal',
+  'replica': 'mirror-master',
+  'replica-of-website': 'mirror-master',
+  'web-design': 'mirror-master',
+  'mirror-masters': 'mirror-master',
   'debugging': 'bug-slayer',
   'coding-challenge': 'bug-slayer',
-  'spot-dance': 'beat-blitz',
-  'spot-choreography': 'beat-blitz',
   'technical-quiz': 'tektoniq',
   'it-quiz': 'tektoniq',
   'tech-quiz': 'tektoniq',
   'ideathon': 'ideatek',
   'hackathon': 'ideatek',
-  'exhibition': 'teksphere',
-  'film-fest': 'cinova',
-  'photography': 'fotonova'
+  'photography': 'fotonova',
+  'photo': 'fotonova',
+  'treasure-hunt': 'find-x',
+  'hunt': 'find-x',
+  'spot-dance': 'find-x',
+  'beat-blitz': 'find-x',
+  'teksphere': 'ideatek',
+  'exhibition': 'ideatek'
 };
 
 export function resolveEventByIdOrSlug(idOrSlug: string): OfficialEvent | undefined {

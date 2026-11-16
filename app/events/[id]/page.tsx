@@ -38,7 +38,7 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
             {/* Banner Header Image */}
             <div className="h-64 sm:h-80 bg-[#07172B] w-full relative overflow-hidden group">
               <Image 
-                src={event.image}
+                src={event.image.replace('/thumbnails/', '/banners/')}
                 alt={event.name}
                 fill
                 priority

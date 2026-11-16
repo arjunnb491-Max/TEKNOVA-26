@@ -45,10 +45,15 @@ export default function DashboardLayout({
   const getWorkflowTabName = () => {
     switch (event.slug) {
       case 'ideatek': return 'Milestones & Rubric';
-      case 'tek-royale': return 'Lobby & Matches';
+      case 'bug-slayer': return 'Code & Bug Hunt';
+      case 'mirror-master':
       case 'mirror-masters': return 'Code & Web Review';
+      case 'fotonova': return 'Gallery & Curation';
+      case 'teknova-e-clash': return 'Bracket & Matches';
+      case 'tek-royal':
+      case 'tek-royale': return 'Lobby & Matches';
+      case 'find-x': return 'Clues & Checkpoints';
       case 'tektoniq': return 'Quiz Rounds';
-      case 'beat-blitz': return 'Dance Battles';
       default: return 'Contest Workflow';
     }
   };
