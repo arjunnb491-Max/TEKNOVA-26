@@ -48,7 +48,6 @@ export default function DashboardLayout({
       case 'bug-slayer': return 'Code & Bug Hunt';
       case 'mirror-master':
       case 'mirror-masters': return 'Code & Web Review';
-      case 'fotonova': return 'Gallery & Curation';
       case 'teknova-e-clash': return 'Bracket & Matches';
       case 'tek-royal':
       case 'tek-royale': return 'Lobby & Matches';

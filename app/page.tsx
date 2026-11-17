@@ -20,7 +20,6 @@ export default function Home() {
     { time: "10:00 AM", title: "BUG SLAYER - Debugging Contest", venue: "Lab Alpha (MCA)", type: "Individual", badge: "Technical" },
     { time: "11:30 AM", title: "MIRROR MASTER - Website Replica Challenge", venue: "Web Systems Studio", type: "Team (1–2)", badge: "Technical" },
     { time: "01:30 PM", title: "TEKNOVA E-CLASH - E-Football Tournament", venue: "Gaming Arena", type: "Individual", badge: "Gaming" },
-    { time: "02:00 PM", title: "FOTONOVA - Photography Contest Kickoff & Framing", venue: "Campus & Studio", type: "Individual", badge: "Creative" },
   ];
 
   const day2Events = [

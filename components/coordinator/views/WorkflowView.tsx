@@ -153,12 +153,6 @@ export default function WorkflowView({ event, onPromoteToWinners }: WorkflowView
           { key: 'responsive', label: 'Mobile & Tablet Responsiveness', max: 30 },
           { key: 'codeQuality', label: 'Semantic Code, CSS & Speed', max: 30 },
         ];
-      case 'fotonova':
-        return [
-          { key: 'composition', label: 'Composition & Framing', max: 30 },
-          { key: 'lighting', label: 'Lighting & Mood', max: 30 },
-          { key: 'thematicImpact', label: 'Storytelling & Thematic Relevance', max: 40 },
-        ];
       case 'teknova-e-clash':
         return [
           { key: 'matchScore', label: 'Goal Margin / Match Result Points', max: 50 },

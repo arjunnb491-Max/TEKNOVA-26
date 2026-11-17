@@ -206,35 +206,6 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     image: '/images/events/thumbnails/mirror-master.webp'
   },
   {
-    id: 'fotonova',
-    slug: 'fotonova',
-    name: 'FOTONOVA',
-    category: 'Creative',
-    subCategory: 'Photography',
-    workingInterpretation: 'Photography Contest',
-    participationType: 'individual',
-    description: 'Capture the pulse, light, and cyberpunk festival moments across the campus through your creative lens.',
-    rules: [
-      'Individual participation only.',
-      'Theme will be announced at the commencement of the event.',
-      'All photos must be taken inside the campus during festival hours.',
-      'Basic color grading and cropping permitted; AI generative modification prohibited.',
-      'Participants must submit raw EXIF metadata alongside final entries.',
-      'Judging criteria: Composition, Storytelling, Lighting, and Thematic Impact.'
-    ],
-    prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
-    ],
-    prizePoolSubtotal: 6000,
-    date: 'December 2, 2026',
-    time: '02:00 PM',
-    venue: 'Campus Grounds & Media Studio',
-    registrationFee: null,
-    registrationOpen: true,
-    image: '/images/events/thumbnails/fotonova.webp'
-  },
-  {
     id: 'teknova-e-clash',
     slug: 'teknova-e-clash',
     name: 'TEKNOVA E-CLASH',
@@ -371,7 +342,7 @@ export const CATEGORIES = [
   {
     id: 'creative',
     name: 'CREATIVE & GENERAL',
-    description: 'Photography visual storytelling and campus-wide mystery treasure hunt.',
+    description: 'Campus-wide mystery cryptographic treasure hunt.',
     iconName: 'Music',
   }
 ];
@@ -391,7 +362,7 @@ export function formatINR(amount: number): string {
 export const TOTAL_KNOWN_PRIZE_POOL = OFFICIAL_EVENTS.reduce(
   (acc, event) => acc + event.prizePoolSubtotal,
   0
-); // Exactly ₹77,000
+); // Exactly ₹71,000 across 7 events
 
 // Alias mapping for legacy event names from previous prototypes
 export const LEGACY_EVENT_ALIASES: Record<string, string> = {
@@ -411,8 +382,6 @@ export const LEGACY_EVENT_ALIASES: Record<string, string> = {
   'tech-quiz': 'tektoniq',
   'ideathon': 'ideatek',
   'hackathon': 'ideatek',
-  'photography': 'fotonova',
-  'photo': 'fotonova',
   'treasure-hunt': 'find-x',
   'hunt': 'find-x',
   'spot-dance': 'find-x',
@@ -438,7 +407,6 @@ export const COORDINATOR_PASSWORDS: Record<string, string> = {
   'ideatek': 'ideatek@2026',
   'bug-slayer': 'bugslayer@2026',
   'mirror-master': 'mirrormaster@2026',
-  'fotonova': 'fotonova@2026',
   'teknova-e-clash': 'teknova-e-clash@2026',
   'tek-royal': 'tekroyal@2026',
   'find-x': 'find-x@2026',

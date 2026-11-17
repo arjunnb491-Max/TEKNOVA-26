@@ -127,7 +127,6 @@ function readDb(): FestDatabase {
           'bug-slayer': ['coordinator.bugslayer@teknova.fest'],
           'mirror-master': ['coordinator.mirrormaster@teknova.fest'],
           'mirror-masters': ['coordinator.mirrormaster@teknova.fest'],
-          'fotonova': ['coordinator.fotonova@teknova.fest'],
           'teknova-e-clash': ['coordinator.eclash@teknova.fest'],
           'tek-royal': ['coordinator.tekroyal@teknova.fest'],
           'tek-royale': ['coordinator.tekroyal@teknova.fest'],

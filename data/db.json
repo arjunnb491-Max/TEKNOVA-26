@@ -166,41 +166,6 @@
       "image": "/images/events/thumbnails/mirror-master.webp"
     },
     {
-      "id": "fotonova",
-      "slug": "fotonova",
-      "name": "FOTONOVA",
-      "category": "Creative",
-      "subCategory": "Photography",
-      "workingInterpretation": "Photography Contest",
-      "participationType": "individual",
-      "description": "Capture the pulse, light, and cyberpunk festival moments across the campus through your creative lens.",
-      "rules": [
-        "Individual participation only.",
-        "Theme will be announced at the commencement of the event.",
-        "All photos must be taken inside the campus during festival hours.",
-        "Basic color grading and cropping permitted; AI generative modification prohibited.",
-        "Participants must submit raw EXIF metadata alongside final entries.",
-        "Judging criteria: Composition, Storytelling, Lighting, and Thematic Impact."
-      ],
-      "prizes": [
-        {
-          "position": "1st",
-          "amount": 4000
-        },
-        {
-          "position": "2nd",
-          "amount": 2000
-        }
-      ],
-      "prizePoolSubtotal": 6000,
-      "date": "December 2, 2026",
-      "time": "02:00 PM",
-      "venue": "Campus Grounds & Media Studio",
-      "registrationFee": null,
-      "registrationOpen": true,
-      "image": "/images/events/thumbnails/fotonova.webp"
-    },
-    {
       "id": "teknova-e-clash",
       "slug": "teknova-e-clash",
       "name": "TEKNOVA E-CLASH",
@@ -368,9 +333,6 @@
     ],
     "mirror-master": [
       "coordinator.mirrormaster@teknova.fest"
-    ],
-    "fotonova": [
-      "coordinator.fotonova@teknova.fest"
     ],
     "teknova-e-clash": [
       "coordinator.eclash@teknova.fest"

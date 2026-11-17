@@ -39,7 +39,6 @@
 | `ASSET-EVT-IDEATEK-CRD` | IDEATEK Thumbnail | `public/images/events/thumbnails/ideatek.webp` | 800 × 450 px | WebP | `[x] Integrated` | Idea Thon + Flagship neon composite |
 | `ASSET-EVT-BUG-CRD` | BUG SLAYER Thumbnail | `public/images/events/thumbnails/bug-slayer.webp` | 800 × 450 px | WebP | `[x] Integrated` | Debugging Event neon terminal composite |
 | `ASSET-EVT-MIRROR-CRD` | MIRROR MASTER Thumbnail | `public/images/events/thumbnails/mirror-master.webp` | 800 × 450 px | WebP | `[x] Integrated` | Replica Event UI matrix composite |
-| `ASSET-EVT-FOTO-CRD` | FOTONOVA Thumbnail | `public/images/events/thumbnails/fotonova.webp` | 800 × 450 px | WebP | `[x] Integrated` | Photography Contest neon lens composite |
 | `ASSET-EVT-ECLASH-CRD` | TEKNOVA E-CLASH Thumbnail | `public/images/events/thumbnails/teknova-e-clash.webp` | 800 × 450 px | WebP | `[x] Integrated` | E-Football esports pitch composite |
 | `ASSET-EVT-ROYAL-CRD` | TEK ROYAL Thumbnail | `public/images/events/thumbnails/tek-royal.webp` | 800 × 450 px | WebP | `[x] Integrated` | PUBG Battleground combat crosshair composite |
 | `ASSET-EVT-FINDX-CRD` | FIND-X Thumbnail | `public/images/events/thumbnails/find-x.webp` | 800 × 450 px | WebP | `[x] Integrated` | Treasure Hunt cipher waypoint composite |
@@ -54,7 +53,6 @@
 | `ASSET-EVT-IDEATEK-BNR` | IDEATEK Banner | `public/images/events/banners/ideatek.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic ideation lab atmosphere |
 | `ASSET-EVT-BUG-BNR` | BUG SLAYER Banner | `public/images/events/banners/bug-slayer.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic debugging arena stream |
 | `ASSET-EVT-MIRROR-BNR` | MIRROR MASTER Banner | `public/images/events/banners/mirror-master.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic replica developer workstation |
-| `ASSET-EVT-FOTO-BNR` | FOTONOVA Banner | `public/images/events/banners/fotonova.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic photography studio & aperture |
 | `ASSET-EVT-ECLASH-BNR` | TEKNOVA E-CLASH Banner | `public/images/events/banners/teknova-e-clash.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic holographic esports stadium |
 | `ASSET-EVT-ROYAL-BNR` | TEK ROYAL Banner | `public/images/events/banners/tek-royal.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic battleground combat terrain |
 | `ASSET-EVT-FINDX-BNR` | FIND-X Banner | `public/images/events/banners/find-x.webp` | 1920 × 640 px | WebP | `[x] Integrated` | Panoramic mystery waypoint & cryptographic terrain |
