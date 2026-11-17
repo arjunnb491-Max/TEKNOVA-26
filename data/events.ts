@@ -298,13 +298,59 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     workingInterpretation: 'Technical Quiz',
     participationType: 'team',
     teamSize: { min: 2, max: 2 },
-    description: 'High-octane technical quiz testing your depth in computing history, algorithms, cryptography, and modern AI.',
+    description: 'Premier Technical Quiz Competition testing technical knowledge, logical reasoning, problem-solving abilities and quick-thinking skills.',
     rules: [
-      'Teams of 2 members.',
-      'Preliminary written round for all registered teams.',
-      'Top 6 teams qualify for the buzzer stage round on main stage.',
-      'Negative marking applies in final rounds.'
+      'Each team must consist of exactly two participants.',
+      'Mobile phones, smartwatches, calculators and other electronic devices are strictly prohibited during the competition.',
+      'Participants must maintain discipline throughout the event.',
+      'All answers must be submitted within the specified time; no additional time will be provided after the deadline.',
+      'During the rapid-fire round, only the team\'s final answer will be considered; once submitted, answers cannot be changed.',
+      'Any form of malpractice or unfair practice will lead to immediate disqualification.',
+      'In case of a tie, sudden-death tie-breaker questions will be conducted until a clear winner is determined.',
+      'The decision of the quiz master and organizing committee will be final and binding.'
     ],
+    guidelinesAndChecklist: {
+      sections: [
+        {
+          title: 'Team Formation & Participation',
+          items: [
+            'Each team must consist of exactly two participants.',
+            'Participants must complete registration before the competition.',
+            'Both team members can discuss and answer questions together during the written rounds.'
+          ]
+        },
+        {
+          title: 'Round 1: TECH STARTER (Prelims – Easy Level)',
+          items: [
+            '25 Questions: Multiple Choice, True/False, Fill in the Blanks & Basic Technical Questions.',
+            'Time Limit: 25 minutes for all 25 questions.',
+            'Question Paper: The same question paper provided to all teams.',
+            'Scoring: +2 points for correct answer, 0 for wrong (No negative marking).',
+            'Advancement: Top-scoring teams qualify for Round 2.'
+          ]
+        },
+        {
+          title: 'Round 2: TECH EXPLORER (Intermediate – Moderate)',
+          items: [
+            '15 Questions: Technical Knowledge, Logical Reasoning and Problem-Solving.',
+            'Question Paper Selection: Each team randomly selects a question paper via lot system (different sets provided).',
+            'Time Limit: 20 minutes for all 15 questions.',
+            'Scoring: +3 points for correct answer, 0 for wrong (No negative marking).',
+            'Advancement: Top-performing teams qualify for the Final Round.'
+          ]
+        },
+        {
+          title: 'Round 3: TEKONIK (Final Round – Rapid Fire)',
+          items: [
+            '10 Questions per team asked directly by the Quiz Master.',
+            'Time Limit: 10 seconds per question.',
+            'Scoring: +2 points for correct answer, –0.5 points for wrong answer, +1 point for passed questions.',
+            'Winner: Highest cumulative score declared TEKTONIQ Champion.'
+          ]
+        }
+      ],
+      importantReminder: 'Think Fast. Think Smart. Be a Tech Champion! Organized by the Department of Master of Computer Applications (MCA), KMM College of Arts and Science, Thrikkakara.'
+    },
     prizes: [
       { position: '1st', amount: 4000 },
       { position: '2nd', amount: 2000 }

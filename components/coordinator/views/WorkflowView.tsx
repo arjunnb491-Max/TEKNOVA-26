@@ -174,9 +174,9 @@ export default function WorkflowView({ event, onPromoteToWinners }: WorkflowView
         ];
       case 'tektoniq':
         return [
-          { key: 'prelims', label: 'Round 1: Prelims MCQ', max: 30 },
-          { key: 'rapidFire', label: 'Round 2: Rapid Fire', max: 30 },
-          { key: 'buzzer', label: 'Round 3: Live Buzzer & Code Decryption', max: 40 },
+          { key: 'round1', label: 'Round 1: Tech Starter (25 Qs × 2 pts)', max: 50 },
+          { key: 'round2', label: 'Round 2: Tech Explorer (15 Qs × 3 pts)', max: 45 },
+          { key: 'round3', label: 'Round 3: Tekonik Rapid Fire (10 Qs)', max: 20 },
         ];
       default:
         return [

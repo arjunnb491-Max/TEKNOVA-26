@@ -89,14 +89,14 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
                         <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10">
                           <div>
                             <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] block mb-1">
-                              24-Hour Hackathon &amp; Prototype Protocol
+                              Official Tournament Protocol
                             </span>
                             <h2 className="text-lg font-bold font-space-grotesk text-white uppercase tracking-wider flex items-center gap-2">
-                              <ListChecks size={20} className="text-[#00E5FF]" /> PARTICIPANTS' GUIDELINES &amp; CHECKLIST
+                              <ListChecks size={20} className="text-[#00E5FF]" /> {event.name} — RULES &amp; GUIDELINES
                             </h2>
                           </div>
                           <span className="text-[10px] font-mono uppercase px-3 py-1 rounded-full bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30 font-bold">
-                            Official Checklist
+                            Verified Protocol
                           </span>
                         </div>
 
@@ -119,12 +119,29 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
                           ))}
                         </div>
 
+                        {/* General Rules & Regulations */}
+                        {event.rules.length > 0 && (
+                          <div className="p-5 bg-[#07172B]/60 rounded-xl border border-white/5 space-y-3">
+                            <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-white/5">
+                              <ShieldCheck size={14} className="text-[#00E5FF]" /> General Rules &amp; Regulations
+                            </h3>
+                            <ul className="space-y-2.5 text-xs text-[#A9B8D0]">
+                              {event.rules.map((rule, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5">
+                                  <span className="text-[#00E5FF] font-mono font-bold shrink-0">{idx + 1}.</span>
+                                  <span className="leading-relaxed text-white/85">{rule}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
                         {event.guidelinesAndChecklist.importantReminder && (
                           <div className="p-4 rounded-xl bg-gradient-to-r from-[#008CFF]/15 via-[#7B2CFF]/15 to-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-start gap-3">
                             <Sparkles size={18} className="text-[#00E5FF] mt-0.5 shrink-0" />
                             <div>
                               <div className="text-[11px] font-mono uppercase tracking-wider font-bold text-[#00E5FF] mb-1">
-                                IMPORTANT REMINDER
+                                OFFICIAL MOTTO &amp; REMINDER
                               </div>
                               <p className="text-xs text-white leading-relaxed font-sans font-medium">
                                 {event.guidelinesAndChecklist.importantReminder}
