@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { ShieldCheck, Lock, ArrowRight, AlertCircle } from 'lucide-react';
+import { ShieldCheck, Lock, ArrowRight, AlertCircle, Eye, EyeOff } from 'lucide-react';
 
 export default function AdminLogin() {
   const router = useRouter();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin2026');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -17,8 +18,16 @@ export default function AdminLogin() {
     e.preventDefault();
     setError('');
 
+    if (!username.trim()) {
+      return setError('Username is required.');
+    }
+
     if (!password.trim()) {
       return setError('Password is required.');
+    }
+
+    if (username.trim().toLowerCase() !== 'admin' || password !== 'admin2026') {
+      return setError('Access denied. Invalid administrator credentials.');
     }
 
     setLoading(true);
@@ -95,8 +104,9 @@ export default function AdminLogin() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="admin"
+                placeholder="Enter admin username"
                 required
+                autoComplete="username"
                 className="w-full px-4 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none"
               />
             </div>
@@ -108,18 +118,23 @@ export default function AdminLogin() {
               <div className="relative">
                 <input
                   id="authKey"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter master password"
                   required
-                  className="w-full px-4 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none"
+                  autoComplete="current-password"
+                  className="w-full pl-4 pr-11 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none font-mono tracking-wider"
                 />
-                <Lock size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#A9B8D0]" />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#A9B8D0] hover:text-[#00E5FF] transition-colors p-1"
+                  title={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
               </div>
-              <p className="text-[10px] text-[#627694] mt-1.5">
-                Default authorized key: <code className="text-[#00E5FF]">admin2026</code>
-              </p>
             </div>
 
             <div>
