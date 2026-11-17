@@ -346,3 +346,53 @@ export function resolveEventByIdOrSlug(idOrSlug: string): OfficialEvent | undefi
   }
   return undefined;
 }
+
+// Official coordinator passwords configured in the format: <event_name>@2026
+export const COORDINATOR_PASSWORDS: Record<string, string> = {
+  'ideatek': 'ideatek@2026',
+  'bug-slayer': 'bugslayer@2026',
+  'mirror-master': 'mirrormaster@2026',
+  'fotonova': 'fotonova@2026',
+  'teknova-e-clash': 'teknova-e-clash@2026',
+  'tek-royal': 'tekroyal@2026',
+  'find-x': 'find-x@2026',
+  'tektoniq': 'tektoniq@2026',
+};
+
+// Formatted display names and password listing for coordinators
+export const COORDINATOR_CREDENTIALS_LIST = OFFICIAL_EVENTS.map(evt => {
+  const password = COORDINATOR_PASSWORDS[evt.slug] || `${evt.slug.replace(/[^a-z0-9]/g, '')}@2026`;
+  return {
+    eventId: evt.id,
+    eventSlug: evt.slug,
+    eventName: evt.name,
+    subCategory: evt.subCategory,
+    workingInterpretation: evt.workingInterpretation,
+    password,
+    displayFormat: `${evt.name.toLowerCase()}@2026`
+  };
+});
+
+export function getCoordinatorPassword(eventSlug: string): string {
+  const normalized = eventSlug.toLowerCase().trim();
+  const matchedEvent = resolveEventByIdOrSlug(normalized);
+  const slug = matchedEvent ? matchedEvent.slug : normalized;
+  return COORDINATOR_PASSWORDS[slug] || `${slug.replace(/[^a-z0-9]/g, '')}@2026`;
+}
+
+export function verifyCoordinatorPassword(eventSlug: string, inputPass: string): boolean {
+  if (!inputPass || !inputPass.trim()) return false;
+  
+  const cleanInput = inputPass.trim().toLowerCase().replace(/[\s\-_]/g, '');
+  const matchedEvent = resolveEventByIdOrSlug(eventSlug);
+  if (!matchedEvent) return false;
+
+  const validVariations = [
+    `${matchedEvent.slug.replace(/[\s\-_]/g, '')}@2026`,
+    `${matchedEvent.name.toLowerCase().replace(/[\s\-_]/g, '')}@2026`,
+    `${matchedEvent.id.replace(/[\s\-_]/g, '')}@2026`,
+    COORDINATOR_PASSWORDS[matchedEvent.slug]?.toLowerCase().replace(/[\s\-_]/g, '')
+  ].filter(Boolean);
+
+  return validVariations.some(v => cleanInput === v);
+}

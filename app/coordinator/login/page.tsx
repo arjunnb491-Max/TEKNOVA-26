@@ -4,15 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Users, Lock, ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
-import { OFFICIAL_EVENTS } from '@/data/events';
+import { Users, Lock, ArrowRight, AlertCircle, CheckCircle2, KeyRound, ChevronDown, ChevronUp } from 'lucide-react';
+import { OFFICIAL_EVENTS, getCoordinatorPassword, verifyCoordinatorPassword, COORDINATOR_CREDENTIALS_LIST } from '@/data/events';
 
 export default function CoordinatorLogin() {
   const router = useRouter();
   const [selectedEvent, setSelectedEvent] = useState(OFFICIAL_EVENTS[0].slug);
-  const [password, setPassword] = useState('coordinator2026');
+  const [password, setPassword] = useState(getCoordinatorPassword(OFFICIAL_EVENTS[0].slug));
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showAllKeys, setShowAllKeys] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,6 +21,11 @@ export default function CoordinatorLogin() {
 
     if (!password.trim()) {
       return setError('Password is required.');
+    }
+
+    if (!verifyCoordinatorPassword(selectedEvent, password)) {
+      const expected = getCoordinatorPassword(selectedEvent);
+      return setError(`Access denied. Incorrect security key for ${currentEvent.name}. Expected format is: ${expected}`);
     }
 
     setLoading(true);
@@ -36,6 +42,12 @@ export default function CoordinatorLogin() {
   };
 
   const currentEvent = OFFICIAL_EVENTS.find(e => e.slug === selectedEvent) || OFFICIAL_EVENTS[0];
+
+  const handleEventChange = (newSlug: string) => {
+    setSelectedEvent(newSlug);
+    setPassword(getCoordinatorPassword(newSlug));
+    setError('');
+  };
 
   return (
     <div className="min-h-screen bg-[#020713] text-[#A9B8D0] flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
@@ -99,7 +111,7 @@ export default function CoordinatorLogin() {
               <select
                 id="event"
                 value={selectedEvent}
-                onChange={(e) => setSelectedEvent(e.target.value)}
+                onChange={(e) => handleEventChange(e.target.value)}
                 className="w-full px-4 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none"
               >
                 {OFFICIAL_EVENTS.map(evt => (
@@ -108,9 +120,12 @@ export default function CoordinatorLogin() {
                   </option>
                 ))}
               </select>
-              <div className="mt-2 p-2.5 bg-[#07172B]/70 border border-white/5 rounded-lg text-[11px] text-[#A9B8D0] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
-                <span>Category: {currentEvent.category} • {currentEvent.participationType.toUpperCase()}</span>
+              <div className="mt-2 p-2.5 bg-[#07172B]/70 border border-white/5 rounded-lg text-[11px] text-[#A9B8D0] flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
+                  <span>{currentEvent.category} • {currentEvent.participationType.toUpperCase()}</span>
+                </div>
+                <span className="text-[10px] font-mono text-[#00E5FF]">{getCoordinatorPassword(selectedEvent)}</span>
               </div>
             </div>
 
@@ -124,14 +139,15 @@ export default function CoordinatorLogin() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter security key"
+                  placeholder={`e.g. ${getCoordinatorPassword(selectedEvent)}`}
                   required
-                  className="w-full px-4 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none"
+                  className="w-full px-4 py-3 bg-[#061226] border border-white/10 rounded-xl text-white text-sm focus:border-[#00E5FF] outline-none font-mono"
                 />
                 <Lock size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#A9B8D0]" />
               </div>
-              <p className="text-[10px] text-[#627694] mt-1.5">
-                Default authorized key: <code className="text-[#00E5FF]">coordinator2026</code>
+              <p className="text-[10px] text-[#627694] mt-1.5 flex items-center justify-between">
+                <span>Format: <code className="text-[#00E5FF]">{`<event_name>@2026`}</code></span>
+                <span className="text-white/60 font-mono">Current: <span className="text-[#00E5FF]">{getCoordinatorPassword(selectedEvent)}</span></span>
               </p>
             </div>
 
@@ -147,10 +163,53 @@ export default function CoordinatorLogin() {
             </div>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-white/10 text-center">
-            <Link href="/" className="text-xs text-[#A9B8D0] hover:text-[#00E5FF] transition-colors">
-              ← Return to TEKNOVA Public Portal
-            </Link>
+          <div className="mt-6 pt-6 border-t border-white/10 space-y-4">
+            <button
+              type="button"
+              onClick={() => setShowAllKeys(!showAllKeys)}
+              className="w-full py-2 px-3 bg-[#07172B] hover:bg-[#07172B]/80 border border-white/5 hover:border-[#00E5FF]/30 rounded-xl text-xs font-mono text-[#A9B8D0] hover:text-white transition-colors flex items-center justify-between"
+            >
+              <span className="flex items-center gap-2">
+                <KeyRound size={13} className="text-[#00E5FF]" />
+                <span>Coordinator Access Key Directory</span>
+              </span>
+              {showAllKeys ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            </button>
+
+            {showAllKeys && (
+              <div className="p-3 bg-[#020713]/90 rounded-2xl border border-white/10 space-y-2 text-xs font-mono">
+                <div className="text-[10px] text-[#627694] uppercase tracking-wider font-bold pb-1 border-b border-white/5">
+                  Official Coordinator Passwords ({COORDINATOR_CREDENTIALS_LIST.length})
+                </div>
+                <div className="space-y-1.5 max-h-56 overflow-y-auto pr-1">
+                  {COORDINATOR_CREDENTIALS_LIST.map((cred) => (
+                    <div
+                      key={cred.eventSlug}
+                      onClick={() => handleEventChange(cred.eventSlug)}
+                      className={`p-2 rounded-lg border transition-all cursor-pointer flex items-center justify-between ${
+                        selectedEvent === cred.eventSlug
+                          ? 'bg-[#008CFF]/15 border-[#00E5FF]/40 text-white'
+                          : 'bg-[#07172B]/60 border-white/5 text-[#A9B8D0] hover:border-white/20 hover:text-white'
+                      }`}
+                    >
+                      <div>
+                        <div className="font-bold text-white text-[11px]">{cred.eventName}</div>
+                        <div className="text-[10px] text-[#627694]">{cred.workingInterpretation}</div>
+                      </div>
+                      <code className="text-[#00E5FF] font-bold text-[11px] bg-[#020713] px-2 py-0.5 rounded border border-[#00E5FF]/20">
+                        {cred.password}
+                      </code>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="text-center pt-2">
+              <Link href="/" className="text-xs text-[#A9B8D0] hover:text-[#00E5FF] transition-colors">
+                ← Return to TEKNOVA Public Portal
+              </Link>
+            </div>
           </div>
         </div>
       </div>

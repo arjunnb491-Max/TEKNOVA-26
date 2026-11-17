@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { UserCog, Plus, Trash2, CheckCircle2, AlertCircle, RefreshCw, Mail, ShieldCheck } from 'lucide-react';
-import { OFFICIAL_EVENTS } from '@/data/events';
+import { UserCog, Plus, Trash2, CheckCircle2, AlertCircle, RefreshCw, Mail, ShieldCheck, KeyRound } from 'lucide-react';
+import { OFFICIAL_EVENTS, getCoordinatorPassword } from '@/data/events';
 
 export default function AdminCoordinators() {
   const [coordinators, setCoordinators] = useState<Record<string, string[]>>({});
@@ -197,6 +197,17 @@ export default function AdminCoordinators() {
                 <span className="text-xs font-mono text-[#00E5FF] px-2 py-0.5 rounded bg-[#008CFF]/10 border border-[#008CFF]/20">
                   {assigned.length} Assigned
                 </span>
+              </div>
+
+              {/* Coordinator Portal Password */}
+              <div className="p-2.5 bg-[#07172B] rounded-xl border border-white/5 flex items-center justify-between text-xs font-mono">
+                <div className="flex items-center gap-1.5 text-[#627694]">
+                  <KeyRound size={12} className="text-[#00E5FF]" />
+                  <span>Portal Password:</span>
+                </div>
+                <code className="text-[#00E5FF] font-bold bg-[#020713] px-2 py-0.5 rounded border border-[#00E5FF]/20">
+                  {getCoordinatorPassword(evt.slug)}
+                </code>
               </div>
 
               <div className="space-y-1.5">
