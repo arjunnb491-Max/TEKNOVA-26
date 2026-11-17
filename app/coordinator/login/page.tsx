@@ -149,9 +149,6 @@ export default function CoordinatorLogin() {
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
-              <p className="text-[10px] text-[#627694] mt-1.5 font-mono">
-                Security key format: <span className="text-[#00E5FF]">&lt;event_name&gt;@2026</span>
-              </p>
             </div>
 
             <div>
