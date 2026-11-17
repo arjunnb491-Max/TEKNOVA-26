@@ -14,12 +14,62 @@
       },
       "description": "The premier 2-day flagship Ideathon: Build disruptive technology solutions for tomorrow's grand challenges.",
       "rules": [
-        "Team of 2 to 4 members.",
-        "Two-day intensive hack & ideation sprint (Dec 2 & Dec 3).",
-        "Day 1: Problem selection, architecture pitch, milestone checkpoints.",
-        "Day 2: Prototype demo, jury Q&A, and grand finale stage.",
-        "Evaluation criteria: Innovation (30%), Technical Feasibility (30%), Impact (20%), Pitch (20%)."
+        "Participants are responsible for the safety of their laptops, mobile phones and other personal belongings.",
+        "Participants are strictly prohibited from preparing or bringing pre-made presentations.",
+        "Problem statements will be announced by the college during the event.",
+        "All presentations must be prepared only after the official announcement of the problem statements.",
+        "Food and refreshments will be provided by the college.",
+        "Team of 2 to 4 members with valid college ID cards.",
+        "Overnight 24-hour innovation and prototype sprint (Dec 2–3, 2026)."
       ],
+      "guidelinesAndChecklist": {
+        "sections": [
+          {
+            "title": "1. Mandatory Items",
+            "items": [
+              "Laptop",
+              "Laptop charger",
+              "Mobile phone and charger",
+              "Power bank (if available)",
+              "College ID card or valid student ID",
+              "Required cables, adapters and accessories",
+              "Hardware components required for the prototype",
+              "Personal medicines (if required)"
+            ]
+          },
+          {
+            "title": "2. Personal Essentials",
+            "items": [
+              "Towel",
+              "Toothbrush and toothpaste",
+              "Soap, face wash and other toiletries",
+              "Extra set of clothes",
+              "Comfortable clothing for the overnight stay",
+              "Hand sanitizer and tissues",
+              "Water bottle"
+            ]
+          },
+          {
+            "title": "3. Overnight Stay Essentials",
+            "items": [
+              "Bedsheet or light blanket",
+              "Pillow",
+              "Other personal sleeping essentials, if required"
+            ]
+          },
+          {
+            "title": "4. Important Instructions",
+            "items": [
+              "Participants are responsible for the safety of their laptops, mobile phones and other personal belongings.",
+              "Participants are strictly prohibited from preparing or bringing pre-made presentations.",
+              "Problem statements will be announced by the college during the event.",
+              "All presentations must be prepared only after the official announcement of the problem statements.",
+              "Food and refreshments will be provided by the college."
+            ]
+          }
+        ],
+        "importantReminder": "Please ensure that you carry all the necessary items for a comfortable and productive 24-hour event. Be prepared. Be creative. Be innovative!"
+      },
       "prizes": [
         {
           "position": "1st",
