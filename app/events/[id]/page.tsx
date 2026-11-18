@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { resolveEventByIdOrSlug, formatINR } from '@/data/events';
+import { getEventRegistrationUrl } from '@/data/registration-links';
 import { Calendar, Clock, MapPin, Users, User, ChevronRight, Trophy, ArrowRight, ShieldCheck, FileText, CheckCircle2, Sparkles, ListChecks } from 'lucide-react';
 
 export default async function EventDetails({ params }: { params: Promise<{ id: string }> }) {
@@ -14,6 +15,8 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
   if (!event) {
     notFound();
   }
+
+  const registrationUrl = getEventRegistrationUrl(event.slug) || getEventRegistrationUrl(event.id);
 
   return (
     <div className="min-h-screen bg-[#020713] text-[#A9B8D0] font-sans antialiased">
@@ -230,18 +233,26 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
                     )}
 
                     <div className="pt-2">
-                      <Link 
-                        href={`/events/${event.slug}/register`}
-                        className="w-full py-4 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl text-center font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(0,140,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] group energy-pulse"
-                      >
-                        <span className="relative z-10 flex items-center justify-center gap-2">
-                          Register For Contest <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
-                        </span>
-                      </Link>
+                      {registrationUrl ? (
+                        <a 
+                          href={registrationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-4 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl text-center font-bold text-xs font-mono uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(0,140,255,0.4)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] group energy-pulse"
+                        >
+                          <span className="relative z-10 flex items-center justify-center gap-2">
+                            Register For Contest <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                          </span>
+                        </a>
+                      ) : (
+                        <div className="w-full py-4 bg-white/5 text-[#A9B8D0]/50 rounded-xl text-center font-bold text-xs font-mono uppercase tracking-widest cursor-not-allowed">
+                          Registration Pending
+                        </div>
+                      )}
                     </div>
 
                     <p className="text-[11px] text-center text-[#A9B8D0] pt-1">
-                      No account creation required. Instant printable registration receipt.
+                      Official Google Forms registration. Opens in a secure new tab.
                     </p>
                   </div>
 

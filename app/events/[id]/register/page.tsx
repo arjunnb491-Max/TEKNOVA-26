@@ -7,10 +7,11 @@ import { useParams, useRouter } from 'next/navigation';
 import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { resolveEventByIdOrSlug, OfficialEvent, formatINR } from '@/data/events';
+import { getEventRegistrationUrl } from '@/data/registration-links';
 import { ParticipantPass } from '@/components/events/ParticipantPass';
 import { 
   CheckCircle2, Users, User, ArrowLeft, ArrowRight, Printer, 
-  Download, ShieldCheck, AlertCircle, Copy, Check, Calendar, MapPin, QrCode, FileText 
+  Download, ShieldCheck, AlertCircle, Copy, Check, Calendar, MapPin, QrCode, FileText, Sparkles 
 } from 'lucide-react';
 
 export default function EventRegistrationPage() {
@@ -24,6 +25,8 @@ export default function EventRegistrationPage() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [createdRegistration, setCreatedRegistration] = useState<any>(null);
+
+  const registrationUrl = event ? (getEventRegistrationUrl(event.slug) || getEventRegistrationUrl(event.id)) : null;
 
   // Form State
   const [formData, setFormData] = useState({
@@ -208,6 +211,30 @@ export default function EventRegistrationPage() {
                   <span>{isTeam ? `Team Event (${event.teamSize?.min || 1}–${event.teamSize?.max || 4} members)` : 'Individual'}</span>
                 </div>
               </div>
+
+              {/* Official Google Form Direct Link Banner */}
+              {registrationUrl && (
+                <div className="mb-8 p-5 bg-gradient-to-r from-[#008CFF]/15 via-[#7B2CFF]/15 to-[#00E5FF]/10 border border-[#00E5FF]/30 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <div className="text-xs font-mono text-[#00E5FF] uppercase font-bold tracking-wider mb-1 flex items-center gap-1.5">
+                      <Sparkles size={14} className="text-[#00E5FF]" />
+                      Official Registration Portal
+                    </div>
+                    <p className="text-sm text-white font-medium">
+                      Official registrations for {event.name} are accepted via Google Forms.
+                    </p>
+                  </div>
+                  <a
+                    href={registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(0,140,255,0.4)] hover:shadow-[0_0_25px_rgba(0,229,255,0.6)] flex items-center gap-2 shrink-0 hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <span>Open Google Form</span>
+                    <ArrowRight size={14} />
+                  </a>
+                </div>
+              )}
 
               {/* Error notice */}
               {errorMessage && (

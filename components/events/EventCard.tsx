@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { Trophy, Users, User, ArrowRight, ChevronRight, Calendar, MapPin } from "lucide-react";
 import { OfficialEvent, formatINR } from "@/data/events";
+import { getEventRegistrationUrl } from "@/data/registration-links";
 
 interface EventCardProps {
   event: OfficialEvent;
@@ -14,6 +15,7 @@ interface EventCardProps {
 
 export function EventCard({ event, index = 0 }: EventCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const registrationUrl = getEventRegistrationUrl(event.slug) || getEventRegistrationUrl(event.id);
 
   return (
     <motion.div
@@ -105,13 +107,23 @@ export function EventCard({ event, index = 0 }: EventCardProps) {
             <span>Details</span>
             <ChevronRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform duration-300 text-[#00E5FF]" />
           </Link>
-          <Link
-            href={`/events/${event.slug}/register`}
-            className="flex-1 text-center py-2.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(0,140,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.5)] flex items-center justify-center gap-1.5 group/reg"
-          >
-            <span>Register</span>
-            <ArrowRight size={14} className="group-hover/reg:translate-x-1 transition-transform duration-300" />
-          </Link>
+          {registrationUrl ? (
+            <a
+              href={registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center py-2.5 bg-gradient-to-r from-[#008CFF] to-[#7B2CFF] hover:from-[#00E5FF] hover:to-[#B44CFF] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(0,140,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.5)] flex items-center justify-center gap-1.5 group/reg"
+            >
+              <span>Register</span>
+              <ArrowRight size={14} className="group-hover/reg:translate-x-1 transition-transform duration-300" />
+            </a>
+          ) : (
+            <span
+              className="flex-1 text-center py-2.5 bg-white/5 text-[#A9B8D0]/50 rounded-xl font-bold text-xs uppercase tracking-wider cursor-not-allowed flex items-center justify-center gap-1.5"
+            >
+              <span>Pending</span>
+            </span>
+          )}
         </div>
       </div>
     </motion.div>
