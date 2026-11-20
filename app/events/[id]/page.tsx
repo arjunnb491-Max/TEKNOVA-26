@@ -39,34 +39,61 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent opacity-80 z-30" />
 
             {/* Banner Header Image */}
-            <div className="h-64 sm:h-80 bg-[#07172B] w-full relative overflow-hidden group">
-              <Image 
-                src={event.image.replace('/thumbnails/', '/banners/')}
-                alt={event.name}
-                fill
-                priority
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover object-center opacity-60"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-[#020713]/50 to-transparent"></div>
-              
-              <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
-                <span className="px-3.5 py-1 bg-[#020713]/90 backdrop-blur-md text-[#00E5FF] text-xs font-mono font-bold rounded-full border border-[#00E5FF]/40 uppercase tracking-widest">
-                  {event.category} • {event.workingInterpretation}
-                </span>
-                <span className="px-3 py-1 bg-[#07172B]/90 backdrop-blur-md text-white text-xs font-mono rounded-lg border border-white/10 flex items-center gap-1.5">
-                  {event.participationType === 'team' ? <Users size={13} className="text-[#00E5FF]" /> : <User size={13} className="text-[#00E5FF]" />}
-                  {event.participationType === 'team' ? `Team Event (${event.teamSize ? `${event.teamSize.min}–${event.teamSize.max} members` : 'Team'})` : 'Individual Contest'}
-                </span>
+            <div className="relative bg-[#07172B] w-full overflow-hidden group min-h-[300px]">
+              {/* Ambient atmospheric backdrop */}
+              <div className="absolute inset-0">
+                <Image 
+                  src={event.image.replace('/thumbnails/', '/banners/')}
+                  alt=""
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover blur-2xl opacity-25 scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-[#020713]/60 to-[#020713]/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#020713] via-transparent to-[#020713]/80" />
               </div>
 
-              <div className="absolute bottom-6 left-6 right-6">
-                <h1 className="text-3xl sm:text-5xl font-black font-space-grotesk text-white glow-cyan tracking-tight">
-                  {event.name}
-                </h1>
-                <p className="text-xs sm:text-sm font-mono text-[#00E5FF] mt-1 tracking-wider uppercase">
-                  TEKNOVA ’26 Official Contest • Department of MCA
-                </p>
+              {/* Main Content: Split layout with Left Title/Badges + Right Full Uncropped Poster in Correct Ratio */}
+              <div className="relative z-10 p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+                {/* Left: Text & Badges */}
+                <div className="flex-1 space-y-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-3.5 py-1 bg-[#020713]/90 backdrop-blur-md text-[#00E5FF] text-xs font-mono font-bold rounded-full border border-[#00E5FF]/40 uppercase tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                      {event.category} • {event.workingInterpretation}
+                    </span>
+                    <span className="px-3 py-1 bg-[#07172B]/90 backdrop-blur-md text-white text-xs font-mono rounded-lg border border-white/10 flex items-center gap-1.5">
+                      {event.participationType === 'team' ? <Users size={13} className="text-[#00E5FF]" /> : <User size={13} className="text-[#00E5FF]" />}
+                      {event.participationType === 'team' ? `Team Event (${event.teamSize ? `${event.teamSize.min}–${event.teamSize.max} members` : 'Team'})` : 'Individual Contest'}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-space-grotesk text-white glow-cyan tracking-tight">
+                      {event.name}
+                    </h1>
+                    <p className="text-xs sm:text-sm font-mono text-[#00E5FF] mt-2 tracking-wider uppercase">
+                      TEKNOVA ’26 Official Contest • Department of MCA
+                    </p>
+                  </div>
+
+                  <p className="text-sm sm:text-base text-[#A9B8D0] leading-relaxed max-w-2xl pt-1">
+                    {event.description}
+                  </p>
+                </div>
+
+                {/* Right: Crisp, Perfectly Proportioned Poster (Preserves Exact 723:1024 Aspect Ratio, Zero Cropping) */}
+                <div className="relative w-48 sm:w-56 md:w-64 aspect-[723/1024] rounded-2xl overflow-hidden glass-panel border border-[#00E5FF]/40 shadow-[0_0_35px_rgba(0,140,255,0.35)] hover:shadow-[0_0_55px_rgba(0,229,255,0.5)] hover:border-[#00E5FF]/80 transition-all duration-500 shrink-0 group/poster">
+                  <Image
+                    src={event.image.replace('/thumbnails/', '/banners/')}
+                    alt={`${event.name} Official Tournament Poster`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 220px, 260px"
+                    className="object-contain object-center group-hover/poster:scale-102 transition-transform duration-500"
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent opacity-60" />
+                </div>
               </div>
             </div>
             

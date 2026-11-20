@@ -140,7 +140,7 @@ export function Footer() {
             &copy; 2026 TEKNOVA ’26. Department of MCA, KMM College of Arts and Science.
           </p>
           <div className="flex gap-6">
-            <span className="hover:text-[#A9B8D0] transition-colors">Prize Pool: ₹69,234 (Published Subtotal)</span>
+            <span className="hover:text-[#A9B8D0] transition-colors">Prize Pool: ₹1 Lakh+ (Grand Prize Pool)</span>
             <Link href="/lookup" className="text-[#00E5FF] hover:underline">Verify Registration</Link>
           </div>
         </div>

@@ -178,7 +178,7 @@ export function Hero() {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse"></span>
                     KMM MCA Tech Fest
                   </div>
-                  <div className="text-sm font-bold text-white font-space-grotesk">10 Competitions • 2 Days</div>
+                  <div className="text-sm font-bold text-white font-space-grotesk">7 Competitions • 2 Days</div>
                 </div>
                 <div className="px-2.5 py-1 bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30 text-[10px] font-mono font-bold rounded">
                   DEC 2–3

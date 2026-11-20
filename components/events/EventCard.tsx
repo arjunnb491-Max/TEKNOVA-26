@@ -33,16 +33,24 @@ export function EventCard({ event, index = 0 }: EventCardProps) {
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
 
       {/* Event Image Banner with Zoom & Layered Crossfade Mask */}
-      <div className="h-52 bg-[#07172B] relative overflow-hidden flex items-center justify-center">
+      <div className="h-56 bg-[#07172B] relative overflow-hidden flex items-center justify-center">
+        {/* Ambient blurred backdrop for consistent wide card atmosphere */}
+        <Image 
+          src={event.image} 
+          alt="" 
+          fill 
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover blur-xl opacity-25 scale-110"
+        />
         <Image 
           src={event.image} 
           alt={event.name} 
           fill 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out opacity-65 group-hover:opacity-90"
+          className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 p-2"
         />
         {/* Layered mask transition overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-[#020713]/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020713] via-[#020713]/30 to-transparent transition-opacity duration-500 group-hover:opacity-70 z-10 pointer-events-none" />
         
         {/* Category Badge */}
         <div className="absolute top-4 right-4 z-20">

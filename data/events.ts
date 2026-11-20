@@ -165,10 +165,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'Decision of the judges and coordinators is final.'
     ],
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 2, 2026',
     time: '10:00 AM',
     venue: 'Lab Alpha (MCA Department)',
@@ -194,10 +194,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics.'
     ],
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 2, 2026',
     time: '11:30 AM',
     venue: 'Web Systems Studio',
@@ -221,10 +221,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'Controllers will be provided, but participants may bring personal certified controllers.'
     ],
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 2, 2026',
     time: '01:30 PM',
     venue: 'Gaming Arena (Auditorium)',
@@ -249,10 +249,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'Points system: Placement points + Kill points as per official tournament standards.'
     ],
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
     time: '10:00 AM',
     venue: 'E-Sports Hub',
@@ -278,10 +278,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'First team to unearth the final artifact and report to the central base wins.'
     ],
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
     time: '01:30 PM',
     venue: 'Campus Grounds & Central Base',
@@ -352,10 +352,10 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       importantReminder: 'Think Fast. Think Smart. Be a Tech Champion! Organized by the Department of Master of Computer Applications (MCA), KMM College of Arts and Science, Thrikkakara.'
     },
     prizes: [
-      { position: '1st', amount: 4000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 7000 },
+      { position: '2nd', amount: 4000 }
     ],
-    prizePoolSubtotal: 6000,
+    prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
     time: '11:00 AM',
     venue: 'Seminar Hall B',
@@ -404,11 +404,13 @@ export function formatINR(amount: number): string {
   }).format(amount);
 }
 
-// Calculate the known prize pool subtotal across official events
+// Calculate the known prize pool subtotal across official events (₹1 Lakh+ Grand Prize Pool)
 export const TOTAL_KNOWN_PRIZE_POOL = OFFICIAL_EVENTS.reduce(
   (acc, event) => acc + event.prizePoolSubtotal,
   0
-); // Exactly ₹71,000 across 7 events
+); // ₹1,01,000 across 7 official events (₹1 Lakh+)
+
+export const TOTAL_PRIZE_POOL_LABEL = '1 Lakh+';
 
 // Alias mapping for legacy event names from previous prototypes
 export const LEGACY_EVENT_ALIASES: Record<string, string> = {

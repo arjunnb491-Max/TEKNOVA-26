@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "TEKNOVA ’26 | Department of MCA, KMM College",
-    description: "Premier Intercollegiate Technical & Cultural Confluence. December 2–3, 2026. ₹70,000+ Prize Pool across official tournaments.",
+    description: "Premier Intercollegiate Technical & Cultural Confluence. December 2–3, 2026. ₹1 Lakh+ Prize Pool across official tournaments.",
     url: "https://teknova2026.in",
     siteName: "TEKNOVA '26",
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TEKNOVA ’26 | KMM College",
-    description: "IDEAS TODAY. A BRIGHTER TOMORROW. 8 Flagship Contests, ₹70,000+ Prize Pool. Dec 2–3, 2026.",
+    description: "IDEAS TODAY. A BRIGHTER TOMORROW. 7 Flagship Contests, ₹1 Lakh+ Prize Pool. Dec 2–3, 2026.",
     images: ["/images/og/twitter-teknova-2026.jpg"],
   }
 };

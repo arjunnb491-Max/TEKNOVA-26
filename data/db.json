@@ -112,14 +112,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 2, 2026",
       "time": "10:00 AM",
       "venue": "Lab Alpha (MCA Department)",
@@ -150,14 +150,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 2, 2026",
       "time": "11:30 AM",
       "venue": "Web Systems Studio",
@@ -183,14 +183,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 2, 2026",
       "time": "01:30 PM",
       "venue": "Gaming Arena (Auditorium)",
@@ -220,14 +220,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 3, 2026",
       "time": "10:00 AM",
       "venue": "E-Sports Hub",
@@ -258,14 +258,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 3, 2026",
       "time": "01:30 PM",
       "venue": "Campus Grounds & Central Base",
@@ -341,14 +341,14 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 4000
+          "amount": 7000
         },
         {
           "position": "2nd",
-          "amount": 2000
+          "amount": 4000
         }
       ],
-      "prizePoolSubtotal": 6000,
+      "prizePoolSubtotal": 11000,
       "date": "December 3, 2026",
       "time": "11:00 AM",
       "venue": "Seminar Hall B",
