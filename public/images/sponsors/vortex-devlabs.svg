@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 70" fill="none">
-    <circle cx="32" cy="35" r="18" stroke="#00E5FF" stroke-width="2" stroke-dasharray="4 3"/>
-    <circle cx="32" cy="35" r="8" fill="#008CFF"/>
-    <text x="62" y="38" fill="#F5F8FF" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="18">VORTEX<tspan fill="#00E5FF">.DEV</tspan></text>
-    <text x="62" y="51" fill="#627694" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="1.5">TOOLING PARTNER</text>
-  </svg>

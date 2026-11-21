@@ -159,19 +159,3 @@ export interface DbAuditLog {
   created_at?: string;
 }
 
-export interface DbSponsor {
-  id: string;
-  name: string;
-  slug: string;
-  tier: 'title' | 'powered_by' | 'associate' | 'community' | 'media' | 'technology' | 'supporting';
-  category: string;
-  description: string | null;
-  logo_url: string;
-  website_url: string | null;
-  is_active: boolean;
-  display_order: number;
-  highlighted?: boolean;
-  created_at?: string;
-  updated_at?: string;
-}
-

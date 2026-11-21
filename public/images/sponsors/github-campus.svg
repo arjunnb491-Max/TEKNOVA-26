@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
-    <circle cx="28" cy="30" r="16" fill="#07172B" stroke="#F5F8FF" stroke-width="1.5"/>
-    <path d="M22 28C22 25 24 23 28 23C32 23 34 25 34 28C34 32 30 35 28 35C26 35 22 32 22 28Z" fill="#F5F8FF"/>
-    <text x="52" y="34" fill="#F5F8FF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15">GITHUB CAMPUS</text>
-    <text x="52" y="46" fill="#627694" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="1">TECH ADVOCATE</text>
-  </svg>

@@ -76,11 +76,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/sponsors" className="text-[#A9B8D0] hover:text-[#00E5FF] transition-colors">
-                  Sponsors & Partners
-                </Link>
-              </li>
-              <li>
                 <Link href="/#schedule" className="text-[#A9B8D0] hover:text-[#00E5FF] transition-colors">
                   Fest Schedule (Dec 2–3)
                 </Link>
