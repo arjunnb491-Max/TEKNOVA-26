@@ -357,10 +357,264 @@
       "image": "/images/events/thumbnails/tektoniq.webp"
     }
   ],
-  "registrations": [],
+  "registrations": [
+    {
+      "id": "REG-1795275730414-b7yf",
+      "registrationNumber": "TK26-TEKN-0001",
+      "eventId": "teknova-e-clash",
+      "eventName": "TEKNOVA E-CLASH",
+      "eventSlug": "teknova-e-clash",
+      "participationType": "individual",
+      "participant": {
+        "id": "PART-1795275730414",
+        "fullName": "Gamer Pro",
+        "email": "gamer.pro@example.com",
+        "phone": "9876500006",
+        "college": "Rajagiri College",
+        "course": "BCA",
+        "year": "2nd Year",
+        "studentId": ""
+      },
+      "teamMembers": [],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-11-21T15:42:10.414Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1795275727707-2sgr",
+      "registrationNumber": "TK26-TEKT-0001",
+      "eventId": "tektoniq",
+      "eventName": "TEKTONIQ",
+      "eventSlug": "tektoniq",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1795275727707",
+        "fullName": "Minimal User",
+        "email": "minimal.user@example.com",
+        "phone": "9876500005",
+        "college": "Model Engineering College",
+        "course": "MCA",
+        "year": "1st Year",
+        "studentId": ""
+      },
+      "teamName": "Minimal User's Team",
+      "teamMembers": [],
+      "paymentStatus": "pending",
+      "registrationDate": "2026-11-21T15:42:07.707Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1795275721876-s6rh",
+      "registrationNumber": "TK26-IDEA-0002",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "eventSlug": "ideatek",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1795275721876",
+        "fullName": "Nexus Innovators",
+        "email": "lead.john@example.com",
+        "phone": "9876500002",
+        "college": "CUSAT",
+        "course": "B.Tech CS",
+        "year": "3rd Year",
+        "studentId": ""
+      },
+      "teamName": "Nexus Innovators",
+      "teamMembers": [
+        {
+          "name": "Member Jane",
+          "email": "member.jane@example.com",
+          "phone": "9876500003"
+        },
+        {
+          "name": "Member Mark",
+          "email": "member.mark@example.com",
+          "phone": "9876500004"
+        }
+      ],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-11-21T15:42:01.876Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1795275718977-gozf",
+      "registrationNumber": "TK26-BUGS-0002",
+      "eventId": "bug-slayer",
+      "eventName": "BUG SLAYER",
+      "eventSlug": "bug-slayer",
+      "participationType": "individual",
+      "participant": {
+        "id": "PART-1795275718977",
+        "fullName": "Audit Individual",
+        "email": "audit.individual@example.com",
+        "phone": "9876500001",
+        "college": "KMM College",
+        "course": "MCA",
+        "year": "1st Year",
+        "studentId": ""
+      },
+      "teamMembers": [],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-11-21T15:41:58.977Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1795275527954-plb5",
+      "registrationNumber": "TK26-IDEA-0001",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "eventSlug": "ideatek",
+      "participationType": "team",
+      "participant": {
+        "id": "PART-1795275527954",
+        "fullName": "CyberDragons",
+        "email": "bob.leader@example.com",
+        "phone": "9876543211",
+        "college": "KMM College",
+        "course": "MCA",
+        "year": "2nd Year",
+        "studentId": ""
+      },
+      "teamName": "CyberDragons",
+      "teamMembers": [
+        {
+          "name": "Charlie Member",
+          "email": "charlie@example.com",
+          "phone": "9876543212"
+        },
+        {
+          "name": "Dave Member",
+          "email": "dave@example.com",
+          "phone": "9876543213"
+        }
+      ],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-11-21T15:38:47.954Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    },
+    {
+      "id": "REG-1795275469256-uc1v",
+      "registrationNumber": "TK26-BUGS-0001",
+      "eventId": "bug-slayer",
+      "eventName": "BUG SLAYER",
+      "eventSlug": "bug-slayer",
+      "participationType": "individual",
+      "participant": {
+        "id": "PART-1795275469256",
+        "fullName": "Alice Test",
+        "email": "alice.test@example.com",
+        "phone": "9876543210",
+        "college": "KMM College",
+        "course": "MCA",
+        "year": "1st Year",
+        "studentId": ""
+      },
+      "teamMembers": [],
+      "paymentStatus": "verified",
+      "registrationDate": "2026-11-21T15:37:49.256Z",
+      "source": "public",
+      "registeredBy": "Google Forms Sync",
+      "attendanceStatus": "not_marked",
+      "day1Attendance": "not_marked",
+      "day2Attendance": "not_marked",
+      "submissionStatus": "not_submitted"
+    }
+  ],
   "winners": [],
   "complaints": [],
   "auditLogs": [
+    {
+      "id": "AUD-1795275730414",
+      "timestamp": "2026-11-21T15:42:10.414Z",
+      "eventId": "teknova-e-clash",
+      "eventName": "TEKNOVA E-CLASH",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-TEKN-0001",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for TEKNOVA E-CLASH"
+    },
+    {
+      "id": "AUD-1795275727707",
+      "timestamp": "2026-11-21T15:42:07.707Z",
+      "eventId": "tektoniq",
+      "eventName": "TEKTONIQ",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-TEKT-0001",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for TEKTONIQ"
+    },
+    {
+      "id": "AUD-1795275721876",
+      "timestamp": "2026-11-21T15:42:01.876Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-IDEA-0002",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for IDEATEK"
+    },
+    {
+      "id": "AUD-1795275718978",
+      "timestamp": "2026-11-21T15:41:58.978Z",
+      "eventId": "bug-slayer",
+      "eventName": "BUG SLAYER",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-BUGS-0002",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for BUG SLAYER"
+    },
+    {
+      "id": "AUD-1795275527956",
+      "timestamp": "2026-11-21T15:38:47.956Z",
+      "eventId": "ideatek",
+      "eventName": "IDEATEK",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-IDEA-0001",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for IDEATEK"
+    },
+    {
+      "id": "AUD-1795275469258",
+      "timestamp": "2026-11-21T15:37:49.258Z",
+      "eventId": "bug-slayer",
+      "eventName": "BUG SLAYER",
+      "action": "REGISTRATION_CREATED",
+      "entityType": "REGISTRATION",
+      "entityId": "TK26-BUGS-0001",
+      "performedBy": "Google Forms Sync",
+      "details": "Online registration for BUG SLAYER"
+    },
     {
       "id": "AUD-001",
       "timestamp": "2026-10-20T09:05:26.704Z",

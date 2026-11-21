@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+    <polygon points="28,14 42,22 28,30 14,22" fill="#07172B" stroke="#00E5FF" stroke-width="1.5"/>
+    <path d="M19 25V35C19 38 28 41 28 41C28 41 37 38 37 35V25" stroke="#00E5FF" stroke-width="1.5"/>
+    <text x="52" y="34" fill="#F5F8FF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15">KMM ALUMNI</text>
+    <text x="52" y="46" fill="#627694" font-family="'JetBrains Mono', monospace" font-size="7.5" letter-spacing="1">MCA ASSOCIATION</text>
+  </svg>

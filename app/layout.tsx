@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://teknova2026.in"),
+  metadataBase: new URL("https://teknova.co.in"),
   title: "TEKNOVA ’26 | KMM College of Arts and Science, Thrikkakara",
   description: "TEKNOVA ’26 — Department of MCA, KMM College of Arts and Science, Thrikkakara. Fest Dates: December 2–3, 2026. IDEAS TODAY. A BRIGHTER TOMORROW. IDEAS • PEOPLE • POSSIBILITIES. MORE THAN JUST TECH.",
   keywords: ["TEKNOVA", "TEKNOVA 2026", "KMM College", "MCA Fest", "Tech Fest Kerala", "KMM College Thrikkakara", "IDEATEK", "BUG SLAYER", "TEK ROYAL", "FIND-X"],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TEKNOVA ’26 | Department of MCA, KMM College",
     description: "Premier Intercollegiate Technical & Cultural Confluence. December 2–3, 2026. ₹1 Lakh+ Prize Pool across official tournaments.",
-    url: "https://teknova2026.in",
+    url: "https://teknova.co.in",
     siteName: "TEKNOVA '26",
     images: [
       {
