@@ -7,36 +7,88 @@ import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { supabase, DbEvent } from '@/lib/supabase';
 import { OFFICIAL_EVENTS, OfficialEvent, formatINR, TOTAL_KNOWN_PRIZE_POOL } from '@/data/events';
-import { Search, Trophy, Calendar, MapPin, Users, User, ArrowRight, AlertCircle, Database, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Search, Trophy, Calendar, MapPin, Users, User, ArrowRight, AlertCircle, Database, RefreshCw, CheckCircle2, WifiOff } from 'lucide-react';
 import { EventCard } from '@/components/events/EventCard';
+
+type SupabaseStatus = 
+  | { type: 'loading' }
+  | { type: 'connected_success'; count: number }
+  | { type: 'connected_empty' }
+  | { type: 'connection_failed'; message: string }
+  | { type: 'query_failed'; message: string };
 
 export default function EventsListing() {
   const [dbEvents, setDbEvents] = useState<DbEvent[]>([]);
   const [loading, setLoading] = useState(true);
-  const [queryError, setQueryError] = useState<string | null>(null);
+  const [status, setStatus] = useState<SupabaseStatus>({ type: 'loading' });
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const fetchLiveEvents = async () => {
     setLoading(true);
-    setQueryError(null);
+    setStatus({ type: 'loading' });
+
+    let fetchedData: DbEvent[] = [];
+    let queryErrorText: string | null = null;
+    let isConnectionIssue = false;
+
     try {
-      // Query published events from live Supabase events table
+      // 1. Direct Supabase query to public.events
       const { data, error } = await supabase
         .from('events')
-        .select('id, name, slug, description, event_type, rules, venue, registration_fee, prize_pool, is_published')
-        .eq('is_published', true);
+        .select('id, name, slug, description, event_type, rules, venue, registration_fee, prize_pool, is_published, registration_open')
+        .eq('is_published', true)
+        .order('created_at', { ascending: true });
 
       if (error) {
-        setQueryError(error.message);
-      } else {
-        setDbEvents(data || []);
+        queryErrorText = error.message;
+      } else if (data && data.length > 0) {
+        fetchedData = data as DbEvent[];
       }
     } catch (err: any) {
-      setQueryError(err?.message || 'Failed to connect to database');
-    } finally {
-      setLoading(false);
+      isConnectionIssue = true;
+      queryErrorText = err?.message || 'Database unavailable';
     }
+
+    // 2. Resilient API route fallback (enforcing is_published=true)
+    // Ensures published events are retrieved even if the RLS SELECT policy is not yet applied in PostgreSQL
+    if (fetchedData.length === 0 && !queryErrorText) {
+      try {
+        const apiRes = await fetch('/api/events');
+        if (apiRes.ok) {
+          const apiJson = await apiRes.json();
+          if (apiJson.success && Array.isArray(apiJson.events) && apiJson.events.length > 0) {
+            fetchedData = apiJson.events as DbEvent[];
+          }
+        }
+      } catch {
+        // Retain original direct query outcome
+      }
+    }
+
+    // 3. Set explicit status based on query outcome
+    if (queryErrorText && fetchedData.length === 0) {
+      const isOfflineOrNet = 
+        isConnectionIssue || 
+        queryErrorText.toLowerCase().includes('failed to fetch') || 
+        queryErrorText.toLowerCase().includes('network') ||
+        queryErrorText.toLowerCase().includes('unavailable');
+
+      if (isOfflineOrNet) {
+        setStatus({ type: 'connection_failed', message: 'Database unavailable' });
+      } else {
+        setStatus({ type: 'query_failed', message: queryErrorText });
+      }
+      setDbEvents([]);
+    } else if (fetchedData.length > 0) {
+      setDbEvents(fetchedData);
+      setStatus({ type: 'connected_success', count: fetchedData.length });
+    } else {
+      setDbEvents([]);
+      setStatus({ type: 'connected_empty' });
+    }
+
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -58,15 +110,21 @@ export default function EventsListing() {
           subCategory: matched ? matched.subCategory : 'Competition',
           workingInterpretation: matched ? matched.workingInterpretation : (d.description || 'Official Event'),
           participationType: d.event_type === 'team' ? 'team' : 'individual',
+          teamSize: matched?.teamSize,
+          coordinator: matched?.coordinator,
           description: d.description || matched?.description || '',
-          rules: d.rules ? [d.rules] : (matched?.rules || []),
+          rules: d.rules 
+            ? (d.rules.includes('\n') ? d.rules.split('\n').filter(Boolean) : [d.rules]) 
+            : (matched?.rules || []),
+          guidelinesAndChecklist: matched?.guidelinesAndChecklist,
           prizes: matched?.prizes || (d.prize_pool ? [{ position: '1st', amount: d.prize_pool }] : []),
           prizePoolSubtotal: d.prize_pool || matched?.prizePoolSubtotal || 0,
+          prizeNote: matched?.prizeNote,
           date: matched?.date || 'December 2–3, 2026',
           time: matched?.time || '10:00 AM',
           venue: d.venue || matched?.venue || 'KMM Campus',
           registrationFee: d.registration_fee,
-          registrationOpen: true,
+          registrationOpen: (d as any).registration_open !== false,
           image: matched?.image || '/images/TEKNOVA \'26_ Neon Tech Fest.png'
         };
       })
@@ -111,24 +169,39 @@ export default function EventsListing() {
             {/* Supabase Connection Status Bar */}
             <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 px-4 py-2 rounded-xl bg-[#07172B] border border-white/10 text-xs font-mono">
               <div className="flex items-center gap-2">
-                <Database size={14} className={hasLiveDbEvents ? "text-emerald-400" : "text-[#00E5FF]"} />
+                <Database 
+                  size={14} 
+                  className={
+                    status.type === 'connected_success' ? "text-emerald-400" :
+                    status.type === 'connected_empty' ? "text-amber-400" :
+                    status.type === 'loading' ? "text-amber-400" : "text-rose-400"
+                  } 
+                />
                 <span>Supabase Live Status:</span>
               </div>
-              {loading ? (
+              {status.type === 'loading' && (
                 <span className="text-amber-400 flex items-center gap-1">
                   <RefreshCw size={12} className="animate-spin" /> Querying table public.events...
                 </span>
-              ) : queryError ? (
-                <span className="text-rose-400 flex items-center gap-1">
-                  <AlertCircle size={12} /> {queryError}
-                </span>
-              ) : hasLiveDbEvents ? (
+              )}
+              {status.type === 'connected_success' && (
                 <span className="text-emerald-400 flex items-center gap-1">
-                  <CheckCircle2 size={12} /> {dbEvents.length} Database Records Published
+                  <CheckCircle2 size={12} /> Connected – Events loaded successfully ({status.count} events)
                 </span>
-              ) : (
-                <span className="text-[#00E5FF] flex items-center gap-1">
-                  <CheckCircle2 size={12} /> Connected (0 published in DB table — displaying official {OFFICIAL_EVENTS.length} events catalogue)
+              )}
+              {status.type === 'connected_empty' && (
+                <span className="text-amber-400 flex items-center gap-1">
+                  <AlertCircle size={12} /> Connected – No published events found
+                </span>
+              )}
+              {status.type === 'connection_failed' && (
+                <span className="text-rose-400 flex items-center gap-1">
+                  <WifiOff size={12} /> Connection failed – Database unavailable
+                </span>
+              )}
+              {status.type === 'query_failed' && (
+                <span className="text-rose-400 flex items-center gap-1">
+                  <AlertCircle size={12} /> Query failed – {status.message}
                 </span>
               )}
               <button 
