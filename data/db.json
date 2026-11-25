@@ -346,13 +346,9 @@
         {
           "position": "1st",
           "amount": 3000
-        },
-        {
-          "position": "2nd",
-          "amount": 2000
         }
       ],
-      "prizePoolSubtotal": 5000,
+      "prizePoolSubtotal": 3000,
       "date": "December 3, 2026",
       "time": "9:30 AM",
       "venue": "Seminar Hall B",

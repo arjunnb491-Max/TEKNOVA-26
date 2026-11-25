@@ -586,10 +586,9 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       importantReminder: 'Think Fast. Think Smart. Be a Tech Champion! Organized by the Department of Master of Computer Applications (MCA), KMM College of Arts and Science, Thrikkakara.'
     },
     prizes: [
-      { position: '1st', amount: 3000 },
-      { position: '2nd', amount: 2000 }
+      { position: '1st', amount: 3000 }
     ],
-    prizePoolSubtotal: 5000,
+    prizePoolSubtotal: 3000,
     date: 'December 3, 2026',
     time: '9:30 AM',
     venue: 'Seminar Hall B',
