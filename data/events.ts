@@ -220,21 +220,108 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     category: 'Technical',
     subCategory: 'Web Design',
     workingInterpretation: 'Replica Event',
-    participationType: 'team',
-    teamSize: { min: 1, max: 2 },
+    participationType: 'individual',
     description: 'Recreate a high-fidelity cyberpunk web interface with pixel perfection and dynamic responsiveness.',
     rules: [
-      'Team of 1 to 2 members.',
-      'Target website mockup will be revealed at the commencement of the event.',
-      'Allowed stack: HTML5, CSS3/Tailwind, Vanilla JS or React.',
-      'No external pre-built templates or AI generators allowed.',
-      'Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics.'
+      'Individual participation only; no teams.',
+      'Systems will be provided. Recreate the given webpage independently (single-page websites only).',
+      'Permitted technologies: HTML5, CSS3 and Bootstrap only. JavaScript is not required.',
+      'Internet access allowed for learning & documentation (Approved: W3Schools, MDN, Bootstrap, GeeksforGeeks, Google Fonts, Font Awesome).',
+      'AI tools and AI-generated code are strictly prohibited (ChatGPT, GitHub Copilot, etc. not allowed).',
+      'Total duration: 2 Hours 30 Minutes. Submit within the allotted time.',
+      'Submit all project files before deadline. Ensure the webpage runs correctly.',
+      'Judges\' decisions are final and binding. Organisers reserve the right to modify the rules.'
     ],
+    guidelinesAndChecklist: {
+      sections: [
+        {
+          title: '1. General Rules',
+          items: [
+            'Individual participation only; no teams.',
+            'Systems will be provided.',
+            'Recreate the given webpage independently.',
+            'Only single-page websites are allowed.'
+          ]
+        },
+        {
+          title: '2. Permitted Technologies',
+          items: [
+            'HTML5, CSS3 and Bootstrap only.',
+            'JavaScript is not required.'
+          ]
+        },
+        {
+          title: '3. Internet & References',
+          items: [
+            'Internet access is allowed for learning and documentation.',
+            'Approved references: W3Schools, MDN, Bootstrap, GeeksforGeeks, Google Fonts and Font Awesome.'
+          ]
+        },
+        {
+          title: '4. AI Usage Policy',
+          items: [
+            'AI tools and AI-generated code are strictly prohibited.',
+            'ChatGPT, GitHub Copilot and similar tools are not allowed.'
+          ]
+        },
+        {
+          title: '5. Design Guidelines',
+          items: [
+            'Match the reference webpage as closely as possible.',
+            'Maintain accurate layouts, colours, fonts, spacing and alignment.',
+            'Responsive design is encouraged.'
+          ]
+        },
+        {
+          title: '6. Time Limit',
+          items: [
+            'Total duration: 2 Hours 30 Minutes.',
+            'Submit within the allotted time.',
+            'No extra time unless permitted by organisers.'
+          ]
+        },
+        {
+          title: '7. Submission Rules',
+          items: [
+            'Submit all project files before the deadline.',
+            'Ensure the webpage runs correctly.',
+            'Late submissions may be rejected.'
+          ]
+        },
+        {
+          title: '8. Disqualification Policy',
+          items: [
+            'Using AI tools or generated code.',
+            'Copying ready-made templates.',
+            'Plagiarism or code sharing.',
+            'Misconduct or rule violations.'
+          ]
+        },
+        {
+          title: '9. Judging Criteria',
+          items: [
+            'Visual similarity to the reference.',
+            'Layout, alignment and spacing.',
+            'Colours and typography.',
+            'Attention to detail.',
+            'Overall design quality and creativity.'
+          ]
+        },
+        {
+          title: '10. Final Decision',
+          items: [
+            'Judges\' decisions are final and binding.',
+            'Organisers reserve the right to modify the rules.'
+          ]
+        }
+      ],
+      importantReminder: 'AI tools and ready-made templates are strictly prohibited. Judges\' decisions are final and binding.'
+    },
     prizes: [
-      { position: '1st', amount: 7000 },
-      { position: '2nd', amount: 4000 }
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
     ],
-    prizePoolSubtotal: 11000,
+    prizePoolSubtotal: 6000,
     date: 'December 3, 2026',
     time: '9:30 AM',
     venue: 'Web Systems Studio',
@@ -252,16 +339,46 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     participationType: 'individual',
     description: 'Command the virtual pitch in an electrifying knockout e-football tournament.',
     rules: [
-      'Solo 1v1 console/PC tournament.',
-      'Match duration: 10 minutes regular time.',
-      'Knockout format; extra time and penalties if tied.',
-      'Controllers will be provided, but participants may bring personal certified controllers.'
+      'Match Format: 1 vs. 1 Knockout.',
+      'Team Type: Dream Team.',
+      'Match Duration: 10 Minutes.',
+      'Smart Assist: OFF.',
+      'Cheating, bug exploitation, or use of third-party controllers will result in immediate disqualification.',
+      'If a match disconnects due to network issues, a rematch will be conducted with the previous score.'
     ],
+    guidelinesAndChecklist: {
+      sections: [
+        {
+          title: 'Match Rules & Structure',
+          items: [
+            'Match Format: 1 vs. 1 Knockout.',
+            'Team Type: Dream Team.',
+            'Match Duration: 10 Minutes.',
+            'Smart Assist: OFF.'
+          ]
+        },
+        {
+          title: 'Fair Play & Controller Policy',
+          items: [
+            'Cheating, bug exploitation, or use of third-party controllers will result in immediate disqualification.',
+            'Controllers will be provided; participants may bring personal certified controllers.'
+          ]
+        },
+        {
+          title: 'Disconnection & Rematch Protocol',
+          items: [
+            'If a match disconnects due to network issues, a rematch will be conducted with the previous score.',
+            'Organizer / Referee decisions are final in all match disputes.'
+          ]
+        }
+      ],
+      importantReminder: '1 vs. 1 Knockout • Dream Team • Match Duration: 10 mins • Smart Assist: OFF.'
+    },
     prizes: [
-      { position: '1st', amount: 7000 },
-      { position: '2nd', amount: 4000 }
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
     ],
-    prizePoolSubtotal: 11000,
+    prizePoolSubtotal: 6000,
     date: 'December 3, 2026',
     time: '9:30 AM',
     venue: 'Gaming Arena (Auditorium)',
@@ -274,22 +391,102 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     slug: 'tek-royal',
     name: 'TEK ROYAL',
     category: 'Gaming',
-    subCategory: 'Battle Royale',
-    workingInterpretation: 'PUBG',
+    subCategory: 'BGMI TDM Tournament',
+    workingInterpretation: 'BGMI TDM',
     participationType: 'team',
-    teamSize: { min: 4, max: 4 },
-    description: 'Drop into the battleground with your squad. Strategy, precision, and survival till the last zone.',
+    teamSize: { min: 4, max: 5 },
+    description: 'BGMI Official TDM Tournament. Team Deathmatch in Warehouse with squad combat, tactical gunplay, and points ladder.',
     rules: [
-      'Squad participation (strictly 4 players).',
-      'Mobile devices only (no emulators, triggers, or tablet displays).',
-      'Matches will be hosted on custom rooms.',
-      'Points system: Placement points + Kill points as per official tournament standards.'
+      'Game: Battlegrounds Mobile India (BGMI) • Mode: Team Deathmatch (Warehouse) • Perspective: TPP.',
+      'Team Size: 4 Players + 1 Substitute (Optional).',
+      'Device: Mobile Only. Emulator, iPad / Tablet, Keyboard / Mouse are strictly NOT allowed.',
+      'All players must be on the latest BGMI version.',
+      'Allowed weapon: AR ONLY (M416). All attachments, frag grenade, stun grenade allowed.',
+      'Hacks, mods, bug glitches, emulators, abusive behavior and teaming up result in immediate disqualification.',
+      'Room ID & Password shared 10 minutes before match; team leader must confirm slot 15 minutes before match.',
+      'Scoring: Win (40 Kills): 10 Pts | Win by Time: 8 Pts | Lose by 1-5 Kills: 3 Pts | Lose by 6+ Kills: 0 Pts | Walkover: 10 Pts.',
+      'Organizer\'s / Referee\'s decision is FINAL in all disputes.'
     ],
+    guidelinesAndChecklist: {
+      sections: [
+        {
+          title: '1. General Rules',
+          items: [
+            'Game: Battlegrounds Mobile India (BGMI)',
+            'Mode: Team Deathmatch - Warehouse',
+            'Team Size: 4 Players + 1 Substitute (Optional)',
+            'Perspective: TPP',
+            'Match Type: Room Match - Custom Room',
+            'Device: Mobile Only. Emulator, iPad / Tablet, Keyboard / Mouse are NOT allowed.',
+            'Version: All players must be on the latest BGMI version.'
+          ]
+        },
+        {
+          title: '2. Room & Slot Rules',
+          items: [
+            'Room ID & Password: Will be shared 10 minutes before the match in the official group.',
+            'Slot Confirmation: Team leader must confirm the slot 15 minutes before the match.',
+            'Late Entry: If the team is not in the room within 5 minutes of start time, team will be disqualified / walkover given.',
+            'Team Name & IGN: IGN must match the registered IGN. Different IGN -> No entry.',
+            'Substitute: Substitute can only be changed between matches, not in the middle of a round.'
+          ]
+        },
+        {
+          title: '3. Allowed Weapons & Equipment',
+          items: [
+            'Allowed: AR ONLY (M416).',
+            'Allowed: All attachments, Frag grenade, Stun grenade.',
+            'Loadout: Players can change loadout only before the match starts.'
+          ]
+        },
+        {
+          title: '4. Prohibited - Strictly Banned',
+          items: [
+            'Hacks / Mods: Aimbot, Wallhack, ESP, No Recoil, Magic Bullet, Any third-party app.',
+            'Team Up: Teaming up with the opposing team.',
+            'Abusive Behaviour: Abusing opponents, organizers or referee in chat / voice.',
+            'Glitch / Bug Abuse: Using mag glitch, out-of-map bug, invisible spot.',
+            'Emulator / iPad: If found, immediate disqualification.',
+            'Account Sharing: Playing from another person\'s account.',
+            'IMPORTANT WARNING: If any player is caught hacking, the entire team will be disqualified immediately and banned from next tournaments.'
+          ]
+        },
+        {
+          title: '5. Scoring System',
+          items: [
+            'Win (40 Kills): 10 Points',
+            'Win by Time (More Kills): 8 Points',
+            'Lose by 1-5 Kills Difference: 3 Points',
+            'Lose by 6+ Kills Difference: 0 Points',
+            'Walkover Win: 10 Points',
+            'Tie in the points table: Decided by Total Kills -> Head-to-Head -> Kill Difference.'
+          ]
+        },
+        {
+          title: '6. Disconnect & Rematch Rules',
+          items: [
+            'If player disconnects within the first minute: the match will be restarted once.',
+            'If a player disconnects after the first minute: Match will continue. No rematch will be allowed.',
+            'If the entire team disconnects or the server crashes, the match will be restarted with the existing score or played again as a fresh match - Organizer\'s decision is final.',
+            'Lag / Ping Issue: Not considered a valid reason for rematch.'
+          ]
+        },
+        {
+          title: '7. Organizer Decision',
+          items: [
+            'Organizer\'s / Referee\'s decision is FINAL in all disputes.',
+            'Any argument / fight in group = Direct disqualification.',
+            'Rules can be changed by the organizer before tournament starts.'
+          ]
+        }
+      ],
+      importantReminder: 'ORGANIZER\'S / REFEREE\'S DECISION IS FINAL. Mobile only (no iPads/emulators). Strictly AR M416 only.'
+    },
     prizes: [
-      { position: '1st', amount: 7000 },
-      { position: '2nd', amount: 4000 }
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
     ],
-    prizePoolSubtotal: 11000,
+    prizePoolSubtotal: 6000,
     date: 'December 3, 2026',
     time: '9:30 AM',
     venue: 'E-Sports Hub',

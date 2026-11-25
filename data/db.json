@@ -132,30 +132,29 @@
       "category": "Technical",
       "subCategory": "Web Design",
       "workingInterpretation": "Replica Event",
-      "participationType": "team",
-      "teamSize": {
-        "min": 1,
-        "max": 2
-      },
+      "participationType": "individual",
       "description": "Recreate a high-fidelity cyberpunk web interface with pixel perfection and dynamic responsiveness.",
       "rules": [
-        "Team of 1 to 2 members.",
-        "Target website mockup will be revealed at the commencement of the event.",
-        "Allowed stack: HTML5, CSS3/Tailwind, Vanilla JS or React.",
-        "No external pre-built templates or AI generators allowed.",
-        "Submissions evaluated on visual fidelity, responsive fluidity, and clean semantics."
+        "Individual participation only; no teams.",
+        "Systems will be provided. Recreate the given webpage independently (single-page websites only).",
+        "Permitted technologies: HTML5, CSS3 and Bootstrap only. JavaScript is not required.",
+        "Internet access allowed for learning & documentation (Approved: W3Schools, MDN, Bootstrap, GeeksforGeeks, Google Fonts, Font Awesome).",
+        "AI tools and AI-generated code are strictly prohibited (ChatGPT, GitHub Copilot, etc. not allowed).",
+        "Total duration: 2 Hours 30 Minutes. Submit within the allotted time.",
+        "Submit all project files before deadline. Ensure the webpage runs correctly.",
+        "Judges' decisions are final and binding. Organisers reserve the right to modify the rules."
       ],
       "prizes": [
         {
           "position": "1st",
-          "amount": 7000
+          "amount": 4000
         },
         {
           "position": "2nd",
-          "amount": 4000
+          "amount": 2000
         }
       ],
-      "prizePoolSubtotal": 11000,
+      "prizePoolSubtotal": 6000,
       "date": "December 3, 2026",
       "time": "9:30 AM",
       "venue": "Web Systems Studio",
@@ -173,22 +172,24 @@
       "participationType": "individual",
       "description": "Command the virtual pitch in an electrifying knockout e-football tournament.",
       "rules": [
-        "Solo 1v1 console/PC tournament.",
-        "Match duration: 10 minutes regular time.",
-        "Knockout format; extra time and penalties if tied.",
-        "Controllers will be provided, but participants may bring personal certified controllers."
+        "Match Format: 1 vs. 1 Knockout.",
+        "Team Type: Dream Team.",
+        "Match Duration: 10 Minutes.",
+        "Smart Assist: OFF.",
+        "Cheating, bug exploitation, or use of third-party controllers will result in immediate disqualification.",
+        "If a match disconnects due to network issues, a rematch will be conducted with the previous score."
       ],
       "prizes": [
         {
           "position": "1st",
-          "amount": 7000
+          "amount": 4000
         },
         {
           "position": "2nd",
-          "amount": 4000
+          "amount": 2000
         }
       ],
-      "prizePoolSubtotal": 11000,
+      "prizePoolSubtotal": 6000,
       "date": "December 3, 2026",
       "time": "9:30 AM",
       "venue": "Gaming Arena (Auditorium)",
@@ -201,31 +202,36 @@
       "slug": "tek-royal",
       "name": "TEK ROYAL",
       "category": "Gaming",
-      "subCategory": "Battle Royale",
-      "workingInterpretation": "PUBG",
+      "subCategory": "BGMI TDM Tournament",
+      "workingInterpretation": "BGMI TDM",
       "participationType": "team",
       "teamSize": {
         "min": 4,
-        "max": 4
+        "max": 5
       },
-      "description": "Drop into the battleground with your squad. Strategy, precision, and survival till the last zone.",
+      "description": "BGMI Official TDM Tournament. Team Deathmatch in Warehouse with squad combat, tactical gunplay, and points ladder.",
       "rules": [
-        "Squad participation (strictly 4 players).",
-        "Mobile devices only (no emulators, triggers, or tablet displays).",
-        "Matches will be hosted on custom rooms.",
-        "Points system: Placement points + Kill points as per official tournament standards."
+        "Game: Battlegrounds Mobile India (BGMI) • Mode: Team Deathmatch (Warehouse) • Perspective: TPP.",
+        "Team Size: 4 Players + 1 Substitute (Optional).",
+        "Device: Mobile Only. Emulator, iPad / Tablet, Keyboard / Mouse are strictly NOT allowed.",
+        "All players must be on the latest BGMI version.",
+        "Allowed weapon: AR ONLY (M416). All attachments, frag grenade, stun grenade allowed.",
+        "Hacks, mods, bug glitches, emulators, abusive behavior and teaming up result in immediate disqualification.",
+        "Room ID & Password shared 10 minutes before match; team leader must confirm slot 15 minutes before match.",
+        "Scoring: Win (40 Kills): 10 Pts | Win by Time: 8 Pts | Lose by 1-5 Kills: 3 Pts | Lose by 6+ Kills: 0 Pts | Walkover: 10 Pts.",
+        "Organizer's / Referee's decision is FINAL in all disputes."
       ],
       "prizes": [
         {
           "position": "1st",
-          "amount": 7000
+          "amount": 4000
         },
         {
           "position": "2nd",
-          "amount": 4000
+          "amount": 2000
         }
       ],
-      "prizePoolSubtotal": 11000,
+      "prizePoolSubtotal": 6000,
       "date": "December 3, 2026",
       "time": "9:30 AM",
       "venue": "E-Sports Hub",
