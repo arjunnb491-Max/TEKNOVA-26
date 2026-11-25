@@ -157,22 +157,59 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     participationType: 'individual',
     description: 'Enter the neon simulation to hunt, isolate, and eradicate code vulnerabilities against the clock.',
     rules: [
-      'Individual participation only.',
-      'Participants must bring college ID card.',
-      'Programming languages supported: C, C++, Java, Python.',
-      'Round 1: Rapid syntax & logic debugging (30 mins).',
-      'Round 2: Algorithmic fix and performance optimization (45 mins).',
-      'Decision of the judges and coordinators is final.'
+      'No internet access or external assistance is allowed.',
+      'The judges\' decisions are final.',
+      'Single participants only (Registration Fee: ₹100 per participant).',
+      'Both Online Registration and Spot Registration are available. A QR code is provided to scan and register.'
     ],
+    guidelinesAndChecklist: {
+      sections: [
+        {
+          title: 'General Rules & Important Rules',
+          items: [
+            'No internet access or external assistance is allowed.',
+            'The judges\' decisions are final.'
+          ]
+        },
+        {
+          title: 'Round 1: Code Quest',
+          items: [
+            'Consists of 25 multiple-choice questions.'
+          ]
+        },
+        {
+          title: 'Round 2: Code Sprint',
+          items: [
+            'Participants must solve a programming problem.',
+            'Advancement: Only the first 10 participants to complete the task will advance to Round 3.'
+          ]
+        },
+        {
+          title: 'Round 3: Bug Hunter',
+          items: [
+            'The final debugging challenge.',
+            'Participants must identify and fix the errors in the given program.'
+          ]
+        },
+        {
+          title: 'Registration Guidelines',
+          items: [
+            'Who can register: Single participants (Registration Fee: ₹100 per participant).',
+            'Methods: Both Online Registration and Spot Registration are available. A QR code is provided to scan and register.'
+          ]
+        }
+      ],
+      importantReminder: 'No internet access or external assistance is allowed. The judges\' decisions are final.'
+    },
     prizes: [
-      { position: '1st', amount: 7000 },
-      { position: '2nd', amount: 4000 }
+      { position: '1st', amount: 4000 },
+      { position: '2nd', amount: 2000 }
     ],
-    prizePoolSubtotal: 11000,
-    date: 'December 2, 2026',
-    time: '10:00 AM',
+    prizePoolSubtotal: 6000,
+    date: 'December 3, 2026',
+    time: '9:30 AM',
     venue: 'Lab Alpha (MCA Department)',
-    registrationFee: null,
+    registrationFee: 100,
     registrationOpen: true,
     image: '/images/events/thumbnails/bug-slayer.webp'
   },
@@ -198,8 +235,8 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       { position: '2nd', amount: 4000 }
     ],
     prizePoolSubtotal: 11000,
-    date: 'December 2, 2026',
-    time: '11:30 AM',
+    date: 'December 3, 2026',
+    time: '9:30 AM',
     venue: 'Web Systems Studio',
     registrationFee: null,
     registrationOpen: true,
@@ -225,8 +262,8 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       { position: '2nd', amount: 4000 }
     ],
     prizePoolSubtotal: 11000,
-    date: 'December 2, 2026',
-    time: '01:30 PM',
+    date: 'December 3, 2026',
+    time: '9:30 AM',
     venue: 'Gaming Arena (Auditorium)',
     registrationFee: null,
     registrationOpen: true,
@@ -254,7 +291,7 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     ],
     prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
-    time: '10:00 AM',
+    time: '9:30 AM',
     venue: 'E-Sports Hub',
     registrationFee: null,
     registrationOpen: true,
@@ -283,7 +320,7 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     ],
     prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
-    time: '01:30 PM',
+    time: '9:30 AM',
     venue: 'Campus Grounds & Central Base',
     registrationFee: null,
     registrationOpen: true,
@@ -357,7 +394,7 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
     ],
     prizePoolSubtotal: 11000,
     date: 'December 3, 2026',
-    time: '11:00 AM',
+    time: '9:30 AM',
     venue: 'Seminar Hall B',
     registrationFee: null,
     registrationOpen: true,

@@ -259,6 +259,17 @@ export default async function EventDetails({ params }: { params: Promise<{ id: s
                       </div>
                     )}
 
+                    {event.registrationFee !== null && (
+                      <div className="flex justify-between items-center p-3 bg-[#07172B] border border-[#00E5FF]/20 rounded-xl">
+                        <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                          Registration Fee
+                        </span>
+                        <span className="text-sm font-extrabold font-mono text-[#00E5FF]">
+                          ₹{event.registrationFee} <span className="text-[10px] text-[#A9B8D0] font-normal">/ participant</span>
+                        </span>
+                      </div>
+                    )}
+
                     <div className="pt-2">
                       {registrationUrl ? (
                         <a 
