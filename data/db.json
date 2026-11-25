@@ -262,14 +262,10 @@
       "prizes": [
         {
           "position": "1st",
-          "amount": 7000
-        },
-        {
-          "position": "2nd",
-          "amount": 4000
+          "amount": 10000
         }
       ],
-      "prizePoolSubtotal": 11000,
+      "prizePoolSubtotal": 10000,
       "date": "December 3, 2026",
       "time": "9:30 AM",
       "venue": "Campus Grounds & Central Base",

@@ -512,10 +512,9 @@ export const OFFICIAL_EVENTS: OfficialEvent[] = [
       'First team to unearth the final artifact and report to the central base wins.'
     ],
     prizes: [
-      { position: '1st', amount: 7000 },
-      { position: '2nd', amount: 4000 }
+      { position: '1st', amount: 10000 }
     ],
-    prizePoolSubtotal: 11000,
+    prizePoolSubtotal: 10000,
     date: 'December 3, 2026',
     time: '9:30 AM',
     venue: 'Campus Grounds & Central Base',
@@ -637,12 +636,8 @@ export function formatINR(amount: number): string {
   }).format(amount);
 }
 
-// Calculate the known prize pool subtotal across official events (₹1 Lakh+ Grand Prize Pool)
-export const TOTAL_KNOWN_PRIZE_POOL = OFFICIAL_EVENTS.reduce(
-  (acc, event) => acc + event.prizePoolSubtotal,
-  0
-); // ₹1,01,000 across 7 official events (₹1 Lakh+)
-
+// Fixed official festival grand prize pool (auto calculation disabled)
+export const TOTAL_KNOWN_PRIZE_POOL = 100000; // Fixed ₹1,00,000+ Grand Prize Pool (₹1 Lakh+)
 export const TOTAL_PRIZE_POOL_LABEL = '1 Lakh+';
 
 // Alias mapping for legacy event names from previous prototypes
