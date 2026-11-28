@@ -225,13 +225,12 @@ export async function syncGoogleFormRegistration(rawPayload: GoogleFormRawPayloa
     paymentStatus: parsed.transactionId ? 'verified' : 'pending'
   });
 
-  const registrationNumber = 
-    localResult.registration?.registrationNumber || 
-    `TK26-${officialEvent.slug.toUpperCase().slice(0, 4).replace(/[^A-Z]/g, '')}-${Date.now().toString().slice(-4)}`;
-
   // 2. Sync to Supabase PostgreSQL Database
   const supabaseLogs: { step: string; status: 'ok' | 'error'; error?: string }[] = [];
   let syncSuccess = true;
+  let registrationNumber =
+    localResult.registration?.registrationNumber ||
+    `TK26-${officialEvent.slug.toUpperCase().slice(0, 4).replace(/[^A-Z]/g, '')}-${Date.now().toString().slice(-4)}`;
 
   try {
     // 2a. Ensure Event exists in Supabase
@@ -275,6 +274,20 @@ export async function syncGoogleFormRegistration(rawPayload: GoogleFormRawPayloa
     if (!eventDbId) {
       throw new Error('Event ID could not be resolved in Supabase.');
     }
+
+    // Generate next unique registration_number from Supabase (avoids collisions on read-only serverless fs)
+    const regPrefix = officialEvent.slug.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4);
+    const { data: existingRegsForEvent } = await supabaseAdmin
+      .from('registrations')
+      .select('registration_number')
+      .eq('event_id', eventDbId);
+
+    const maxSeq = (existingRegsForEvent || []).reduce((max: number, r: any) => {
+      const parts = String(r.registration_number || '').split('-');
+      const num = parseInt(parts[parts.length - 1], 10);
+      return Number.isNaN(num) ? max : Math.max(max, num);
+    }, 0);
+    registrationNumber = `TK26-${regPrefix}-${String(maxSeq + 1).padStart(4, '0')}`;
 
     // 2b. Insert / Update Primary Participant (Leader) in Supabase
     let participantDbId: string | null = null;
