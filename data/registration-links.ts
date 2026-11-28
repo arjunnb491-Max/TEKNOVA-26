@@ -4,16 +4,18 @@
  * Requirements:
  * - Base Form: Individual registrations Google Form
  * - Question Parameter: entry.1596960882
- * - IDEATEK: Separate Google Form (forms.gle/1JnptrqLw3y3BEbt6)
+ * - IDEATEK: Separate Google Form (forms.gle/HKSktzkPNjtu8Wx38)
  * - Raw URL parameters preserved verbatim (exact whitespace '+' encoding & fee strings).
  */
 
 export const INDIVIDUAL_GOOGLE_FORM_BASE =
   'https://docs.google.com/forms/d/e/1FAIpQLSdCVIj4gWHmVIgQQYg5AHsoVXgueqNnlDpa722alf8VRGzgUg/viewform';
 
+export const INDIVIDUAL_GOOGLE_FORM_SHORTLINK = 'https://forms.gle/ndjgjQvCKTjcVUiy5';
+
 export const GOOGLE_FORM_QUESTION_PARAMETER = 'entry.1596960882';
 
-export const IDEATEK_GOOGLE_FORM = 'https://forms.gle/1JnptrqLw3y3BEbt6';
+export const IDEATEK_GOOGLE_FORM = 'https://forms.gle/HKSktzkPNjtu8Wx38';
 
 /**
  * Exact prefilled Google Form registration URLs mapped by event slug.
@@ -21,7 +23,7 @@ export const IDEATEK_GOOGLE_FORM = 'https://forms.gle/1JnptrqLw3y3BEbt6';
  */
 export const EVENT_REGISTRATION_URLS: Record<string, string> = {
   // Flagship Ideathon (Separate Google Form)
-  'ideatek': 'https://forms.gle/1JnptrqLw3y3BEbt6',
+  'ideatek': 'https://forms.gle/HKSktzkPNjtu8Wx38',
 
   // 1. BUG SLAYER (Debugging)
   'bug-slayer': 'https://docs.google.com/forms/d/e/1FAIpQLSdCVIj4gWHmVIgQQYg5AHsoVXgueqNnlDpa722alf8VRGzgUg/viewform?usp=pp_url&entry.1596960882=BUG+SLAYER+(DEBUGGING)+++++++++++++++++++++++++(%E2%82%B9100/-+per+head)',

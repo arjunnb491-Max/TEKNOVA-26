@@ -60,7 +60,7 @@ export function AnimatedCounter({
   return (
     <span className={className}>
       {prefix}
-      {displayValue.toLocaleString()}
+      {displayValue.toLocaleString('en-IN')}
       {suffix}
     </span>
   );
