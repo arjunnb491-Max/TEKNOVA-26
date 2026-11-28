@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Store } from '@/lib/store';
+import {
+  getSupabaseAuditLogs,
+  getSupabaseStats,
+  updateSupabaseEvent,
+} from '@/lib/supabase-portal';
 
 export async function GET(req: NextRequest) {
   try {
@@ -7,12 +12,12 @@ export async function GET(req: NextRequest) {
     const type = searchParams.get('type');
 
     if (type === 'audit') {
-      const logs = Store.getAuditLogs();
+      const logs = await getSupabaseAuditLogs();
       return NextResponse.json({ logs });
     }
 
     if (type === 'stats') {
-      const stats = Store.getStats();
+      const stats = await getSupabaseStats();
       return NextResponse.json({ stats });
     }
 
@@ -21,8 +26,10 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ coordinators });
     }
 
-    const stats = Store.getStats();
-    const logs = Store.getAuditLogs(20);
+    const [stats, logs] = await Promise.all([
+      getSupabaseStats(),
+      getSupabaseAuditLogs(20),
+    ]);
     return NextResponse.json({ stats, logs });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -38,7 +45,7 @@ export async function POST(req: NextRequest) {
       if (!eventSlug || !updates) {
         return NextResponse.json({ error: 'eventSlug and updates object required.' }, { status: 400 });
       }
-      const updated = Store.updateEvent(eventSlug, updates, performedBy || 'Admin');
+      const updated = await updateSupabaseEvent(eventSlug, updates, performedBy || 'Admin');
       if (!updated) {
         return NextResponse.json({ error: 'Event not found.' }, { status: 404 });
       }

@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Store } from '@/lib/store';
+import {
+  createSupabaseRegistration,
+  getSupabaseRegistrationByNumber,
+  getSupabaseRegistrations,
+} from '@/lib/supabase-portal';
 
 export async function POST(req: NextRequest) {
   try {
@@ -45,7 +49,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Team name is mandatory for team events.' }, { status: 400 });
     }
 
-    const result = Store.createRegistration({
+    const result = await createSupabaseRegistration({
       eventSlug,
       participant: {
         fullName: fullName.trim(),
@@ -87,7 +91,7 @@ export async function GET(req: NextRequest) {
 
     if (regNumber) {
       // Secure lookup: requires verify (email or phone) to prevent guessing personal data
-      const record = Store.getRegistrationByNumber(regNumber, verify || undefined);
+      const record = await getSupabaseRegistrationByNumber(regNumber, verify || undefined);
       if (!record) {
         return NextResponse.json(
           { error: 'Registration not found or verification credentials did not match.' },
@@ -98,7 +102,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Event filtered query
-    const list = Store.getRegistrations(eventId || undefined);
+    const list = await getSupabaseRegistrations(eventId || undefined);
     return NextResponse.json({ registrations: list });
   } catch (err: any) {
     return NextResponse.json({ error: 'Error fetching registration data.' }, { status: 500 });

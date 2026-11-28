@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Store } from '@/lib/store';
+import { updateSupabaseWorkflowSubmission } from '@/lib/supabase-portal';
 
 export async function POST(req: NextRequest) {
   try {
@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Registration number and submission data are required.' }, { status: 400 });
     }
 
-    const success = Store.updateWorkflowSubmission(registrationNumber, {
+    const success = await updateSupabaseWorkflowSubmission(registrationNumber, {
       ...submission,
       performedBy: performedBy || 'Event Coordinator'
     });

@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Store } from '@/lib/store';
+import {
+  confirmSupabaseWinner,
+  getSupabaseWinners,
+} from '@/lib/supabase-portal';
 
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const eventId = searchParams.get('eventId');
-    const winners = Store.getWinners(eventId || undefined);
+    const winners = await getSupabaseWinners(eventId || undefined);
     return NextResponse.json({ winners });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -21,7 +24,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Event, Position, and Registration Number are required.' }, { status: 400 });
     }
 
-    const result = Store.confirmWinner({
+    const result = await confirmSupabaseWinner({
       eventId,
       position,
       registrationNumber,
